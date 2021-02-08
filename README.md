@@ -1,13 +1,13 @@
-# flutter_extension
+# awesome_extensions
 
 ## Let get started 💪
 
 1. Go to `pubspec.yaml`
-2. add a flutter_extension and replace `[version]` with the latest version:
+2. add a awesome_extensions and replace `[version]` with the latest version:
 
 ```dart
 dependencies:
- flutter_extension: ^[version]
+ awesome_extensions: ^[version]
  ```
 
 3. click the packages get button or *flutter pub get*
