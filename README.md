@@ -20,6 +20,11 @@ Text('Hello World',
     style: Theme.of(context).textTheme.caption.bold,
    ),
 
+   // or
+
+   Text('Hello World',
+       style: context.textTheme.caption.bold,
+      ),
 ```
 Similar text style extensions are:
 * `mostThick` The most thick - FontWeight.w900
@@ -31,3 +36,57 @@ Similar text style extensions are:
 * `light` Light - FontWeight.w300
 * `extraLight` Extra-light - FontWeight.w200
 * `thin` Thin, the least thick - FontWeight.w100
+
+
+## SizeBox Extensions
+
+This extension is reduced more code like:
+```dart
+SizedBox(
+    height : 20.0
+   )
+```
+you can done in 1 line code
+
+```dart
+// make space of 20.0 height
+ 20.0.heightSizedBox
+
+ // for width
+ 20.0.widthSizedBox
+```
+
+## Date Extensions
+
+```dart
+// for check two date are same or not
+date.isSameDate(otherdate);    // its return bool (true/false)
+
+// for check date is today's date
+date.isToday    // its return bool (true/false)
+
+// for check this date is yesterday's date
+date.isYesterday    // its return bool (true/false)
+```
+
+## Padding Extensions
+
+for apply padding in widget you doing this:
+
+```dart
+Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: Text("text"),
+);
+```
+but using padding extension:
+```dart
+ Text("text").paddingAll(8.0),
+```
+
+Similar padding extensions are:
+* `paddingAll` Creates insets from offsets from all side.
+* `paddingOnly` Creates insets with only the given values non-zero.
+* `paddingLTRB` Creates insets from offsets from the left, top, right, and bottom.
+* `paddingSymmetric` Creates insets with symmetrical vertical and horizontal offsets.
+* `paddingFromWindowPadding` Creates insets that match the given window padding.
