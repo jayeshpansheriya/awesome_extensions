@@ -1,3 +1,6 @@
+## 0.0.4
+### Added
+- build context extension
 ## 0.0.3
 ### Update
 - example
