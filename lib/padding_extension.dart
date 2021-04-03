@@ -1,7 +1,7 @@
 part of 'awesome_extensions.dart';
 
 extension PaddingX on Widget {
-  Padding paddingAll(double value, {Key key}) => Padding(
+  Padding paddingAll(double value, {required Key key}) => Padding(
         key: key,
         padding: EdgeInsets.all(value),
         child: this,
@@ -12,7 +12,7 @@ extension PaddingX on Widget {
     double top = 0.0,
     double right = 0.0,
     double bottom = 0.0,
-    Key key,
+    required Key key,
   }) =>
       Padding(
         key: key,
@@ -26,7 +26,7 @@ extension PaddingX on Widget {
     double top,
     double right,
     double bottom, {
-    Key key,
+    required Key key,
   }) =>
       Padding(
         key: key,
@@ -37,7 +37,7 @@ extension PaddingX on Widget {
   Padding paddingFromWindowPadding(
     ui.WindowPadding padding,
     double devicePixelRatio, {
-    Key key,
+    required Key key,
   }) =>
       Padding(
         key: key,
@@ -46,7 +46,7 @@ extension PaddingX on Widget {
       );
 
   Padding paddingSymmetric(
-          {double vertical = 0.0, double horizontal = 0.0, Key key}) =>
+          {double vertical = 0.0, double horizontal = 0.0, required Key key}) =>
       Padding(
         key: key,
         padding: EdgeInsets.symmetric(

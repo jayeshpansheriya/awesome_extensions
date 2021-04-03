@@ -1,3 +1,6 @@
+## 1.0.0
+### Added
+- mirgrate to nullsafety
 ## 0.0.5
 ### Added
 - build shimmer extension

@@ -1,15 +1,14 @@
 name: awesome_extensions
 description: An extension to the widget that helps to reduce the boilerplate and adds some helpful methods.
-version: 0.0.5
+version: 1.0.0-nullsafety.0
 #author:
 homepage: https://github.com/jayeshpansheriya/awesome_extensions
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
-  shimmer: ^1.1.2
 
   flutter:
     sdk: flutter
