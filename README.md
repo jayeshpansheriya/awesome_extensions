@@ -129,3 +129,14 @@ context.back();
 context.replaceWith(SecondScreen());
 ```
 
+## For Responsive Layout (MediaQuery)
+
+
+```dart
+// Equivalent to : MediaQuery.of(context).size.height,
+// Height of the Screen
+context.height
+
+// Width of Screen
+context.width
+```
