@@ -1,3 +1,6 @@
+## [0.0.6] - 2021-04-03
+* add some context extension for MediaQuery
+
 ## [0.0.5] - 2021-03-06
 * add `Shimmer` extension
 ## [0.0.4] - 2021-02-11
