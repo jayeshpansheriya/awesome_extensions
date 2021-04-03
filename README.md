@@ -28,6 +28,12 @@ Text('Hello World',
    Text('Hello World',
        style: context.textTheme.caption.bold,
       ),
+
+      // or
+
+   Text('Hello World',
+       style: context.textTheme.headline3,
+      ),
 ```
 Similar text style extensions are:
 * `mostThick` The most thick - FontWeight.w900
@@ -53,10 +59,10 @@ you can done in 1 line code
 
 ```dart
 // make space of 20.0 height
- 20.0.heightSizedBox
+ 20.0.heightBox
 
  // for width
- 20.0.widthSizedBox
+ 20.0.widthBox
 ```
 
 ## Date Extensions
@@ -93,3 +99,33 @@ Similar padding extensions are:
 * `paddingLTRB` Creates insets from offsets from the left, top, right, and bottom.
 * `paddingSymmetric` Creates insets with symmetrical vertical and horizontal offsets.
 * `paddingFromWindowPadding` Creates insets that match the given window padding.
+
+
+## Shimmer Effect
+
+```dart
+Container(height: 50,width: 50,).applyShimmer();
+```
+you can also change color of shimmer using `Color baseColor`, `Color highlightColor`
+
+
+## Context Extensions
+
+```dart
+Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => SecondScreen()),
+  );
+```
+context extension reduced  your code:
+```dart
+// for push
+ context.to(SecondScreen());
+
+// for back
+context.back();
+
+// for replace
+context.replaceWith(SecondScreen());
+```
+

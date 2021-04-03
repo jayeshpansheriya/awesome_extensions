@@ -41,19 +41,19 @@ class _MyHomePageState extends State<MyHomePage> {
             //Text Extensions
             Text(
               'Hello World',
-              style: Theme.of(context).textTheme.caption.bold,
+              style: context.textTheme.caption.bold,
             ),
             Text(
               'Hello World',
-              style: Theme.of(context).textTheme.headline3.semiBold,
+              style: context.textTheme.headline3.semiBold,
             ),
             Text(
               'Hello World',
-              style: Theme.of(context).textTheme.headline3.regular,
+              style: context.textTheme.headline3.regular,
             ),
             Text(
               'Hello World',
-              style: Theme.of(context).textTheme.headline4.thin,
+              style: context.textTheme.headline4.thin,
             ),
 
             //SizeBox Extensions
@@ -84,6 +84,31 @@ class _MyHomePageState extends State<MyHomePage> {
             Text('${dateTime.isToday}'),
             Text('${dateTime.isToday}'),
             Text('${dateTime.isSameDate(dateTime)}'),
+
+            //Shimmer Effect
+            StreamBuilder<List<Object>>(
+                  stream: your stream,
+                  builder: (BuildContext context,
+                      AsyncSnapshot<List<Object>> snapshot) {
+                    if (snapshot.data == null) {
+                      return ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 3,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(height: 50,width: 50,).applyShimmer();
+                        },
+                      );
+                    }
+
+                    return ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container();
+                      },
+                    );
+                  },
+                ),
           ],
         )
         // This trailing comma makes auto-formatting nicer for build methods.
