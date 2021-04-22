@@ -1,3 +1,7 @@
+
+## [1.0.0] - 2021-04-22
+* migrate to full null safety
+
 ## [0.0.6] - 2021-04-03
 * add some context extension for MediaQuery
 

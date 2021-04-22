@@ -1,15 +1,14 @@
 part of 'awesome_extensions.dart';
 
-///
-/// Extension Method for the [Shimmer Effect] Widget
-///
 extension ShimmerEffect on Widget {
   Widget applyShimmer(
-      {bool enable = true, Color baseColor, Color highlightColor}) {
+      {bool enable = true,
+      Color baseColor = Colors.grey,
+      Color highlightColor = Colors.grey}) {
     if (enable) {
       return Shimmer.fromColors(
-        baseColor: baseColor ?? Colors.grey[300],
-        highlightColor: highlightColor ?? Colors.grey[100],
+        baseColor: baseColor,
+        highlightColor: highlightColor,
         enabled: enable,
         child: this,
       );
