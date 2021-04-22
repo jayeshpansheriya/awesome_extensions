@@ -2,14 +2,16 @@ part of 'awesome_extensions.dart';
 
 extension ExtBuildContext on BuildContext {
   ThemeData get theme => Theme.of(this);
+  TextTheme get textTheme => Theme.of(this).textTheme;
+
   double get height => MediaQuery.of(this).size.height;
   double get width => MediaQuery.of(this).size.width;
 
   /// performs a simple [Navigator.pop] action and returns given [result]
-  void navigateBack() => Navigator.pop(this);
+  void back() => Navigator.pop(this);
 
   /// performs a simple [Navigator.push] action with given [route]
-  void navigateTo(Widget screen) {
+  void to(Widget screen) {
     Navigator.of(this).push(MaterialPageRoute<Widget>(builder: (_) => screen));
   }
 
