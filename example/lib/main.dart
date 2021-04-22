@@ -57,14 +57,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             //SizeBox Extensions
-            20.0.heightSizedBox,
+            20.0.heightBox,
 
             Row(
               children: [
                 Text(
                   'Hello World',
                 ),
-                20.0.widthSizedBox,
+                20.0.widthBox,
                 Text(
                   'Hello World',
                 )
@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             //Shimmer Effect
             StreamBuilder<List<Object>>(
-                  stream: your stream,
+                  stream: <your stream here>,
                   builder: (BuildContext context,
                       AsyncSnapshot<List<Object>> snapshot) {
                     if (snapshot.data == null) {

@@ -1,6 +1,6 @@
 name: awesome_extensions
 description: An extension to the widget that helps to reduce the boilerplate and adds some helpful methods.
-version: 1.0.0-nullsafety.1
+version: 1.0.0
 
 #author:
 homepage: https://github.com/jayeshpansheriya/awesome_extensions
