@@ -1,5 +1,5 @@
 name: awesome_extensions
-description: An extension to the widget that helps to reduce the boilerplate and adds some helpful methods.
+description: An extension to the widget that helps to reduce the boilerplate and adds some helpful methods. and you can make responsive design.
 version: 1.0.1
 
 #author:
@@ -10,7 +10,6 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-
   flutter:
     sdk: flutter
 

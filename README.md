@@ -16,6 +16,7 @@ dependencies:
 3. click the packages get button or *flutter pub get*
 
 ## TextStyle
+#### From the `TextStyle` Access properties right in the `context` instance.
 
 ### .bold()
 ```dart
@@ -41,7 +42,7 @@ Similar text style extensions are:
 * `thin` Thin, the least thick - FontWeight.w100
 
 ## Theme
-#### From the `Theme` class. Access your themes right in the `context` instance. Available extensions:
+#### From the `Theme` class. Access your themes right in the `context` instance.
 
 * `context.theme`
 * `context.textTheme`
@@ -121,6 +122,7 @@ Similar padding extensions are:
 
 
 ## BuildContext
+#### From the `Navigator` Access properties right in the `context` instance.
 
 ```dart
 // Before
@@ -152,17 +154,55 @@ context.toAndRemoveUntilName('/login');
 ```
 
 ## For Responsive Layout (MediaQuery)
+#### From the `MediaQuery` Access properties right in the `context` instance.
+* `context.height`  // Height of the Screen, Equivalent to : MediaQuery.of(context).size.height,
+* `context.width`   // Width of Screen
+* `context.mediaQuerySize`
+* `context.orientation`
+* `context.mediaQueryPadding`
+* `context.alwaysUse24HourFormat`
+* `context.devicePixelRatio`
+* `context.platformBrightness`
+* `context.textScaleFactor`
+* `context.isLandscape`
+* `context.isPortrait`
+* `context.mediaQueryViewPadding`
+* `context.mediaQueryViewInsets`
+* `context.mediaQueryShortestSide`
+
+
+* `context.showNavbar`    // True if width be larger than 800
+* `context.isPhone`       // True if the shortestSide is smaller than 600p
+* `context.isTablet`      // True if the current device is Tablet
+* `context.isSmallTablet`   // True if the shortestSide is largest than 600p
+* `context.isLargeTablet`    // True if the shortestSide is largest than 720p
 
 
 ```dart
-// Equivalent to : MediaQuery.of(context).size.height,
-// Height of the Screen
-context.height
+//Check in what platform the app is running
+GetPlatform.isAndroid
+GetPlatform.isIOS
+GetPlatform.isMacOS
+GetPlatform.isWindows
+GetPlatform.isLinux
+GetPlatform.isFuchsia
 
-// Width of Screen
-context.width
+//Check the device type
+GetPlatform.isMobile
+GetPlatform.isDesktop
+//All platforms are supported independently in web!
+//You can tell if you are running inside a browser
+//on Windows, iOS, OSX, Android, etc.
+GetPlatform.isWeb
+
+
+/// Returns a value<T> according to the screen size
+/// can give value for:
+/// mobile: if the shortestSide is smaller than 600
+/// tablet: if the shortestSide is smaller than 1200
+/// desktop: if width is largest than 1200
+context.responsiveValue<T>()
 ```
-
 
 ## Shimmer Effect
 
