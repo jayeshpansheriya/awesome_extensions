@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 
@@ -29,6 +31,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   DateTime dateTime = DateTime.now();
+
+  StreamController<int> _events;
+  @override
+  initState() {
+    super.initState();
+    _events = new StreamController<int>();
+    _events.add(0);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,29 +96,31 @@ class _MyHomePageState extends State<MyHomePage> {
             Text('${dateTime.isSameDate(dateTime)}'),
 
             //Shimmer Effect
-            StreamBuilder<List<Object>>(
-                  stream: <your stream here>,
-                  builder: (BuildContext context,
-                      AsyncSnapshot<List<Object>> snapshot) {
-                    if (snapshot.data == null) {
-                      return ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: 3,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(height: 50,width: 50,).applyShimmer();
-                        },
-                      );
-                    }
+            StreamBuilder<int>(
+              stream: _events.stream,
+              builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+                if (snapshot.data == null) {
+                  return ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 3,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        height: 50,
+                        width: 50,
+                      ).applyShimmer();
+                    },
+                  );
+                }
 
-                    return ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: snapshot.data.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container();
-                      },
-                    );
+                return ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container();
                   },
-                ),
+                );
+              },
+            ),
           ],
         )
         // This trailing comma makes auto-formatting nicer for build methods.
