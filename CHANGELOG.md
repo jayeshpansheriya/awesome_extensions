@@ -1,6 +1,7 @@
 ## [1.0.1] - 2021-04-24
 * add new Theme related extenstion
-
+* add Platform related extension
+* add more extension for responsive screen according to the screen size
 ## [1.0.0] - 2021-04-22
 * migrate to full null safety
 

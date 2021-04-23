@@ -1,6 +1,7 @@
 library awesome_extensions;
 
 import 'dart:ui' as ui show WindowPadding;
+import 'package:awesome_extensions/src/platform/platform.dart';
 import 'package:awesome_extensions/src/shimmer.dart';
 import 'package:flutter/material.dart';
 
