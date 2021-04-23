@@ -15,25 +15,19 @@ dependencies:
 
 3. click the packages get button or *flutter pub get*
 
-## TextStyle Extensions
+## TextStyle
 
 ### .bold()
 ```dart
-Text('Hello World',
-    style: Theme.of(context).textTheme.caption.bold,
-   ),
+// Before
+Text('Hello World',style: Theme.of(context).textTheme.caption.bold,),
 
-   // or
-
-   Text('Hello World',
-       style: context.textTheme.caption.bold,
-      ),
-
-      // or
-
-   Text('Hello World',
-       style: context.textTheme.headline3,
-      ),
+// After
+Text('Hello World',style: context.textTheme.caption.bold,),
+// OR
+Text('Hello World',style: context.textTheme.headline3,),
+//OR
+Text('Hello World',style: context.headline3,),
 ```
 Similar text style extensions are:
 * `mostThick` The most thick - FontWeight.w900
@@ -46,18 +40,43 @@ Similar text style extensions are:
 * `extraLight` Extra-light - FontWeight.w200
 * `thin` Thin, the least thick - FontWeight.w100
 
+## Theme
+#### From the `Theme` class. Access your themes right in the `context` instance. Available extensions:
 
-## SizeBox Extensions
+* `context.theme`
+* `context.textTheme`
+* `context.primaryTextTheme`
+* `context.accentTextTheme`
+* `context.bottomAppBarTheme`
+* `context.bottomSheetTheme`
+* `context.appBarTheme`
+* `context.backgroundColor`
+* `context.primaryColor`
+* `context.buttonColor`
+* `context.scaffoldBackgroundColor`
+* `context.headline1`
+* `context.headline2`
+* `context.headline3`
+* `context.headline4`
+* `context.headline5`
+* `context.headline6`
+* `context.subtitle1`
+* `context.bodyText1`
+* `context.bodyText2`
+* `context.caption`
+* `context.button`
+* `context.subtitle2`
+* `context.overline`
+
+## SizeBox
 
 This extension is reduced more code like:
 ```dart
+// Before
 SizedBox(
     height : 20.0
    )
-```
-you can done in 1 line code
-
-```dart
+// After
 // make space of 20.0 height
  20.0.heightBox
 
@@ -65,7 +84,7 @@ you can done in 1 line code
  20.0.widthBox
 ```
 
-## Date Extensions
+## Date
 
 ```dart
 // for check two date are same or not
@@ -78,18 +97,16 @@ date.isToday    // its return bool (true/false)
 date.isYesterday    // its return bool (true/false)
 ```
 
-## Padding Extensions
-
-for apply padding in widget you doing this:
+## Padding
 
 ```dart
+// Before
 Padding(
   padding: const EdgeInsets.all(8.0),
   child: Text("text"),
 );
-```
-but using padding extension:
-```dart
+
+// After
  Text("text").paddingAll(8.0),
 ```
 
@@ -101,32 +118,37 @@ Similar padding extensions are:
 * `paddingFromWindowPadding` Creates insets that match the given window padding.
 
 
-## Shimmer Effect
+
+
+## BuildContext
 
 ```dart
-Container(height: 50,width: 50,).applyShimmer();
-```
-you can also change color of shimmer using `Color baseColor`, `Color highlightColor`
-
-
-## Context Extensions
-
-```dart
+// Before
 Navigator.push(
     context,
     MaterialPageRoute(builder: (context) => SecondScreen()),
   );
-```
-context extension reduced  your code:
-```dart
+
+// After
+
 // for push
  context.to(SecondScreen());
+ context.toNamed('/home');
 
 // for back
 context.back();
 
 // for replace
 context.replaceWith(SecondScreen());
+context.replaceWithNamed('/home');
+
+// popUntil
+context.backUntilNamed('/login');
+
+// pushAndRemoveUntil
+context.toAndRemoveUntil(SecondScreen());
+context.toAndRemoveUntil(SecondScreen(),routes: false);
+context.toAndRemoveUntilName('/login');
 ```
 
 ## For Responsive Layout (MediaQuery)
@@ -140,3 +162,20 @@ context.height
 // Width of Screen
 context.width
 ```
+
+
+## Shimmer Effect
+
+```dart
+Container(height: 50,width: 50,).applyShimmer();
+```
+you can also change color of shimmer using `Color baseColor`, `Color highlightColor`
+
+
+# Support
+You liked this package? then give it a star. If you want to help then:
+
+* Start this repository
+* Send a Pull Request with new features
+* Share this package
+* Create issues if you find a Bug or want to suggest something

@@ -1,3 +1,5 @@
+## [1.0.1] - 2021-04-24
+* add new Theme related extenstion
 
 ## [1.0.0] - 2021-04-22
 * migrate to full null safety
