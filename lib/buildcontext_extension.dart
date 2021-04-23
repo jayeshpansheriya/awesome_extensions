@@ -54,10 +54,6 @@ extension ThemeExt on BuildContext {
   ThemeData get theme => Theme.of(this);
   TextTheme get textTheme => Theme.of(this).textTheme;
 
-  /// performs a simple [Theme.of(context).size] action and returns given [height or width]
-  double get height => MediaQuery.of(this).size.height;
-  double get width => MediaQuery.of(this).size.width;
-
   /// performs a simple [Theme.of(context).primaryTextTheme] action and returns given [primaryTextTheme]
   TextTheme get primaryTextTheme => Theme.of(this).primaryTextTheme;
 
@@ -123,4 +119,34 @@ extension ThemeExt on BuildContext {
 
   /// performs a simple [textTheme.overline] action and returns given [overline]
   TextStyle? get overline => textTheme.overline;
+}
+
+extension MediaQueryExt on BuildContext {
+  /// performs a simple [Theme.of(context).size] action and returns given [height or width]
+  double get height => MediaQuery.of(this).size.height;
+  double get width => MediaQuery.of(this).size.width;
+
+  Size get mediaQuerySize => MediaQuery.of(this).size;
+
+  EdgeInsets get mediaQueryPadding => MediaQuery.of(this).padding;
+
+  EdgeInsets get mediaQueryViewPadding => MediaQuery.of(this).viewPadding;
+
+  EdgeInsets get mediaQueryViewInsets => MediaQuery.of(this).viewInsets;
+
+  Orientation get orientation => MediaQuery.of(this).orientation;
+
+  bool get isLandscape => orientation == Orientation.landscape;
+
+  bool get isPortrait => orientation == Orientation.portrait;
+
+  bool get alwaysUse24HourFormat => MediaQuery.of(this).alwaysUse24HourFormat;
+
+  double get devicePixelRatio => MediaQuery.of(this).devicePixelRatio;
+
+  Brightness get platformBrightness => MediaQuery.of(this).platformBrightness;
+
+  double get textScaleFactor => MediaQuery.of(this).textScaleFactor;
+
+  double get mediaQueryShortestSide => mediaQuerySize.shortestSide;
 }

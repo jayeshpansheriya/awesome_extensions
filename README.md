@@ -16,6 +16,7 @@ dependencies:
 3. click the packages get button or *flutter pub get*
 
 ## TextStyle
+#### From the `TextStyle`. Access properties right in the `context` instance.
 
 ### .bold()
 ```dart
@@ -41,7 +42,7 @@ Similar text style extensions are:
 * `thin` Thin, the least thick - FontWeight.w100
 
 ## Theme
-#### From the `Theme` class. Access your themes right in the `context` instance. Available extensions:
+#### From the `Theme` class. Access your themes right in the `context` instance.
 
 * `context.theme`
 * `context.textTheme`
@@ -121,6 +122,7 @@ Similar padding extensions are:
 
 
 ## BuildContext
+#### From the `Navigator`. Access properties right in the `context` instance.
 
 ```dart
 // Before
@@ -152,16 +154,21 @@ context.toAndRemoveUntilName('/login');
 ```
 
 ## For Responsive Layout (MediaQuery)
-
-
-```dart
-// Equivalent to : MediaQuery.of(context).size.height,
-// Height of the Screen
-context.height
-
-// Width of Screen
-context.width
-```
+#### From the `MediaQuery`. Access properties right in the `context` instance.
+* `context.height`  // Height of the Screen, Equivalent to : MediaQuery.of(context).size.height,
+* `context.width`   // Width of Screen
+* `context.mediaQuerySize`
+* `context.orientation`
+* `context.mediaQueryPadding`
+* `context.alwaysUse24HourFormat`
+* `context.devicePixelRatio`
+* `context.platformBrightness`
+* `context.textScaleFactor`
+* `context.isLandscape`
+* `context.isPortrait`
+* `context.mediaQueryViewPadding`
+* `context.mediaQueryViewInsets`
+* `context.mediaQueryShortestSide`
 
 
 ## Shimmer Effect
