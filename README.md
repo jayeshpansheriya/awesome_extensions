@@ -25,7 +25,7 @@ Text('Hello World',style: Theme.of(context).textTheme.caption.bold,),
 // After
 Text('Hello World',style: context.textTheme.caption.bold,),
 // OR
- Text('Hello World',style: context.textTheme.headline3,),
+Text('Hello World',style: context.textTheme.headline3,),
 //OR
 Text('Hello World',style: context.headline3,),
 ```
@@ -40,7 +40,7 @@ Similar text style extensions are:
 * `extraLight` Extra-light - FontWeight.w200
 * `thin` Thin, the least thick - FontWeight.w100
 
-
+## Theme
 #### From the `Theme` class. Access your themes right in the `context` instance. Available extensions:
 
 * `context.theme`
@@ -170,3 +170,12 @@ context.width
 Container(height: 50,width: 50,).applyShimmer();
 ```
 you can also change color of shimmer using `Color baseColor`, `Color highlightColor`
+
+
+# Support
+You liked this package? then give it a star. If you want to help then:
+
+* Start this repository
+* Send a Pull Request with new features
+* Share this package
+* Create issues if you find a Bug or want to suggest something
