@@ -1,4 +1,4 @@
-# awesome_extensions
+# Awesome Extensions
 
 ![awesome_extensions](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/flutter_extension.png?raw=true)
 
