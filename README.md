@@ -26,6 +26,8 @@ Text('Hello World',style: Theme.of(context).textTheme.caption.bold,),
 Text('Hello World',style: context.textTheme.caption.bold,),
 // OR
  Text('Hello World',style: context.textTheme.headline3,),
+//OR
+Text('Hello World',style: context.headline3,),
 ```
 Similar text style extensions are:
 * `mostThick` The most thick - FontWeight.w900
@@ -38,6 +40,33 @@ Similar text style extensions are:
 * `extraLight` Extra-light - FontWeight.w200
 * `thin` Thin, the least thick - FontWeight.w100
 
+
+#### From the `Theme` class. Access your themes right in the `context` instance. Available extensions:
+
+* `context.theme`
+* `context.textTheme`
+* `context.primaryTextTheme`
+* `context.accentTextTheme`
+* `context.bottomAppBarTheme`
+* `context.bottomSheetTheme`
+* `context.appBarTheme`
+* `context.backgroundColor`
+* `context.primaryColor`
+* `context.buttonColor`
+* `context.scaffoldBackgroundColor`
+* `context.headline1`
+* `context.headline2`
+* `context.headline3`
+* `context.headline4`
+* `context.headline5`
+* `context.headline6`
+* `context.subtitle1`
+* `context.bodyText1`
+* `context.bodyText2`
+* `context.caption`
+* `context.button`
+* `context.subtitle2`
+* `context.overline`
 
 ## SizeBox
 
