@@ -204,6 +204,19 @@ GetPlatform.isWeb
 context.responsiveValue<T>()
 ```
 
+## Url_ Strategy
+
+With a simple call of `setPathUrlStrategy`, your Flutter web app does not have a leading `#`
+in the URL anymore 🚀
+```dart
+void main() {
+  // Here we set the URL strategy for our web app.
+  // It is safe to call this function when running on mobile or desktop as well.
+  setPathUrlStrategy();
+  runApp(MyApp());
+}
+```
+
 ## Shimmer Effect
 
 ```dart
