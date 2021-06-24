@@ -1,25 +1,25 @@
 ## [1.0.3] - 2021-06-24
-* add `Text` extensions
-* add `Align` extensions
-* add `Center` extensions
-* add `Container` extensions
-* add `Gesture Detector` extensions
-* add `ToolTip` extensions
+* add `Text` extension
+* add `Align` extension
+* add `Center` extension
+* add `Container` extension
+* add `Gesture Detector` extension
+* add `ToolTip` extension
 
 ## [1.0.2] - 2021-06-09
 * add Url Strategy for web url
 * update example with null safety
 
 ## [1.0.1] - 2021-04-26
-* add new Theme related extenstion
-* add Platform related extension
+* add new `Theme` related extenstion
+* add `Platform` related extension
 * add more extension for responsive screen according to the screen size
 
 ## [1.0.0] - 2021-04-22
 * migrate to full null safety
 
 ## [0.0.6] - 2021-04-03
-* add some context extension for MediaQuery
+* add some context extension for `MediaQuery`
 
 ## [0.0.5] - 2021-03-06
 * add `Shimmer` extension
