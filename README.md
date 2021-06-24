@@ -41,6 +41,13 @@ Similar text style extensions are:
 * `extraLight` Extra-light - FontWeight.w200
 * `thin` Thin, the least thick - FontWeight.w100
 
+```dart
+ Text('hello')
+     .bold()
+     .fontSize(25)
+     .italic();
+```
+
 ## Theme
 #### From the `Theme` class. Access your themes right in the `context` instance.
 
@@ -137,7 +144,7 @@ Navigator.push(
  context.to(SecondScreen());
  context.toNamed('/home');
 
-// for back
+// for back , you can also add back result data
 context.back();
 
 // for replace

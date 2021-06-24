@@ -1,3 +1,7 @@
+## [1.0.3] - 2021-06-24
+* add `Text` extensions
+
+
 ## [1.0.2] - 2021-06-09
 * add Url Strategy for web url
 * update example with null safety

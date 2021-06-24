@@ -75,7 +75,10 @@ class _MyHomePageState extends State<MyHomePage> {
               'Hello World',
               style: context.textTheme.headline4!.thin,
             ),
-
+        Text('hello')
+            .bold()
+            .fontSize(25)
+            .italic(),
             //SizeBox Extensions
             20.0.heightBox,
 
