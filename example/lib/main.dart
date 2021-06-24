@@ -46,7 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
     Future.delayed(Duration(seconds: 5), () {
       // 5s over, navigate to a new page
       _events.add(0);
-      context.back();
     });
   }
 
@@ -75,13 +74,24 @@ class _MyHomePageState extends State<MyHomePage> {
               'Hello World',
               style: context.textTheme.headline4!.thin,
             ),
-        Text('hello')
-            .bold()
-            .fontSize(25)
-            .italic(),
+            Text('hello').bold().fontSize(25).italic(),
             //SizeBox Extensions
-            20.0.heightBox,
 
+            Container(
+              height: 100,
+              width: 100,
+            )
+                .withRoundCorners(backgroundColor: Colors.grey)
+                .withShadow()
+                .alignAtCenter()
+                .toCenter()
+                .withTooltip('just a tooltip')
+                .paddingOnly(left: 10)
+                .paddingAll(20)
+                .onTap(() => print('tap'))
+                .onLongPress(() => print('long press')),
+
+            20.0.heightBox,
             Row(
               children: [
                 Text(

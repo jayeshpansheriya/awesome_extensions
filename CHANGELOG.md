@@ -1,6 +1,10 @@
 ## [1.0.3] - 2021-06-24
 * add `Text` extensions
-
+* add `Align` extensions
+* add `Center` extensions
+* add `Container` extensions
+* add `Gesture Detector` extensions
+* add `ToolTip` extensions
 
 ## [1.0.2] - 2021-06-09
 * add Url Strategy for web url

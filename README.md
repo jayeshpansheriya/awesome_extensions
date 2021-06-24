@@ -211,6 +211,24 @@ GetPlatform.isWeb
 context.responsiveValue<T>()
 ```
 
+## Widget
+Now we can just add round corners, shadows, align, and added gestures to our Widgets.
+```dart
+     Container(
+          height: 100,
+          width: 100,
+     )   .withRoundCorners(backgroundColor: Colors.grey)
+         .withShadow()
+         .alignAtCenter()
+         .toCenter()
+         .withTooltip('just a tooltip')
+         .paddingOnly(left: 10)
+         .paddingAll(20)
+         .onTap(() => print('tap'))
+         .onLongPress(() => print('long press'))
+```
+
+
 ## Url_ Strategy
 
 With a simple call of `setPathUrlStrategy`, your Flutter web app does not have a leading `#`
