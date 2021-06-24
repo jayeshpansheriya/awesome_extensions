@@ -5,7 +5,7 @@ extension NavigatorExt on BuildContext {
   bool canBack() => Navigator.canPop(this);
 
   /// performs a simple [Navigator.pop] action and returns given [result]
-  void back() => Navigator.pop(this);
+  void back({result}) => Navigator.pop(this, result);
 
   /// performs a simple [Navigator.push] action with given [route]
   void to(Widget screen) {

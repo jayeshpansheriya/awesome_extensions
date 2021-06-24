@@ -46,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Future.delayed(Duration(seconds: 5), () {
       // 5s over, navigate to a new page
       _events.add(0);
+      context.back();
     });
   }
 
