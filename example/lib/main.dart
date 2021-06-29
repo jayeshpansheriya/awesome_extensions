@@ -1,5 +1,9 @@
 import 'dart:async';
 import 'package:awesome_extensions/awesome_extensions.dart';
+import 'package:example/padding_ext.dart';
+import 'package:example/shimmer_effect.dart';
+import 'package:example/text_data.dart';
+import 'package:example/widget_ext.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -34,21 +39,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   DateTime dateTime = DateTime.now();
 
-  late StreamController<int> _events;
-  @override
-  initState() {
-    super.initState();
-    _events = new StreamController<int>();
-    addData();
-  }
-
-  addData() {
-    Future.delayed(Duration(seconds: 5), () {
-      // 5s over, navigate to a new page
-      _events.add(0);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,41 +47,24 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Column(
           children: [
-            //Text Extensions
-            Text(
-              'Hello World',
-              style: context.textTheme.caption!.bold,
-            ),
-            Text(
-              'Hello World',
-              style: context.textTheme.headline3!.semiBold,
-            ),
-            Text(
-              'Hello World',
-              style: context.textTheme.headline3!.regular,
-            ),
-            Text(
-              'Hello World',
-              style: context.textTheme.headline4!.thin,
-            ),
-            Text('hello').bold().fontSize(25).italic(),
-            //SizeBox Extensions
+            /// Shimmer Effect
+            ElevatedButton(
+                onPressed: () {
+                  context.to(ShimmerEffectExample());
+                },
+                child: Text('Shimmer Effect')),
 
-            Container(
-              height: 100,
-              width: 100,
-            )
-                .withRoundCorners(backgroundColor: Colors.grey)
-                .withShadow()
-                .alignAtCenter()
-                .toCenter()
-                .withTooltip('just a tooltip')
-                .paddingOnly(left: 10)
-                .paddingAll(20)
-                .onTap(() => print('tap'))
-                .onLongPress(() => print('long press')),
+            /// Text Theme Extensions
+            ElevatedButton(
+                onPressed: () {
+                  context.to(TextExt());
+                },
+                child: Text('Text Theme')),
 
+            ///SizeBox Extensions
             20.0.heightBox,
+            20.0.widthBox,
+
             Row(
               children: [
                 Text(
@@ -104,61 +77,31 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
 
-            //Padding Extensions
-            Text(
-              'Hello World',
-            ).paddingSymmetric(horizontal: 2.0, vertical: 5.0),
+            /// Widget Extensions
+            ElevatedButton(
+                onPressed: () {
+                  context.to(WidgetExt());
+                },
+                child: Text('Widget Ext')),
 
-            Text(
-              'Hello World',
-            ).paddingAll(10.0),
+            ///Padding Extensions
+            ElevatedButton(
+                onPressed: () {
+                  context.to(PaddingExt());
+                },
+                child: Text('Pedding Ext')),
 
-            //Date Extensions
+            ///Date Extensions
             Text('${dateTime.isToday}'),
             Text('${dateTime.isToday}'),
             Text('${dateTime.isSameDate(dateTime)}'),
 
+            ///Platform Extension
             if (GetPlatform.isWeb)
               Text(
                 'Hello World',
               ).paddingAll(10.0),
-
-            //Shimmer Effect
-            StreamBuilder<int>(
-              stream: _events.stream,
-              builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
-                if (snapshot.data == null) {
-                  return Container(
-                    height: 50,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 3,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          color: Colors.blue,
-                          height: 50,
-                          width: 50,
-                        ).applyShimmer();
-                      },
-                    ),
-                  );
-                }
-
-                return Container(
-                  height: 50,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 5,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container();
-                    },
-                  ),
-                );
-              },
-            ),
           ],
-        )
-        // This trailing comma makes auto-formatting nicer for build methods.
-        );
+        ));
   }
 }
