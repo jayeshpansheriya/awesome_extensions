@@ -1,4 +1,5 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
+import 'package:example/flushbar_effect.dart';
 import 'package:example/padding_ext.dart';
 import 'package:example/shimmer_effect.dart';
 import 'package:example/text_data.dart';
@@ -89,6 +90,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   context.to(PaddingExt());
                 },
                 child: Text('Pedding Ext')),
+
+            ///Flushbar
+            ElevatedButton(
+                onPressed: () {
+                  context.to(FlueshBarEffect());
+                },
+                child: Text('FlushBar')),
 
             ///Date Extensions
             Text('${dateTime.isToday}'),
