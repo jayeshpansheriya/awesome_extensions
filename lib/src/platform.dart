@@ -1,7 +1,7 @@
 import 'package:awesome_extensions/src/platform/platform_web.dart'
     if (dart.library.io) 'package:awesome_extensions/src/platform/platform_io.dart';
 
-class GetPlatform {
+class MyPlatform {
   static bool get isWeb => GeneralPlatform.isWeb;
 
   static bool get isMacOS => GeneralPlatform.isMacOS;
@@ -16,8 +16,8 @@ class GetPlatform {
 
   static bool get isFuchsia => GeneralPlatform.isFuchsia;
 
-  static bool get isMobile => GetPlatform.isIOS || GetPlatform.isAndroid;
+  static bool get isMobile => MyPlatform.isIOS || MyPlatform.isAndroid;
 
   static bool get isDesktop =>
-      GetPlatform.isMacOS || GetPlatform.isWindows || GetPlatform.isLinux;
+      MyPlatform.isMacOS || MyPlatform.isWindows || MyPlatform.isLinux;
 }

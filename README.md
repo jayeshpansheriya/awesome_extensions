@@ -42,7 +42,7 @@ Similar text style extensions are:
 * `thin` Thin, the least thick - FontWeight.w100
 
 ```dart
- Text('hello')
+ Text('Hello World')
      .bold()
      .fontSize(25)
      .italic();
@@ -187,20 +187,20 @@ context.toAndRemoveUntilName('/login');
 
 ```dart
 //Check in what platform the app is running
-GetPlatform.isAndroid
-GetPlatform.isIOS
-GetPlatform.isMacOS
-GetPlatform.isWindows
-GetPlatform.isLinux
-GetPlatform.isFuchsia
+MyPlatform.isAndroid
+MyPlatform.isIOS
+MyPlatform.isMacOS
+MyPlatform.isWindows
+MyPlatform.isLinux
+MyPlatform.isFuchsia
 
 //Check the device type
-GetPlatform.isMobile
-GetPlatform.isDesktop
+MyPlatform.isMobile
+MyPlatform.isDesktop
 //All platforms are supported independently in web!
 //You can tell if you are running inside a browser
 //on Windows, iOS, OSX, Android, etc.
-GetPlatform.isWeb
+MyPlatform.isWeb
 
 
 /// Returns a value<T> according to the screen size
@@ -221,7 +221,7 @@ Now we can just add round corners, shadows, align, and added gestures to our Wid
          .withShadow()
          .alignAtCenter()
          .toCenter()
-         .withTooltip('just a tooltip')
+         .withTooltip('My Tooltip')
          .paddingOnly(left: 10)
          .paddingAll(20)
          .onTap(() => print('tap'))

@@ -194,7 +194,7 @@ extension MediaQueryExt on BuildContext {
     T? desktop,
   }) {
     var deviceWidth = mediaQuerySize.shortestSide;
-    if (GetPlatform.isDesktop) {
+    if (MyPlatform.isDesktop) {
       deviceWidth = mediaQuerySize.width;
     }
     if (deviceWidth >= 1200 && desktop != null) return desktop;

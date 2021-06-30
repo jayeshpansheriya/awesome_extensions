@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:example/padding_ext.dart';
 import 'package:example/shimmer_effect.dart';
@@ -97,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text('${dateTime.isSameDate(dateTime)}'),
 
             ///Platform Extension
-            if (GetPlatform.isWeb)
+            if (MyPlatform.isWeb)
               Text(
                 'Hello World',
               ).paddingAll(10.0),
