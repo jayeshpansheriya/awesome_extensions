@@ -16,7 +16,7 @@ dependencies:
 3. click the packages get button or *flutter pub get*
 
 ## TextStyle
-#### From the `TextStyle` Access properties right in the `context` instance.
+From the `TextStyle` Access properties right in the `context` instance.
 
 ### .bold()
 ```dart
@@ -49,7 +49,7 @@ Similar text style extensions are:
 ```
 
 ## Theme
-#### From the `Theme` class. Access your themes right in the `context` instance.
+From the `Theme` class. Access your themes right in the `context` instance.
 
 * `context.theme`
 * `context.textTheme`
@@ -129,7 +129,7 @@ Similar padding extensions are:
 
 
 ## BuildContext
-#### From the `Navigator` Access properties right in the `context` instance.
+From the `Navigator` Access properties right in the `context` instance.
 
 ```dart
 // Before
@@ -161,7 +161,7 @@ context.toAndRemoveUntilName('/login');
 ```
 
 ## For Responsive Layout (MediaQuery)
-#### From the `MediaQuery` Access properties right in the `context` instance.
+From the `MediaQuery` Access properties right in the `context` instance.
 * `context.height`  // Height of the Screen, Equivalent to : MediaQuery.of(context).size.height,
 * `context.width`   // Width of Screen
 * `context.mediaQuerySize`
@@ -203,11 +203,11 @@ MyPlatform.isDesktop
 MyPlatform.isWeb
 
 
-/// Returns a value<T> according to the screen size
-/// can give value for:
-/// mobile: if the shortestSide is smaller than 600
-/// tablet: if the shortestSide is smaller than 1200
-/// desktop: if width is largest than 1200
+// Returns a value<T> according to the screen size
+// can give value for:
+// mobile: if the shortestSide is smaller than 600
+// tablet: if the shortestSide is smaller than 1200
+// desktop: if width is largest than 1200
 context.responsiveValue<T>()
 ```
 
@@ -259,8 +259,18 @@ Flushbar(
   duration:  Duration(seconds: 3),
   )..show(context);
 ```
-Quick tip
+###Quick tip
 If you use a lot of those properties, it makes sense to make a factory to help with your Flushbar's base appearance. Things like shadows, padding, margins, text styles usually don't change within the app. Take a look at FlushbarHelper class.
+
+I made a helper class to facilitate the creation of the most common Flushbars.
+```
+FlushbarHelper.createSuccess({message, title, duration});
+FlushbarHelper.createInformation({message, title, duration});
+FlushbarHelper.createError({message, title, duration});
+FlushbarHelper.createAction({message, title, duration flatButton});
+FlushbarHelper.createLoading({message,linearProgressIndicator, title, duration, progressIndicatorController, progressIndicatorBackgroundColor});
+FlushbarHelper.createInputFlushbar({textForm});
+```
 
 
 ## Support
