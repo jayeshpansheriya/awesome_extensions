@@ -260,6 +260,7 @@ Flushbar(
   )..show(context);
 ```
 ###Quick tip
+
 If you use a lot of those properties, it makes sense to make a factory to help with your Flushbar's base appearance. Things like shadows, padding, margins, text styles usually don't change within the app. Take a look at FlushbarHelper class.
 
 I made a helper class to facilitate the creation of the most common Flushbars.
