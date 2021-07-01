@@ -229,7 +229,7 @@ Now we can just add round corners, shadows, align, and added gestures to our Wid
 ```
 
 
-## Url_ Strategy
+## Url Strategy
 
 With a simple call of `setPathUrlStrategy`, your Flutter web app does not have a leading `#`
 in the URL anymore 🚀
@@ -250,7 +250,20 @@ Container(height: 50,width: 50,).applyShimmer();
 you can also change color of shimmer using `Color baseColor`, `Color highlightColor`
 
 
-# Support
+## Flushbar
+The most basic Flushbar uses only a message. Failing to provide it before you call `show()` will result in a runtime error. `Duration`, if not provided, will create an infinite Flushbar, only dismissible by code, back button clicks, or a drag (case `isDismissible` is set to `true`).
+```
+Flushbar(
+  title:  "Hey Ninja",
+  message:  "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+  duration:  Duration(seconds: 3),
+  )..show(context);
+```
+Quick tip
+If you use a lot of those properties, it makes sense to make a factory to help with your Flushbar's base appearance. Things like shadows, padding, margins, text styles usually don't change within the app. Take a look at FlushbarHelper class.
+
+
+## Support
 You liked this package? then give it a star. If you want to help then:
 
 * Start this repository
