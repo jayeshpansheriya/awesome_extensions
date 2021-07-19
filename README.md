@@ -274,7 +274,6 @@ FlushbarHelper.createLoading({message,linearProgressIndicator, title, duration, 
 FlushbarHelper.createInputFlushbar({textForm});
 ```
 ## Avatar Image
-You can set image or text in avatar image
 ```
    Avatar(
       image: Image.asset('images/avatar.jpeg', scale: 2.4),
@@ -291,7 +290,10 @@ You can set image or text in avatar image
        textStyle: TextStyle(fontSize: 17, color: Colors.white),
        ),
 ```
-
+<p float="left">
+  <img src="https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-image.jpeg" />
+  <img src="https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-name.jpeg" /> 
+</p>
 
 
 ## Support
