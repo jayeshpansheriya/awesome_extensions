@@ -4,11 +4,13 @@ extension ContainerExtensions on Container {
   /// Add round corners to a Container
   ///  if the Container already has a color use [backgroundColor] instead and remove the
   ///  [Color] from the Container it self
-  Container withRoundCorners({required Color backgroundColor}) => Container(
+  Container withRoundCorners(
+          {required Color backgroundColor, double? radius}) =>
+      Container(
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.all(
-            Radius.circular(25),
+            Radius.circular(radius ?? 25),
           ),
         ),
         child: this,
