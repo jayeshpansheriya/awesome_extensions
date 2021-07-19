@@ -273,6 +273,25 @@ FlushbarHelper.createAction({message, title, duration flatButton});
 FlushbarHelper.createLoading({message,linearProgressIndicator, title, duration, progressIndicatorController, progressIndicatorBackgroundColor});
 FlushbarHelper.createInputFlushbar({textForm});
 ```
+## Avatar Image
+You can set image or text in avatar image
+```
+   Avatar(
+      image: Image.asset('images/avatar.jpeg', scale: 2.4),
+      width: 50,
+      height: 50,
+       ),
+
+   Avatar(
+       color: Color(0xFF881798),
+       width: 50,
+       height: 50,
+       radius: 5,
+       text: 'JP',
+       textStyle: TextStyle(fontSize: 17, color: Colors.white),
+       ),
+```
+
 
 
 ## Support
