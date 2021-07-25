@@ -1,7 +1,12 @@
+## [1.0.5] - 2021-07-25
+* add `Avtar` image widget
+* update example
+* update readme file
+
 ## [1.0.4] - 2021-07-01
 * add `Flushbar` toast
 * update example
-* add readme file
+* update readme file
 
 ## [1.0.3] - 2021-06-24
 * add `Text` extension
