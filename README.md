@@ -294,6 +294,18 @@ FlushbarHelper.createInputFlushbar({textForm});
 ![avatar-image](https://user-images.githubusercontent.com/31765271/127460246-b214749a-69ad-4c7b-aacf-9dcf148cd69e.jpeg)
 ![avatar-name](https://user-images.githubusercontent.com/31765271/127460314-5d7962bb-01a8-4c0b-bace-609e4e6eba2e.jpeg)
 
+| Properties | Description |
+| --- | --- |
+| child | type of [Widget], which can have text , icon etc |
+| backgroundColor | Color to fill the background of avatar |
+| foregroundColor | Color to change the textColor inside the avatar |
+| radius | size of the avatar |
+| minRadius | minimum size of the avatar |
+| maxRadius | maximun size of the avatar |
+| size | size of the avatar i.e `ImageSize.large`, `ImageSize.medium`, `ImageSize.small` |
+| shape | shape of the avatar i.e, `AvatarImageShape.standard`, `AvatarImageShape.circle`, `AvatarImageShape.square` |
+| borderRadius | extra radius to avatar shapes, not applicable to circular avatar |
+
 
 ## Support
 You liked this package? then give it a star. If you want to help then:
