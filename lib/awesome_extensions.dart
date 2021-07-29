@@ -5,7 +5,7 @@ export 'package:awesome_extensions/src/platform.dart';
 export 'package:awesome_extensions/src/url_strategy.dart';
 export 'package:awesome_extensions/src/flushbar_helper.dart';
 export 'package:awesome_extensions/src/flushbar/flushbar.dart';
-export 'package:awesome_extensions/src/widgets/avatar.dart';
+export 'package:awesome_extensions/src/widgets/avatar_image.dart';
 import 'package:awesome_extensions/src/platform.dart';
 import 'package:awesome_extensions/src/shimmer.dart';
 import 'package:flutter/material.dart';

@@ -13,45 +13,80 @@ class AvatarExample extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Avatar(
-              image: Image.asset('images/avatar.jpeg'),
-              width: 100,
-              height: 100,
-            ),
             10.0.heightBox,
-            Avatar(
-              image: Image.asset('images/avatar.jpeg', scale: 2),
-              width: 75,
-              height: 75,
-              radius: 10,
+            Row(
+              children: [
+                AvatarImage(
+                    backgroundImage: NetworkImage(
+                        'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+                    shape: AvatarImageShape.circle),
+                10.0.widthBox,
+                AvatarImage(
+                    backgroundImage: NetworkImage(
+                        'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+                    shape: AvatarImageShape.square),
+                10.0.widthBox,
+                AvatarImage(
+                    backgroundImage: NetworkImage(
+                        'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+                    shape: AvatarImageShape.standard),
+              ],
             ),
+
             10.0.heightBox,
-            Avatar(
-              image: Image.asset('images/avatar.jpeg', scale: 2),
-              width: 75,
-              height: 75,
+
+            Row(
+              children: [
+                AvatarImage(
+                  backgroundImage: NetworkImage(
+                      'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+                  shape: AvatarImageShape.standard,
+                  size: ImageSize.LARGE,
+                  child: Text('Lucky'),
+                  backgroundColor: Colors.red,
+                ),
+                10.0.widthBox,
+                AvatarImage(
+                  shape: AvatarImageShape.standard,
+                  child: Text('JP'),
+                ),
+                10.0.widthBox,
+                AvatarImage(
+                  shape: AvatarImageShape.circle,
+                  child: Text('JP'),
+                  backgroundColor: Colors.red,
+                  // borderRadius: BorderRadius.circular(10),
+                ),
+              ],
             ),
+
             10.0.heightBox,
-            Avatar(
-              image: Image.asset('images/avatar.jpeg', scale: 2.4),
-              width: 50,
-              height: 50,
-            ),
-            10.0.heightBox,
-            Avatar(
-              color: Color(0xFFD13438),
-              text: 'CE',
-              textStyle: TextStyle(fontSize: 17, color: Colors.white),
-            ),
-            10.0.heightBox,
-            Avatar(
-              color: Color(0xFF881798),
-              width: 50,
-              height: 50,
-              radius: 5,
-              text: 'CE',
-              textStyle: TextStyle(fontSize: 17, color: Colors.white),
-            ),
+            // Avatar(
+            //   image: Image.asset('images/avatar.jpeg', scale: 2),
+            //   width: 75,
+            //   height: 75,
+            // ),
+            // 10.0.heightBox,
+            // Avatar(
+            //   image: Image.asset('images/avatar.jpeg', scale: 2.4),
+            //   width: 50,
+            //   height: 50,
+            // ),
+            // 10.0.heightBox,
+            // Avatar(
+            //   color: Color(0xFFD13438),
+            //   text: 'CE',
+            //   textStyle: TextStyle(fontSize: 17, color: Colors.white),
+            // ),
+            // 10.0.heightBox,
+            // Avatar(
+            //   color: Color(0xFF881798),
+            //   width: 50,
+            //   height: 50,
+            //   radius: 5,
+            //   text: 'CE',
+            //   textStyle: TextStyle(fontSize: 17, color: Colors.white),
+            // ),
           ],
         ),
       ),

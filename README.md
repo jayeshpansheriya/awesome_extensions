@@ -275,26 +275,23 @@ FlushbarHelper.createInputFlushbar({textForm});
 ```
 ## Avatar Image
 ```
-   Avatar(
-      image: Image.asset('images/avatar.jpeg', scale: 2.4),
-      width: 50,
-      height: 50,
+   AvatarImage(
+       backgroundImage: NetworkImage(
+           'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+       shape: AvatarImageShape.standard,
+       size: ImageSize.LARGE,
+       child: Text('Lucky'),
+       backgroundColor: Colors.red,
        ),
 
-   Avatar(
-       color: Color(0xFF881798),
-       width: 50,
-       height: 50,
-       radius: 5,
-       text: 'JP',
-       textStyle: TextStyle(fontSize: 17, color: Colors.white),
-       ),
+   AvatarImage(
+      shape: AvatarImageShape.circle,
+      child: Text('JP'),
+      backgroundColor: Colors.red,
+      ),
 ```
-<p float="left">
-  <img src="https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-image.jpeg" />
-  <img src="https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-name.jpeg" /> 
-</p>
-
+![awesome_extensions](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-image.jpeg)
+![awesome_extensions](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-name.jpeg)
 
 ## Support
 You liked this package? then give it a star. If you want to help then:
