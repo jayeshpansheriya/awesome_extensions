@@ -42,10 +42,10 @@ Similar text style extensions are:
 * `thin` Thin, the least thick - FontWeight.w100
 
 ```dart
- Text('Hello World')
-     .bold()
-     .fontSize(25)
-     .italic();
+Text('Hello World')
+    .bold()
+    .fontSize(25)
+    .italic();
 ```
 
 ## Theme
@@ -86,10 +86,10 @@ SizedBox(
    )
 // After
 // make space of 20.0 height
- 20.0.heightBox
+20.0.heightBox
 
- // for width
- 20.0.widthBox
+// for width
+20.0.widthBox
 ```
 
 ## Date
@@ -115,7 +115,7 @@ Padding(
 );
 
 // After
- Text("text").paddingAll(8.0),
+Text("text").paddingAll(8.0),
 ```
 
 Similar padding extensions are:
@@ -141,8 +141,8 @@ Navigator.push(
 // After
 
 // for push
- context.to(SecondScreen());
- context.toNamed('/home');
+context.to(SecondScreen());
+context.toNamed('/home');
 
 // for back , you can also add back result data
 context.back();
@@ -214,10 +214,10 @@ context.responsiveValue<T>()
 ## Widget
 Now we can just add round corners, shadows, align, and added gestures to our Widgets.
 ```dart
-     Container(
-          height: 100,
-          width: 100,
-     )   .withRoundCorners(backgroundColor: Colors.grey)
+Container(
+      height: 100,
+       width: 100,)
+         .withRoundCorners(backgroundColor: Colors.grey)
          .withShadow()
          .alignAtCenter()
          .toCenter()
@@ -231,17 +231,17 @@ Now we can just add round corners, shadows, align, and added gestures to our Wid
 ## Future & Duration
 Utility to delay some callback (or code execution).
 ```dart
-      print('+ wait for 2 seconds');
-      await 2.delay();
-      print('- 2 seconds completed');
-      print('+ callback in 1.2sec');
-      1.delay(() => print('- 1.2sec callback called'));
+print('+ wait for 2 seconds');
+await 2.delay();
+print('- 2 seconds completed');
+print('+ callback in 1.2sec');
+1.delay(() => print('- 1.2sec callback called'));
 ```
 Easy way to make Durations from numbers.
 ```dart
-     print(1.seconds + 200.milliseconds);
-     print(1.hours + 30.minutes);
-     print(1.5.hours);
+print(1.seconds + 200.milliseconds);
+print(1.hours + 30.minutes);
+print(1.5.hours);
 ```
 
 ## Url Strategy
@@ -250,10 +250,10 @@ With a simple call of `setPathUrlStrategy`, your Flutter web app does not have a
 in the URL anymore 🚀
 ```dart
 void main() {
-  // Here we set the URL strategy for our web app.
-  // It is safe to call this function when running on mobile or desktop as well.
-  setPathUrlStrategy();
-  runApp(MyApp());
+// Here we set the URL strategy for our web app.
+// It is safe to call this function when running on mobile or desktop as well.
+setPathUrlStrategy();
+runApp(MyApp());
 }
 ```
 
@@ -267,7 +267,7 @@ you can also change color of shimmer using `Color baseColor`, `Color highlightCo
 
 ## Flushbar
 The most basic Flushbar uses only a message. Failing to provide it before you call `show()` will result in a runtime error. `Duration`, if not provided, will create an infinite Flushbar, only dismissible by code, back button clicks, or a drag (case `isDismissible` is set to `true`).
-```
+```dart
 Flushbar(
   title:  "Hey Ninja",
   message:  "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
@@ -275,12 +275,12 @@ Flushbar(
   )..show(context);
 ```
 
- Quick tip
+Quick tip
 
 If you use a lot of those properties, it makes sense to make a factory to help with your Flushbar's base appearance. Things like shadows, padding, margins, text styles usually don't change within the app. Take a look at FlushbarHelper class.
 
 I made a helper class to facilitate the creation of the most common Flushbars.
-```
+```dart
 FlushbarHelper.createSuccess({message, title, duration});
 FlushbarHelper.createInformation({message, title, duration});
 FlushbarHelper.createError({message, title, duration});
@@ -289,20 +289,20 @@ FlushbarHelper.createLoading({message,linearProgressIndicator, title, duration, 
 FlushbarHelper.createInputFlushbar({textForm});
 ```
 ## Avatar Image
-```
-   AvatarImage(
-       backgroundImage: NetworkImage(
-           'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
-       shape: AvatarImageShape.standard,
-       size: ImageSize.LARGE,
-       child: Text('Lucky'),
-       backgroundColor: Colors.red,
-       ),
+```dart
+AvatarImage(
+   backgroundImage: NetworkImage(
+    'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+     shape: AvatarImageShape.standard,
+     size: ImageSize.LARGE,
+     child: Text('Lucky'),
+          backgroundColor: Colors.red,
+      ),
 
-   AvatarImage(
-      shape: AvatarImageShape.circle,
-      child: Text('JP'),
-      backgroundColor: Colors.red,
+AvatarImage(
+    shape: AvatarImageShape.circle,
+    child: Text('JP'),
+    backgroundColor: Colors.red,
       ),
 ```
 ![avatar-image](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-image.jpeg)
