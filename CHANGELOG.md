@@ -1,4 +1,4 @@
-## [1.0.5] - 2021-07-25
+## [1.0.6] - 2021-09-14
 * add `num` extension
 * update example
 * update readme file
