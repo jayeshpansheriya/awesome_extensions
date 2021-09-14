@@ -1,5 +1,6 @@
 library awesome_extensions;
 
+import 'dart:async';
 import 'dart:ui' as ui show WindowPadding;
 export 'package:awesome_extensions/src/platform.dart';
 export 'package:awesome_extensions/src/url_strategy.dart';
@@ -22,3 +23,4 @@ part 'center_extension.dart';
 part 'container_extension.dart';
 part 'gesture_detector_extension.dart';
 part 'tooltip_extension.dart';
+part 'number_extension.dart';

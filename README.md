@@ -228,6 +228,21 @@ Now we can just add round corners, shadows, align, and added gestures to our Wid
          .onLongPress(() => print('long press'))
 ```
 
+## Future & Duration
+Utility to delay some callback (or code execution).
+```dart
+      print('+ wait for 2 seconds');
+      await 2.delay();
+      print('- 2 seconds completed');
+      print('+ callback in 1.2sec');
+      1.delay(() => print('- 1.2sec callback called'));
+```
+Easy way to make Durations from numbers.
+```dart
+     print(1.seconds + 200.milliseconds);
+     print(1.hours + 30.minutes);
+     print(1.5.hours);
+```
 
 ## Url Strategy
 

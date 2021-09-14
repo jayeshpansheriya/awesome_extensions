@@ -1,4 +1,9 @@
 ## [1.0.5] - 2021-07-25
+* add `num` extension
+* update example
+* update readme file
+
+## [1.0.5] - 2021-07-25
 * add `Avtar` image widget
 * update example
 * update readme file
