@@ -290,8 +290,8 @@ FlushbarHelper.createInputFlushbar({textForm});
       backgroundColor: Colors.red,
       ),
 ```
-![avatar-image](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avtar-image.jpeg?raw=true)
-![avatar-image](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avtar-name.jpeg?raw=true)
+![avatar-image](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-image.jpeg)
+![avatar-image](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-name.jpeg)
 
 | Properties | Description |
 | --- | --- |
