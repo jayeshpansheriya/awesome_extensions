@@ -8,8 +8,10 @@ extension NavigatorExt on BuildContext {
   void back({result}) => Navigator.pop(this, result);
 
   /// performs a simple [Navigator.push] action with given [route]
-  void to(Widget screen) {
-    Navigator.of(this).push(MaterialPageRoute<Widget>(builder: (_) => screen));
+  Future<dynamic> to(Widget screen) async {
+    var result = await Navigator.of(this)
+        .push(MaterialPageRoute<Widget>(builder: (_) => screen));
+    return result;
   }
 
   /// performs a simple [Navigator.pushReplacement] action with given [route]
@@ -27,13 +29,19 @@ extension NavigatorExt on BuildContext {
   }
 
   /// perform push with routeName
-  void toNamed(String screenName) {
-    Navigator.of(this).pushNamed(screenName);
+  void toNamed(
+    String screenName, {
+    Object? arguments,
+  }) {
+    Navigator.of(this).pushNamed(screenName, arguments: arguments);
   }
 
   /// perform replash with routeName
-  void replaceWithNamed(String screenName) {
-    Navigator.of(this).pushReplacementNamed(screenName);
+  void replaceWithNamed(
+    String screenName, {
+    Object? arguments,
+  }) {
+    Navigator.of(this).pushReplacementNamed(screenName, arguments: arguments);
   }
 
   /// perform replash with routeName
@@ -58,6 +66,12 @@ extension ThemeExt on BuildContext {
   TextTheme get primaryTextTheme => Theme.of(this).primaryTextTheme;
 
   /// performs a simple [Theme.of(context).accentTextTheme] action and returns given [accentTextTheme]
+  @Deprecated(
+    'No longer used by the framework, please remove any reference to it. '
+    'For more information, consult the migration guide at '
+    'https://flutter.dev/docs/release/breaking-changes/theme-data-accent-properties#migration-guide. '
+    'This feature was deprecated after v2.3.0-0.1.pre.',
+  )
   TextTheme get accentTextTheme => Theme.of(this).accentTextTheme;
 
   /// performs a simple [Theme.of(context).bottomAppBarTheme] action and returns given [bottomAppBarTheme]
@@ -73,6 +87,10 @@ extension ThemeExt on BuildContext {
   Color get primaryColor => Theme.of(this).primaryColor;
 
   /// performs a simple [Theme.of(context).buttonColor] action and returns given [buttonColor]
+  @Deprecated(
+    'No longer used by the framework, please remove any reference to it. '
+    'This feature was deprecated after v2.3.0-0.2.pre.',
+  )
   Color get buttonColor => Theme.of(this).buttonColor;
 
   /// performs a simple [Theme.of(context).scaffoldBackgroundColor] action and returns given [scaffoldBackgroundColor]

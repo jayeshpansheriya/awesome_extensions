@@ -1,3 +1,6 @@
+## [1.0.7] - 2021-12-05
+* update navigation extension
+
 ## [1.0.6] - 2021-09-14
 * add `num` extension
 * update example
