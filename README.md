@@ -20,22 +20,22 @@ dependencies:
 
 3. click the packages get button or *flutter pub get*
 
-## TextStyle
+## Text & TextStyle Extensions
 From the `TextStyle` Access properties right in the `context` instance.
 
-### .bold()
+### TextStyle
 ```dart
 // Before
-Text('Hello World',style: Theme.of(context).textTheme.caption.bold,),
+Text('Hello World',style: Theme.of(context).textTheme.caption),
 
 // After
-Text('Hello World',style: context.textTheme.caption.bold,),
+Text('Hello World',style: context.caption),
 // OR
-Text('Hello World',style: context.textTheme.headline3,),
-//OR
-Text('Hello World',style: context.headline3,),
+Text('Hello World',style: context.headline3),
+// If you want to bold text then 
+Text('Hello World',style: context.caption.bold),
 ```
-Similar text style extensions are:
+Similar fontWeight extensions are:
 * `mostThick` The most thick - FontWeight.w900
 * `extraBold` Extra-bold - FontWeight.w800
 * `bold` Bold - FontWeight.bold - FontWeight.w700
@@ -45,15 +45,9 @@ Similar text style extensions are:
 * `light` Light - FontWeight.w300
 * `extraLight` Extra-light - FontWeight.w200
 * `thin` Thin, the least thick - FontWeight.w100
+  
 
-```dart
-Text('Hello World')
-    .bold()
-    .fontSize(25)
-    .italic();
-```
-
-## Theme
+### Theme TextStyle
 From the `Theme` class. Access your themes right in the `context` instance.
 
 * `context.theme`
@@ -80,6 +74,17 @@ From the `Theme` class. Access your themes right in the `context` instance.
 * `context.button`
 * `context.subtitle2`
 * `context.overline`
+  
+If you dont want use thene, then we have some other methods:
+
+```dart
+Text('Hello World')
+    .bold()
+    .fontSize(25)
+    .italic();
+```
+
+
 
 ## SizeBox
 
