@@ -46,77 +46,91 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title ?? ''),
         ),
-        body: Column(
-          children: [
-            /// Shimmer Effect
-            ElevatedButton(
-                onPressed: () {
-                  context.to(ShimmerEffectExample());
-                },
-                child: Text('Shimmer Effect')),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              /// Shimmer Effect
+              ElevatedButton(
+                  onPressed: () {
+                    context.to(ShimmerEffectExample());
+                  },
+                  child: Text('Shimmer Effect')),
 
-            /// Text Theme Extensions
-            ElevatedButton(
-                onPressed: () {
-                  context.to(TextExt());
-                },
-                child: Text('Text Theme')),
+              20.0.heightBox,
 
-            ///SizeBox Extensions
-            20.0.heightBox,
-            20.0.widthBox,
+              /// Text Theme Extensions
+              ElevatedButton(
+                  onPressed: () {
+                    context.to(TextExt());
+                  },
+                  child: Text('Text Theme')),
 
-            Row(
-              children: [
+              ///SizeBox Extensions
+              20.0.heightBox,
+              20.0.widthBox,
+
+              Row(
+                children: [
+                  Text(
+                    'Hello World',
+                  ),
+                  20.0.widthBox,
+                  Text(
+                    'Hello World',
+                  )
+                ],
+              ),
+
+              20.0.heightBox,
+
+              /// Widget Extensions
+              ElevatedButton(
+                  onPressed: () {
+                    context.to(WidgetExt());
+                  },
+                  child: Text('Widget Ext')),
+
+              20.0.heightBox,
+
+              ///Padding Extensions
+              ElevatedButton(
+                  onPressed: () {
+                    context.to(PaddingExt());
+                  },
+                  child: Text('Pedding Ext')),
+
+              20.0.heightBox,
+
+              ///Flushbar
+              ElevatedButton(
+                  onPressed: () {
+                    context.to(FlueshBarEffect());
+                  },
+                  child: Text('FlushBar')),
+
+              20.0.heightBox,
+
+              ///Avatar
+              ElevatedButton(
+                  onPressed: () {
+                    context.to(AvatarExample());
+                  },
+                  child: Text('Avatar')),
+
+              20.0.heightBox,
+
+              ///Date Extensions
+              Text('${dateTime.isToday}'),
+              Text('${dateTime.isToday}'),
+              Text('${dateTime.isSameDate(dateTime)}'),
+
+              ///Platform Extension
+              if (MyPlatform.isWeb)
                 Text(
                   'Hello World',
-                ),
-                20.0.widthBox,
-                Text(
-                  'Hello World',
-                )
-              ],
-            ),
-
-            /// Widget Extensions
-            ElevatedButton(
-                onPressed: () {
-                  context.to(WidgetExt());
-                },
-                child: Text('Widget Ext')),
-
-            ///Padding Extensions
-            ElevatedButton(
-                onPressed: () {
-                  context.to(PaddingExt());
-                },
-                child: Text('Pedding Ext')),
-
-            ///Flushbar
-            ElevatedButton(
-                onPressed: () {
-                  context.to(FlueshBarEffect());
-                },
-                child: Text('FlushBar')),
-
-            ///Avatar
-            ElevatedButton(
-                onPressed: () {
-                  context.to(AvatarExample());
-                },
-                child: Text('Avatar')),
-
-            ///Date Extensions
-            Text('${dateTime.isToday}'),
-            Text('${dateTime.isToday}'),
-            Text('${dateTime.isSameDate(dateTime)}'),
-
-            ///Platform Extension
-            if (MyPlatform.isWeb)
-              Text(
-                'Hello World',
-              ).paddingAll(10.0),
-          ],
+                ).paddingAll(10.0),
+            ],
+          ),
         ));
   }
 }

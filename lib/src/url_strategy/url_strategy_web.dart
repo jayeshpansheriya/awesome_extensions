@@ -21,5 +21,5 @@ void setPathUrlStrategy() {
 /// See also:
 ///  * [setPathUrlStrategy], which will use a path URL strategy instead.
 void setHashUrlStrategy() {
-  setUrlStrategy(HashUrlStrategy());
+  setUrlStrategy(const HashUrlStrategy());
 }

@@ -717,7 +717,7 @@ class _FlushbarState<K extends Object?> extends State<Flushbar>
         ? widget.titleText
         : Text(
             widget.title ?? "",
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.white,
                 fontWeight: FontWeight.bold),
@@ -727,7 +727,7 @@ class _FlushbarState<K extends Object?> extends State<Flushbar>
   Text _getDefaultNotificationText() {
     return Text(
       widget.message ?? "",
-      style: TextStyle(fontSize: 14.0, color: Colors.white),
+      style: const TextStyle(fontSize: 14.0, color: Colors.white),
     );
   }
 
