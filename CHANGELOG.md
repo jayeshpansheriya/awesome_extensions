@@ -1,3 +1,6 @@
+## [1.0.8] - 2022-02-26
+* update documentation
+* update example
 ## [1.0.7] - 2021-12-05
 * update navigation extension
 
