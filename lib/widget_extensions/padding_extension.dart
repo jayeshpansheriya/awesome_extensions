@@ -1,4 +1,4 @@
-part of 'awesome_extensions.dart';
+part of '../awesome_extensions.dart';
 
 extension PaddingX on Widget {
   Padding paddingAll(double value, {Key? key}) => Padding(
