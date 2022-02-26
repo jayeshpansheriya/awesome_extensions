@@ -1,6 +1,8 @@
 # Awesome Extensions
 
-[![pub package](https://img.shields.io/pub/v/get.svg?label=get&color=blue)](https://pub.dev/packages/awesome_extensions)
+[![pub package](https://img.shields.io/pub/v/awesome_extensions.svg?label=get&color=blue)](https://pub.dev/packages/awesome_extensions)
+[![popularity](https://badges.bar/awesome_extensions/popularity)](https://pub.dev/packages/awesome_extensions/score)
+[![likes](https://badges.bar/awesome_extensions/likes)](https://pub.dev/packages/awesome_extensions/score)
 
 ![awesome_extensions](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/flutter_extension.png?raw=true)
 
