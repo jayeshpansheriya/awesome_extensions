@@ -89,7 +89,7 @@ From the `Theme` class. Access your themes right in the `context` instance.
   
 ## Media Query Extensions For Responsive Layout
 From the `MediaQuery` Access properties right in the `context` instance.
-* `context.height`  // Height of the Screen, Equivalent to : MediaQuery.of(context).size.height,
+* `context.height`  /// Height of the Screen, Equivalent to : MediaQuery.of(context).size.height,
 * `context.width`   // Width of Screen
 * `context.mediaQuerySize`
 * `context.orientation`
@@ -103,8 +103,6 @@ From the `MediaQuery` Access properties right in the `context` instance.
 * `context.mediaQueryViewPadding`
 * `context.mediaQueryViewInsets`
 * `context.mediaQueryShortestSide`
-
-
 * `context.showNavbar`    // True if width be larger than 800
 * `context.isPhone`       // True if the shortestSide is smaller than 600p
 * `context.isTablet`      // True if the current device is Tablet
@@ -136,6 +134,39 @@ MyPlatform.isWeb
 // tablet: if the shortestSide is smaller than 1200
 // desktop: if width is largest than 1200
 context.responsiveValue<T>()
+```
+
+
+## Navigation Extensions
+From the `Navigator` Access properties right in the `context` instance.
+
+```dart
+// Before
+Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => SecondScreen()),
+  );
+
+// After
+
+// for push
+context.to(SecondScreen());
+context.toNamed('/home');
+
+// for back , you can also add back result data
+context.back();
+
+// for replace
+context.replaceWith(SecondScreen());
+context.replaceWithNamed('/home');
+
+// popUntil
+context.backUntilNamed('/login');
+
+// pushAndRemoveUntil
+context.toAndRemoveUntil(SecondScreen());
+context.toAndRemoveUntil(SecondScreen(),routes: false);
+context.toAndRemoveUntilName('/login');
 ```
 ## SizeBox
 
@@ -185,41 +216,6 @@ Similar padding extensions are:
 * `paddingLTRB` Creates insets from offsets from the left, top, right, and bottom.
 * `paddingSymmetric` Creates insets with symmetrical vertical and horizontal offsets.
 * `paddingFromWindowPadding` Creates insets that match the given window padding.
-
-
-
-
-## BuildContext
-From the `Navigator` Access properties right in the `context` instance.
-
-```dart
-// Before
-Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => SecondScreen()),
-  );
-
-// After
-
-// for push
-context.to(SecondScreen());
-context.toNamed('/home');
-
-// for back , you can also add back result data
-context.back();
-
-// for replace
-context.replaceWith(SecondScreen());
-context.replaceWithNamed('/home');
-
-// popUntil
-context.backUntilNamed('/login');
-
-// pushAndRemoveUntil
-context.toAndRemoveUntil(SecondScreen());
-context.toAndRemoveUntil(SecondScreen(),routes: false);
-context.toAndRemoveUntilName('/login');
-```
 
 
 
@@ -274,32 +270,7 @@ runApp(MyApp());
 ```dart
 Container(height: 50,width: 50,).applyShimmer();
 ```
-you can also change color of shimmer using `Color baseColor`, `Color highlightColor`
-
-
-## Flushbar
-The most basic Flushbar uses only a message. Failing to provide it before you call `show()` will result in a runtime error. `Duration`, if not provided, will create an infinite Flushbar, only dismissible by code, back button clicks, or a drag (case `isDismissible` is set to `true`).
-```dart
-Flushbar(
-  title:  "Hey Ninja",
-  message:  "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-  duration:  Duration(seconds: 3),
-  )..show(context);
-```
-
-Quick tip
-
-If you use a lot of those properties, it makes sense to make a factory to help with your Flushbar's base appearance. Things like shadows, padding, margins, text styles usually don't change within the app. Take a look at FlushbarHelper class.
-
-I made a helper class to facilitate the creation of the most common Flushbars.
-```dart
-FlushbarHelper.createSuccess({message, title, duration});
-FlushbarHelper.createInformation({message, title, duration});
-FlushbarHelper.createError({message, title, duration});
-FlushbarHelper.createAction({message, title, duration flatButton});
-FlushbarHelper.createLoading({message,linearProgressIndicator, title, duration, progressIndicatorController, progressIndicatorBackgroundColor});
-FlushbarHelper.createInputFlushbar({textForm});
-```
+you can also change color of shimmer using `Color baseColor`, `Color highlightColor`.
 ## Avatar Image
 ```dart
 AvatarImage(
