@@ -1,5 +1,7 @@
 # Awesome Extensions
 
+[![pub package](https://img.shields.io/pub/v/image_picker.svg)](https://pub.dev/packages/image_picker)
+
 ![awesome_extensions](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/flutter_extension.png?raw=true)
 
 
@@ -308,17 +310,17 @@ AvatarImage(
 ![avatar-image](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-image.jpeg)
 ![avatar-image](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-name.jpeg)
 
-| Properties | Description |
-| --- | --- |
-| child | type of [Widget], which can have text , icon etc |
-| backgroundColor | Color to fill the background of avatar |
-| foregroundColor | Color to change the textColor inside the avatar |
-| radius | size of the avatar |
-| minRadius | minimum size of the avatar |
-| maxRadius | maximun size of the avatar |
-| size | size of the avatar i.e `ImageSize.large`, `ImageSize.medium`, `ImageSize.small` |
-| shape | shape of the avatar i.e, `AvatarImageShape.standard`, `AvatarImageShape.circle`, `AvatarImageShape.square` |
-| borderRadius | extra radius to avatar shapes, not applicable to circular avatar |
+| Properties      | Description                                                                                                |
+| --------------- | ---------------------------------------------------------------------------------------------------------- |
+| child           | type of [Widget], which can have text , icon etc                                                           |
+| backgroundColor | Color to fill the background of avatar                                                                     |
+| foregroundColor | Color to change the textColor inside the avatar                                                            |
+| radius          | size of the avatar                                                                                         |
+| minRadius       | minimum size of the avatar                                                                                 |
+| maxRadius       | maximun size of the avatar                                                                                 |
+| size            | size of the avatar i.e `ImageSize.large`, `ImageSize.medium`, `ImageSize.small`                            |
+| shape           | shape of the avatar i.e, `AvatarImageShape.standard`, `AvatarImageShape.circle`, `AvatarImageShape.square` |
+| borderRadius    | extra radius to avatar shapes, not applicable to circular avatar                                           |
 
 
 ## Support
