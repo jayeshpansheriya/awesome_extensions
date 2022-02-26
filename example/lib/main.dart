@@ -1,6 +1,5 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:example/avtar_exp.dart';
-import 'package:example/flushbar_effect.dart';
 import 'package:example/padding_ext.dart';
 import 'package:example/shimmer_effect.dart';
 import 'package:example/text_data.dart';
@@ -98,15 +97,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     context.to(PaddingExt());
                   },
                   child: Text('Pedding Ext')),
-
-              20.0.heightBox,
-
-              ///Flushbar
-              ElevatedButton(
-                  onPressed: () {
-                    context.to(FlueshBarEffect());
-                  },
-                  child: Text('FlushBar')),
 
               20.0.heightBox,
 
