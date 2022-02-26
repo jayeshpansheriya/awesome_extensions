@@ -20,10 +20,10 @@ dependencies:
 
 3. click the packages get button or *flutter pub get*
 
-## TextStyle Extensions
+## Theme Extensions
+#### TextStyle
 From the `TextStyle` Access properties right in the `context` instance.
 
-#### TextStyle
 ```dart
 // Before
 Text('Hello World',style: Theme.of(context).textTheme.caption),
@@ -35,7 +35,7 @@ Text('Hello World',style: context.headline3),
 // If you want to bold text then 
 Text('Hello World',style: context.caption.bold),
 ```
-Similar fontWeight extensions are:
+Similar fontWeight are:
 * `mostThick` The most thick - FontWeight.w900
 * `extraBold` Extra-bold - FontWeight.w800
 * `bold` Bold - FontWeight.bold - FontWeight.w700
@@ -45,22 +45,8 @@ Similar fontWeight extensions are:
 * `light` Light - FontWeight.w300
 * `extraLight` Extra-light - FontWeight.w200
 * `thin` Thin, the least thick - FontWeight.w100
-  
 
-### Theme TextStyle
-From the `Theme` class. Access your themes right in the `context` instance.
-
-* `context.theme`
-* `context.textTheme`
-* `context.primaryTextTheme`
-* `context.accentTextTheme`
-* `context.bottomAppBarTheme`
-* `context.bottomSheetTheme`
-* `context.appBarTheme`
-* `context.backgroundColor`
-* `context.primaryColor`
-* `context.buttonColor`
-* `context.scaffoldBackgroundColor`
+Similar TextStyle are:
 * `context.headline1`
 * `context.headline2`
 * `context.headline3`
@@ -74,7 +60,8 @@ From the `Theme` class. Access your themes right in the `context` instance.
 * `context.button`
 * `context.subtitle2`
 * `context.overline`
-  
+
+
 If you dont want use theme, then we have some other methods:
 
 ```dart
@@ -84,8 +71,72 @@ Text('Hello World')
     .italic();
 ```
 
+#### Theme
+From the `Theme` class. Access your themes right in the `context` instance.
+
+* `context.theme`
+* `context.textTheme`
+* `context.primaryTextTheme`
+* `context.accentTextTheme`
+* `context.bottomAppBarTheme`
+* `context.bottomSheetTheme`
+* `context.appBarTheme`
+* `context.backgroundColor`
+* `context.primaryColor`
+* `context.buttonColor`
+* `context.scaffoldBackgroundColor`
+
+  
+## Media Query Extensions For Responsive Layout
+From the `MediaQuery` Access properties right in the `context` instance.
+* `context.height`  // Height of the Screen, Equivalent to : MediaQuery.of(context).size.height,
+* `context.width`   // Width of Screen
+* `context.mediaQuerySize`
+* `context.orientation`
+* `context.mediaQueryPadding`
+* `context.alwaysUse24HourFormat`
+* `context.devicePixelRatio`
+* `context.platformBrightness`
+* `context.textScaleFactor`
+* `context.isLandscape`
+* `context.isPortrait`
+* `context.mediaQueryViewPadding`
+* `context.mediaQueryViewInsets`
+* `context.mediaQueryShortestSide`
 
 
+* `context.showNavbar`    // True if width be larger than 800
+* `context.isPhone`       // True if the shortestSide is smaller than 600p
+* `context.isTablet`      // True if the current device is Tablet
+* `context.isSmallTablet`   // True if the shortestSide is largest than 600p
+* `context.isLargeTablet`    // True if the shortestSide is largest than 720p
+
+
+```dart
+//Check in what platform the app is running
+MyPlatform.isAndroid
+MyPlatform.isIOS
+MyPlatform.isMacOS
+MyPlatform.isWindows
+MyPlatform.isLinux
+MyPlatform.isFuchsia
+
+//Check the device type
+MyPlatform.isMobile
+MyPlatform.isDesktop
+//All platforms are supported independently in web!
+//You can tell if you are running inside a browser
+//on Windows, iOS, OSX, Android, etc.
+MyPlatform.isWeb
+
+
+// Returns a value<T> according to the screen size
+// can give value for:
+// mobile: if the shortestSide is smaller than 600
+// tablet: if the shortestSide is smaller than 1200
+// desktop: if width is largest than 1200
+context.responsiveValue<T>()
+```
 ## SizeBox
 
 This extension is reduced more code like:
@@ -170,56 +221,7 @@ context.toAndRemoveUntil(SecondScreen(),routes: false);
 context.toAndRemoveUntilName('/login');
 ```
 
-## For Responsive Layout (MediaQuery)
-From the `MediaQuery` Access properties right in the `context` instance.
-* `context.height`  // Height of the Screen, Equivalent to : MediaQuery.of(context).size.height,
-* `context.width`   // Width of Screen
-* `context.mediaQuerySize`
-* `context.orientation`
-* `context.mediaQueryPadding`
-* `context.alwaysUse24HourFormat`
-* `context.devicePixelRatio`
-* `context.platformBrightness`
-* `context.textScaleFactor`
-* `context.isLandscape`
-* `context.isPortrait`
-* `context.mediaQueryViewPadding`
-* `context.mediaQueryViewInsets`
-* `context.mediaQueryShortestSide`
 
-
-* `context.showNavbar`    // True if width be larger than 800
-* `context.isPhone`       // True if the shortestSide is smaller than 600p
-* `context.isTablet`      // True if the current device is Tablet
-* `context.isSmallTablet`   // True if the shortestSide is largest than 600p
-* `context.isLargeTablet`    // True if the shortestSide is largest than 720p
-
-
-```dart
-//Check in what platform the app is running
-MyPlatform.isAndroid
-MyPlatform.isIOS
-MyPlatform.isMacOS
-MyPlatform.isWindows
-MyPlatform.isLinux
-MyPlatform.isFuchsia
-
-//Check the device type
-MyPlatform.isMobile
-MyPlatform.isDesktop
-//All platforms are supported independently in web!
-//You can tell if you are running inside a browser
-//on Windows, iOS, OSX, Android, etc.
-MyPlatform.isWeb
-
-
-// Returns a value<T> according to the screen size
-// can give value for:
-// mobile: if the shortestSide is smaller than 600
-// tablet: if the shortestSide is smaller than 1200
-// desktop: if width is largest than 1200
-context.responsiveValue<T>()
-```
 
 ## Widget
 Now we can just add round corners, shadows, align, and added gestures to our Widgets.
