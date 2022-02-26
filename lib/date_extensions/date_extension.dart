@@ -1,4 +1,4 @@
-part of 'awesome_extensions.dart';
+part of '../awesome_extensions.dart';
 
 extension DateOnlyCompare on DateTime {
   bool isSameDate(DateTime other) {

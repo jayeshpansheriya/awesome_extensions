@@ -1,4 +1,4 @@
-part of 'awesome_extensions.dart';
+part of '../awesome_extensions.dart';
 
 extension TxtStyle on TextStyle {
   /// The most thick - FontWeight.w900
