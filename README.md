@@ -168,9 +168,10 @@ context.toAndRemoveUntil(SecondScreen());
 context.toAndRemoveUntil(SecondScreen(),routes: false);
 context.toAndRemoveUntilName('/login');
 ```
-## SizeBox
 
-This extension is reduced more code like:
+## Widget Extensions
+This extension is reduced more code.
+#### SizeBox
 ```dart
 // Before
 SizedBox(
@@ -184,20 +185,7 @@ SizedBox(
 20.0.widthBox
 ```
 
-## Date
-
-```dart
-// for check two date are same or not
-date.isSameDate(otherdate);    // its return bool (true/false)
-
-// for check date is today's date
-date.isToday    // its return bool (true/false)
-
-// for check this date is yesterday's date
-date.isYesterday    // its return bool (true/false)
-```
-
-## Padding
+#### Padding
 
 ```dart
 // Before
@@ -218,8 +206,7 @@ Similar padding extensions are:
 * `paddingFromWindowPadding` Creates insets that match the given window padding.
 
 
-
-## Widget
+#### Other
 Now we can just add round corners, shadows, align, and added gestures to our Widgets.
 ```dart
 Container(
@@ -235,8 +222,28 @@ Container(
          .onTap(() => print('tap'))
          .onLongPress(() => print('long press'))
 ```
+#### Shimmer Effect
 
-## Future & Duration
+```dart
+Container(height: 50,width: 50,).applyShimmer();
+```
+you can also change color of shimmer using `Color baseColor`, `Color highlightColor`.
+
+## Date Extensions
+
+```dart
+// for check two date are same or not
+date.isSameDate(otherdate);    // its return bool (true/false)
+
+// for check date is today's date
+date.isToday    // its return bool (true/false)
+
+// for check this date is yesterday's date
+date.isYesterday    // its return bool (true/false)
+```
+
+## Number Extensions
+#### Future & Duration
 Utility to delay some callback (or code execution).
 ```dart
 print('+ wait for 2 seconds');
@@ -265,12 +272,7 @@ runApp(MyApp());
 }
 ```
 
-## Shimmer Effect
 
-```dart
-Container(height: 50,width: 50,).applyShimmer();
-```
-you can also change color of shimmer using `Color baseColor`, `Color highlightColor`.
 ## Avatar Image
 ```dart
 AvatarImage(
