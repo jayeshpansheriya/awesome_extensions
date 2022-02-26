@@ -20,10 +20,10 @@ dependencies:
 
 3. click the packages get button or *flutter pub get*
 
-## Text & TextStyle Extensions
+## TextStyle Extensions
 From the `TextStyle` Access properties right in the `context` instance.
 
-### TextStyle
+#### TextStyle
 ```dart
 // Before
 Text('Hello World',style: Theme.of(context).textTheme.caption),
@@ -75,7 +75,7 @@ From the `Theme` class. Access your themes right in the `context` instance.
 * `context.subtitle2`
 * `context.overline`
   
-If you dont want use thene, then we have some other methods:
+If you dont want use theme, then we have some other methods:
 
 ```dart
 Text('Hello World')
