@@ -46,7 +46,7 @@ Similar fontWeight are:
 * `extraLight` Extra-light - FontWeight.w200
 * `thin` Thin, the least thick - FontWeight.w100
 
-Similar TextStyle are:
+Similar 2018 TextStyle are:
 * `context.headline1`
 * `context.headline2`
 * `context.headline3`
@@ -61,6 +61,22 @@ Similar TextStyle are:
 * `context.subtitle2`
 * `context.overline`
 
+Similar 2021 TextStyle are:
+* `context.displayLarge`
+* `context.displayMedium`
+* `context.displaySmall`
+* `context.headlineLarge`
+* `context.headlineMedium`
+* `context.headlineSmall`
+* `context.titleLarge`
+* `context.titleMedium`
+* `context.titleSmall`
+* `context.bodyLarge`
+* `context.bodyMedium`
+* `context.bodySmall`
+* `context.labelLarge`
+* `context.labelMedium`
+* `context.labelSmall`
 
 If you dont want use theme, then we have some other methods:
 
@@ -77,13 +93,16 @@ From the `Theme` class. Access your themes right in the `context` instance.
 * `context.theme`
 * `context.textTheme`
 * `context.primaryTextTheme`
-* `context.accentTextTheme`
 * `context.bottomAppBarTheme`
 * `context.bottomSheetTheme`
 * `context.appBarTheme`
 * `context.backgroundColor`
 * `context.primaryColor`
-* `context.buttonColor`
+* `context.primaryColorLight`
+* `context.primaryColorDark`
+* `context.focusColor`
+* `context.hoverColor`
+* `context.dividerColor`
 * `context.scaffoldBackgroundColor`
 
   
