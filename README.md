@@ -1,6 +1,6 @@
 # Awesome Extensions
 
-[![pub package](https://img.shields.io/pub/v/awesome_extensions.svg?label=get&color=blue)](https://pub.dev/packages/awesome_extensions)
+[![pub package](https://img.shields.io/pub/v/awesome_extensions.svg?label=awesome_extensions&color=blue)](https://pub.dev/packages/awesome_extensions)
 [![popularity](https://badges.bar/awesome_extensions/popularity)](https://pub.dev/packages/awesome_extensions/score)
 [![likes](https://badges.bar/awesome_extensions/likes)](https://pub.dev/packages/awesome_extensions/score)
 [![pub points](https://badges.bar/awesome_extensions/pub%20points)](https://pub.dev/packages/awesome_extensions/score)
