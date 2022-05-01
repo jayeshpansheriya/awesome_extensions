@@ -20,7 +20,6 @@ dependencies:
 
 3. click the packages get button or *flutter pub get*
 
-
 ## Theme Extensions
 #### TextStyle
 From the `TextStyle` Access properties right in the `context` instance.
@@ -139,7 +138,12 @@ MyPlatform.isWeb
 // mobile: if the shortestSide is smaller than 600
 // tablet: if the shortestSide is smaller than 1200
 // desktop: if width is largest than 1200
-context.responsiveValue<T>()
+context.responsiveValue<T>(
+  T? watch,
+    T? mobile,
+    T? tablet,
+    T? desktop,
+)
 ```
 
 
@@ -223,6 +227,12 @@ Container(
          .onTap(() => print('tap'))
          .onLongPress(() => print('long press'))
 ```
+Automatic detect platform and show material and cupertino dialog
+```dart
+context.showAlertDialog(title: 'title',
+                        message: 'message',)
+```
+
 #### Shimmer Effect
 
 ```dart
@@ -258,6 +268,30 @@ Easy way to make Durations from numbers.
 print(1.seconds + 200.milliseconds);
 print(1.hours + 30.minutes);
 print(1.5.hours);
+
+5.isLowerThan(4);
+5.isGreaterThan(4);
+5.isEqual(4);
+```
+
+## String Extensions
+```dart
+//Check String is empty
+''.isBlank();
+//your name => Your Name,
+'your name'.capitalize();
+//your name => Your name,
+'your name'.capitalizeFirst();
+//your name => yourname
+'your name'.removeAllWhitespace();
+
+// match any RegExp
+'dsts'.hasMatch("'r'[A-Z]");
+//return bool if match RegExp
+'123'.isNumericOnly();
+'dsf'.isAlphabetOnly();
+'Ajh'.hasCapitalletter();
+'true'.isBool();
 ```
 
 ## Url Strategy

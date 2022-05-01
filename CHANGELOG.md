@@ -1,7 +1,10 @@
-## [2.0.0] - 2022-03-12
+## [2.0.0] - 2022-05-01
 * Update documentation
 * Remove 2018 test style
 * Changes in navigation extention name, read readme file for more detail
+* Add more `num` extension
+* Add `String` extension
+* Add `alert dialog` extension
 
 ## [1.1.0] - 2022-03-12
 * Update documentation

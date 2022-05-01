@@ -27,4 +27,10 @@ extension NumExtension on num {
       Duration(minutes: (this * Duration.minutesPerHour).round());
 
   Duration get days => Duration(hours: (this * Duration.hoursPerDay).round());
+
+  bool isLowerThan(num b) => this < b;
+
+  bool isGreaterThan(num b) => this > b;
+
+  bool isEqual(num b) => this == b;
 }

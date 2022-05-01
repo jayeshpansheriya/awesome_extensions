@@ -119,6 +119,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text(
                   'Hello World',
                 ).paddingAll(10.0),
+
+              ///Show Platform dialog
+              ElevatedButton(
+                  onPressed: () {
+                    context.showAlertDialog(
+                        title: 'title',
+                        message: 'message',
+                        cancelButtonTitle: 'ok',
+                        cancelTitleColor: Colors.green,
+                        fontSize: 20);
+                  },
+                  child: Text('Show Dialog')),
             ],
           ),
         ));
