@@ -1,6 +1,6 @@
 ## [2.0.0] - 2022-05-01
 * Update documentation
-* Remove 2018 test style
+* Remove 2018 text style
 * Changes in navigation extention name, read readme file for more detail
 * Add more `num` extension
 * Add `String` extension
