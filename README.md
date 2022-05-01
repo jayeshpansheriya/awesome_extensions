@@ -20,6 +20,8 @@ dependencies:
 
 3. click the packages get button or *flutter pub get*
 
+## See [awesome_extensions](https://jayeshpansheriya.github.io/awesome_extensions) for goawesome_extensions_router docs & samples
+
 ## Theme Extensions
 #### TextStyle
 From the `TextStyle` Access properties right in the `context` instance.

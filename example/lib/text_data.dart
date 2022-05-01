@@ -16,23 +16,20 @@ class TextExt extends StatelessWidget {
             //Text Extensions
             Text(
               'Hello World',
-              style: context.caption!.bold,
+              style: context.displayLarge?.bold,
             ),
             Text(
               'Hello World',
-              style: context.headline3!.semiBold,
+              style: context.headlineLarge?.semiBold,
             ),
             Text(
               'Hello World',
-              style: context.headline3!.regular,
+              style: context.titleLarge?.regular,
             ),
+            Text('Hello World', style: context.bodyLarge),
             Text(
               'Hello World',
-              style: context.headline4,
-            ),
-            Text(
-              'Hello World',
-              style: context.textTheme.headline4!.thin,
+              style: context.textTheme.bodySmall?.thin,
             ),
 
             /// Text Widget

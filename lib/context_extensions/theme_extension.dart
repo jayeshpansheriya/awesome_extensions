@@ -51,46 +51,46 @@ extension ThemeExt on BuildContext {
   /// [Divider.createBorderSide].
   Color get dividerColor => Theme.of(this).dividerColor;
 
-  // TYPOGRAPHY 2018
+  // // TYPOGRAPHY 2018
 
-  /// performs a simple [textTheme.headline1] action and returns given [headline1]
-  TextStyle? get headline1 => textTheme.displayLarge;
+  // /// performs a simple [textTheme.headline1] action and returns given [headline1]
+  // TextStyle? get headline1 => textTheme.displayLarge;
 
-  /// performs a simple [textTheme.headline2] action and returns given [headline2]
-  TextStyle? get headline2 => textTheme.displayMedium;
+  // /// performs a simple [textTheme.headline2] action and returns given [headline2]
+  // TextStyle? get headline2 => textTheme.displayMedium;
 
-  /// performs a simple [textTheme.headline3] action and returns given [headline3]
-  TextStyle? get headline3 => textTheme.displaySmall;
+  // /// performs a simple [textTheme.headline3] action and returns given [headline3]
+  // TextStyle? get headline3 => textTheme.displaySmall;
 
-  /// performs a simple [textTheme.headline4] action and returns given [headline4]
-  TextStyle? get headline4 => textTheme.headlineMedium;
+  // /// performs a simple [textTheme.headline4] action and returns given [headline4]
+  // TextStyle? get headline4 => textTheme.headlineMedium;
 
-  /// performs a simple [textTheme.headline5] action and returns given [headline5]
-  TextStyle? get headline5 => textTheme.headlineSmall;
+  // /// performs a simple [textTheme.headline5] action and returns given [headline5]
+  // TextStyle? get headline5 => textTheme.headlineSmall;
 
-  /// performs a simple [textTheme.headline6] action and returns given [headline6]
-  TextStyle? get headline6 => textTheme.titleLarge;
+  // /// performs a simple [textTheme.headline6] action and returns given [headline6]
+  // TextStyle? get headline6 => textTheme.titleLarge;
 
-  /// performs a simple [textTheme.subtitle1] action and returns given [subtitle1]
-  TextStyle? get subtitle1 => textTheme.titleMedium;
+  // /// performs a simple [textTheme.subtitle1] action and returns given [subtitle1]
+  // TextStyle? get subtitle1 => textTheme.titleMedium;
 
-  /// performs a simple [textTheme.subtitle2] action and returns given [subtitle2]
-  TextStyle? get subtitle2 => textTheme.titleSmall;
+  // /// performs a simple [textTheme.subtitle2] action and returns given [subtitle2]
+  // TextStyle? get subtitle2 => textTheme.titleSmall;
 
-  /// performs a simple [textTheme.bodyText1] action and returns given [bodyText1]
-  TextStyle? get bodyText1 => textTheme.bodyLarge;
+  // /// performs a simple [textTheme.bodyText1] action and returns given [bodyText1]
+  // TextStyle? get bodyText1 => textTheme.bodyLarge;
 
-  /// performs a simple [textTheme.bodyText2] action and returns given [bodyText2]
-  TextStyle? get bodyText2 => textTheme.bodyMedium;
+  // /// performs a simple [textTheme.bodyText2] action and returns given [bodyText2]
+  // TextStyle? get bodyText2 => textTheme.bodyMedium;
 
-  /// performs a simple [textTheme.caption] action and returns given [caption]
-  TextStyle? get caption => textTheme.bodySmall;
+  // /// performs a simple [textTheme.caption] action and returns given [caption]
+  // TextStyle? get caption => textTheme.bodySmall;
 
-  /// performs a simple [textTheme.button] action and returns given [button]
-  TextStyle? get button => textTheme.labelLarge;
+  // /// performs a simple [textTheme.button] action and returns given [button]
+  // TextStyle? get button => textTheme.labelLarge;
 
-  /// performs a simple [textTheme.overline] action and returns given [overline]
-  TextStyle? get overline => textTheme.labelSmall;
+  // /// performs a simple [textTheme.overline] action and returns given [overline]
+  // TextStyle? get overline => textTheme.labelSmall;
 
   // TYPOGRAPHY 2021
 

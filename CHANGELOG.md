@@ -1,3 +1,8 @@
+## [2.0.0] - 2022-03-12
+* Update documentation
+* Remove 2018 test style
+* Changes in navigation extention name, read readme file for more detail
+
 ## [1.1.0] - 2022-03-12
 * Update documentation
 * Introduce Flutter SDK constraint minimum of 2.10
