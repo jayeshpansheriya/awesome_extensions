@@ -20,7 +20,7 @@ dependencies:
 
 3. click the packages get button or *flutter pub get*
 
-## See [awesome_extensions](https://jayeshpansheriya.github.io/awesome_extensions) for goawesome_extensions_router docs & samples
+## See [awesome_extensions](https://jayeshpansheriya.github.io/awesome_extensions) for docs & samples
 
 ## Theme Extensions
 #### TextStyle
@@ -48,20 +48,6 @@ Similar fontWeight are:
 * `extraLight` Extra-light - FontWeight.w200
 * `thin` Thin, the least thick - FontWeight.w100
 
-Similar 2018 TextStyle are:
-* `context.headline1`
-* `context.headline2`
-* `context.headline3`
-* `context.headline4`
-* `context.headline5`
-* `context.headline6`
-* `context.subtitle1`
-* `context.bodyText1`
-* `context.bodyText2`
-* `context.caption`
-* `context.button`
-* `context.subtitle2`
-* `context.overline`
 
 Similar 2021 TextStyle are:
 * `context.displayLarge`
@@ -171,23 +157,18 @@ Navigator.push(
 // After
 
 // for push
-context.to(SecondScreen());
-context.toNamed('/home');
+context.push(SecondScreen());
+context.pushNamed('/home');
 
 // for back , you can also add back result data
-context.back();
+context.pop();
 
 // for replace
-context.replaceWith(SecondScreen());
-context.replaceWithNamed('/home');
+context.pushReplacement(SecondScreen());
+context.pushReplacementNamed('/home');
 
 // popUntil
-context.backUntilNamed('/login');
-
-// pushAndRemoveUntil
-context.toAndRemoveUntil(SecondScreen());
-context.toAndRemoveUntil(SecondScreen(),routes: false);
-context.toAndRemoveUntilName('/login');
+context.popUntil('/login');
 ```
 
 ## Widget Extensions
