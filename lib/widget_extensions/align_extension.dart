@@ -8,10 +8,10 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment.bottomCenter,
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 
   Align alignAtTopLeft({
@@ -21,10 +21,10 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment.topLeft,
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 
   Align alignAtBottomLeft({
@@ -34,10 +34,10 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment.bottomLeft,
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 
   Align alignAtBottomRight({
@@ -47,10 +47,10 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment.bottomRight,
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 
   Align alignAtCenterLeft({
@@ -60,10 +60,10 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment.centerLeft,
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 
   Align alignAtCenter({
@@ -73,10 +73,10 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment.center,
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 
   Align alignAtCenterRight({
@@ -86,10 +86,10 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment.centerRight,
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 
   Align alignAtLERP(
@@ -102,10 +102,10 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment.lerp(a, b, t)!,
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 
   Align alignXY(
@@ -117,10 +117,10 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment(x, y),
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 
   Align alignAtTopCenter({
@@ -130,10 +130,10 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment.topCenter,
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 
   Align alignAtTopRight({
@@ -143,9 +143,9 @@ extension AlignExtensions on Widget {
   }) =>
       Align(
         key: key,
-        child: this,
         alignment: Alignment.topRight,
         heightFactor: heightFactor,
         widthFactor: widthFactor,
+        child: this,
       );
 }

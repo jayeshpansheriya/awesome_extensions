@@ -60,11 +60,11 @@ extension DialogExt on BuildContext {
     if (cancelButton != null) {
       CupertinoDialogAction action = CupertinoDialogAction(
         isDefaultAction: true,
-        child: Text(cancelButton),
         textStyle: TextStyle(color: cancelTitleColor, fontSize: fontSize),
         onPressed: () {
           context.pop();
         },
+        child: Text(cancelButton),
       );
       arrWidget.add(action);
     }
@@ -73,7 +73,6 @@ extension DialogExt on BuildContext {
       for (String buttonTitle in buttons) {
         CupertinoDialogAction action = CupertinoDialogAction(
           isDefaultAction: true,
-          child: Text(buttonTitle),
           textStyle: TextStyle(color: positiveTitleColor, fontSize: fontSize),
           onPressed: () {
             int index = buttons.indexOf(buttonTitle);
@@ -82,6 +81,7 @@ extension DialogExt on BuildContext {
             }
             context.pop();
           },
+          child: Text(buttonTitle),
         );
         arrWidget.add(action);
       }

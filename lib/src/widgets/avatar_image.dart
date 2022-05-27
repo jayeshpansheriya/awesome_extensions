@@ -13,7 +13,7 @@ class AvatarImage extends StatelessWidget {
       this.maxRadius,
       this.borderRadius,
       this.shape = AvatarImageShape.circle,
-      this.size = ImageSize.MEDIUM})
+      this.size = ImageSize.medium})
       : assert(radius == null || (minRadius == null && maxRadius == null)),
         super(key: key);
 
@@ -165,11 +165,11 @@ enum AvatarImageShape {
 /// [ImageSize] is used to change the size of the widget.
 class ImageSize {
   /// [ImageSize.SMALL] is used for small size widget
-  static const double SMALL = 30;
+  static const double small = 30;
 
   /// Default size if [ImageSize.MEDIUM] is used for medium size widget
-  static const double MEDIUM = 35;
+  static const double medium = 35;
 
   /// [ImageSize.LARGE] is used for large size widget
-  static const double LARGE = 40;
+  static const double large = 40;
 }

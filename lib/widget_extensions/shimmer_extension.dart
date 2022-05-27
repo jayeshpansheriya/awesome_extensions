@@ -5,9 +5,8 @@ extension ShimmerEffect on Widget {
       {bool enable = true, Color? baseColor, Color? highlightColor}) {
     if (enable) {
       return Shimmer.fromColors(
-        baseColor: baseColor == null ? Colors.grey.shade300 : baseColor,
-        highlightColor:
-            highlightColor == null ? Colors.grey.shade100 : highlightColor,
+        baseColor: baseColor ?? Colors.grey.shade300,
+        highlightColor: highlightColor ?? Colors.grey.shade100,
         enabled: enable,
         child: this,
       );
