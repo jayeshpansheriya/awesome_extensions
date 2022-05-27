@@ -1,3 +1,6 @@
+## [2.0.1-prerelease] - 2022-05-27
+* Update Code With Flutter 3.
+
 ## [2.0.0] - 2022-05-01
 * Update documentation
 * Remove 2018 text style
