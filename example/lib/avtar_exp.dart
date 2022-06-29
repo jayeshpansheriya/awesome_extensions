@@ -41,7 +41,7 @@ class AvatarExample extends StatelessWidget {
                   backgroundImage: NetworkImage(
                       'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
                   shape: AvatarImageShape.standard,
-                  size: ImageSize.LARGE,
+                  size: ImageSize.large,
                   child: Text('Lucky'),
                   backgroundColor: Colors.red,
                 ),

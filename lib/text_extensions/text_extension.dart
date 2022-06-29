@@ -30,7 +30,7 @@ extension StyledText<T extends Text> on T {
         textWidthBasis: textWidthBasis ?? this.textWidthBasis,
       );
 
-  T textStyle(TextStyle? style) => this.copyWith(
+  T textStyle(TextStyle? style) => copyWith(
         style: (this.style ?? const TextStyle()).copyWith(
           background: style?.background,
           backgroundColor: style?.backgroundColor,
@@ -58,46 +58,46 @@ extension StyledText<T extends Text> on T {
       ) as T;
 
   T textScale(double scaleFactor) =>
-      this.copyWith(textScaleFactor: scaleFactor) as T;
+      copyWith(textScaleFactor: scaleFactor) as T;
 
-  T bold() => this.copyWith(
-        style: (this.style ?? const TextStyle()).copyWith(
+  T bold() => copyWith(
+        style: (style ?? const TextStyle()).copyWith(
           fontWeight: FontWeight.bold,
         ),
       ) as T;
 
-  T italic() => this.copyWith(
-        style: (this.style ?? const TextStyle()).copyWith(
+  T italic() => copyWith(
+        style: (style ?? const TextStyle()).copyWith(
           fontStyle: FontStyle.italic,
         ),
       ) as T;
 
-  T fontWeight(FontWeight fontWeight) => this.copyWith(
-        style: (this.style ?? const TextStyle()).copyWith(
+  T fontWeight(FontWeight fontWeight) => copyWith(
+        style: (style ?? const TextStyle()).copyWith(
           fontWeight: fontWeight,
         ),
       ) as T;
 
-  T fontSize(double size) => this.copyWith(
-        style: (this.style ?? const TextStyle()).copyWith(
+  T fontSize(double size) => copyWith(
+        style: (style ?? const TextStyle()).copyWith(
           fontSize: size,
         ),
       ) as T;
 
-  T fontFamily(String font) => this.copyWith(
-        style: (this.style ?? const TextStyle()).copyWith(
+  T fontFamily(String font) => copyWith(
+        style: (style ?? const TextStyle()).copyWith(
           fontFamily: font,
         ),
       ) as T;
 
-  T letterSpacing(double space) => this.copyWith(
-        style: (this.style ?? const TextStyle()).copyWith(
+  T letterSpacing(double space) => copyWith(
+        style: (style ?? const TextStyle()).copyWith(
           letterSpacing: space,
         ),
       ) as T;
 
-  T wordSpacing(double space) => this.copyWith(
-        style: (this.style ?? const TextStyle()).copyWith(
+  T wordSpacing(double space) => copyWith(
+        style: (style ?? const TextStyle()).copyWith(
           wordSpacing: space,
         ),
       ) as T;
@@ -107,8 +107,8 @@ extension StyledText<T extends Text> on T {
     double blurRadius = 0.0,
     Offset offset = Offset.zero,
   }) =>
-      this.copyWith(
-        style: (this.style ?? const TextStyle()).copyWith(
+      copyWith(
+        style: (style ?? const TextStyle()).copyWith(
           shadows: [
             Shadow(
               color: color,
@@ -119,27 +119,27 @@ extension StyledText<T extends Text> on T {
         ),
       ) as T;
 
-  T textColor(Color color) => this.copyWith(
-        style: (this.style ?? const TextStyle()).copyWith(
+  T textColor(Color color) => copyWith(
+        style: (style ?? const TextStyle()).copyWith(
           color: color,
         ),
       ) as T;
 
-  T textAlignment(TextAlign align) => this.copyWith(textAlign: align) as T;
+  T textAlignment(TextAlign align) => copyWith(textAlign: align) as T;
 
   T textDirection(TextDirection direction) =>
-      this.copyWith(textDirection: direction) as T;
+      copyWith(textDirection: direction) as T;
 
-  T textBaseline(TextBaseline textBaseline) => this.copyWith(
-        style: (this.style ?? const TextStyle()).copyWith(
+  T textBaseline(TextBaseline textBaseline) => copyWith(
+        style: (style ?? const TextStyle()).copyWith(
           textBaseline: textBaseline,
         ),
       ) as T;
 
   T textWidthBasis(TextWidthBasis textWidthBasis) =>
-      this.copyWith(textWidthBasis: textWidthBasis) as T;
+      copyWith(textWidthBasis: textWidthBasis) as T;
 
-  T withUnderLine() => this.copyWith(
-      style: (this.style ?? const TextStyle())
+  T withUnderLine() => copyWith(
+      style: (style ?? const TextStyle())
           .copyWith(decoration: TextDecoration.underline)) as T;
 }

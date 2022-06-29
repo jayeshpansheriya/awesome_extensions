@@ -99,7 +99,7 @@ class Shimmer extends StatefulWidget {
         super(key: key);
 
   @override
-  _ShimmerState createState() => _ShimmerState();
+  ShimmerState createState() => ShimmerState();
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -115,7 +115,7 @@ class Shimmer extends StatefulWidget {
   }
 }
 
-class _ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
+class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   int _count = 0;
 
@@ -155,10 +155,10 @@ class _ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
       animation: _controller,
       child: widget.child,
       builder: (BuildContext context, Widget? child) => _Shimmer(
-        child: child,
         direction: widget.direction,
         gradient: widget.gradient,
         percent: _controller.value,
+        child: child,
       ),
     );
   }
