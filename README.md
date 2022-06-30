@@ -278,8 +278,6 @@ print(1.5.hours);
 
 ## String Extensions
 ```dart
-//Check String is empty
-''.isBlank();
 //your name => Your Name,
 'your name'.capitalize();
 //your name => Your name,

@@ -1,9 +1,7 @@
 part of '../awesome_extensions.dart';
 
 extension StringExtension on String {
-  /// Checks if data is empty
-  bool isBlank() => isEmpty;
-
+  
   /// Capitalize each word inside string
   /// Example: your name => Your Name, your name => Your name
   String capitalize() {
