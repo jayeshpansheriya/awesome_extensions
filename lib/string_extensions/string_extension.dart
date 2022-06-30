@@ -5,14 +5,14 @@ extension StringExtension on String {
   /// Capitalize each word inside string
   /// Example: your name => Your Name, your name => Your name
   String capitalize() {
-    if (isBlank()) return this;
+    if (isEmpty) return this;
     return split(' ').map((e) => e.capitalize()).join(' ');
   }
 
   /// Uppercase first letter inside string and let the others lowercase
   /// Example: your name => Your name
   String capitalizeFirst() {
-    if (isBlank()) return this;
+    if (isEmpty) return this;
     return this[0].toUpperCase() + substring(1).toLowerCase();
   }
 
