@@ -23,6 +23,9 @@ dependencies:
 ## See [awesome_extensions](https://jayeshpansheriya.github.io/awesome_extensions) for docs & samples
 
 - [About Awesome Extensions](#about)
+- [Theme Extensions](#theme-extensions)
+  - [TextStyle](#textstyle)
+  - [Text](#text)
 
 ## About
 An extension to the widget helps reduce the boilerplate and adds some helpful methods. and you can make a responsive design.
@@ -34,14 +37,16 @@ From the `TextStyle` Access properties right in the `context` instance.
 
 ```dart
 // Before
-Text('Hello World',style: Theme.of(context).textTheme.caption),
+Text('Hello World',style: Theme.of(context).textTheme.labelSmall),
+
+Text('Hello World', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 40)
 
 // After
-Text('Hello World',style: context.caption),
+Text('Hello World',style: context.labelSmall),
 // OR
-Text('Hello World',style: context.headline3),
+Text('Hello World',style: context.displaySmall),
 // If you want to bold text then 
-Text('Hello World',style: context.caption.bold),
+Text('Hello World',style: context.labelSmall.bold),   
 ```
 Similar fontWeight are:
 * `mostThick` The most thick - FontWeight.w900
@@ -72,6 +77,7 @@ Similar 2021 TextStyle are:
 * `context.labelMedium`
 * `context.labelSmall`
 
+#### Text
 If you dont want use theme, then we have some other methods:
 
 ```dart
@@ -80,6 +86,20 @@ Text('Hello World')
     .fontSize(25)
     .italic();
 ```
+Similar methods are:
+*`.textScale()`  TextScale
+*`.bold()`  Bold Text
+*`.italic()`  Italic Text
+*`.fontWeight()`  Specific FontWeight
+*`.fontSize()`  Specific FontSize
+*`.letterSpacing()`  Specific LetterSpacing
+*`.wordSpacing()`  Specific WordSpacing
+*`.fontFamily()`  Specific FontFamily
+*`.textShadow()`  Specific TextShadow
+*`.textColor()`   TextColor
+*`.textAlignment()`  Specific TextAlignment
+*`.withUnderLine()`  TextUnderLine
+
 
 #### Theme
 From the `Theme` class. Access your themes right in the `context` instance.
