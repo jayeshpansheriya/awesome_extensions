@@ -22,6 +22,12 @@ dependencies:
 
 ## See [awesome_extensions](https://jayeshpansheriya.github.io/awesome_extensions) for docs & samples
 
+- [About Awesome Extensions](#about)
+
+## About
+An extension to the widget helps reduce the boilerplate and adds some helpful methods. and you can make a responsive design.
+
+
 ## Theme Extensions
 #### TextStyle
 From the `TextStyle` Access properties right in the `context` instance.
