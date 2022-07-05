@@ -86,19 +86,20 @@ Text('Hello World')
     .fontSize(25)
     .italic();
 ```
+
 Similar methods are:
-*`.textScale()`  TextScale
-*`.bold()`  Bold Text
-*`.italic()`  Italic Text
-*`.fontWeight()`  Specific FontWeight
-*`.fontSize()`  Specific FontSize
-*`.letterSpacing()`  Specific LetterSpacing
-*`.wordSpacing()`  Specific WordSpacing
-*`.fontFamily()`  Specific FontFamily
-*`.textShadow()`  Specific TextShadow
-*`.textColor()`   TextColor
-*`.textAlignment()`  Specific TextAlignment
-*`.withUnderLine()`  TextUnderLine
+* `textScale()`  TextScale
+* `bold()`  Bold Text
+* `italic()`  Italic Text
+* `fontWeight()`  Specific FontWeight
+* `fontSize()`  Specific FontSize
+* `letterSpacing()`  Specific LetterSpacing
+* `wordSpacing()`  Specific WordSpacing
+* `fontFamily()`  Specific FontFamily
+* `textShadow()`  Specific TextShadow
+* `textColor()`   TextColor
+* `textAlignment()`  Specific TextAlignment
+* `withUnderLine()`  TextUnderLine
 
 
 #### Theme
