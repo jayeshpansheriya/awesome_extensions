@@ -26,6 +26,8 @@ dependencies:
 - [Theme Extensions](#theme-extensions)
   - [TextStyle](#textstyle)
   - [Text](#text)
+  - [Theme](#theme)
+- [Media Query Extensions For Responsive Layout](#media-query-extensions-for-responsive-layout)
 
 ## About
 An extension to the widget helps reduce the boilerplate and adds some helpful methods. and you can make a responsive design.
@@ -123,7 +125,22 @@ From the `Theme` class. Access your themes right in the `context` instance.
   
 ## Media Query Extensions For Responsive Layout
 From the `MediaQuery` Access properties right in the `context` instance.
-* `context.height`  /// Height of the Screen, Equivalent to : MediaQuery.of(context).size.height,
+
+```dart
+// Before
+ Container(
+     width: MediaQuery.of(context).size.width,
+     height: MediaQuery.of(context).size.width,
+        )
+// After
+Container(
+     width: context.width,
+     height: context.width,
+        )
+```
+
+Similar extensions are:
+* `context.height`  /// Height of the Screen, 
 * `context.width`   // Width of Screen
 * `context.mediaQuerySize`
 * `context.orientation`
