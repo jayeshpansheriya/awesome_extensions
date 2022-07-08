@@ -21,19 +21,45 @@ dependencies:
 3. click the packages get button or *flutter pub get*
 
 
+- [About Awesome Extensions](#about)
+- [Theme Extensions](#theme-extensions)
+  - [TextStyle](#textstyle)
+  - [Text](#text)
+  - [Theme](#theme)
+- [Media Query Extensions For Responsive Layout](#media-query-extensions-for-responsive-layout)
+- [Navigation Extensions](#navigation-extensions)
+- [Widget Extensions](#widget-extensions)
+  - [SizeBox](#sizebox)
+  - [Padding](#padding)
+  - [Other](#other)
+  - [Dialog](#other)
+- [Shimmer Effect](#shimmer-effect)
+- [Date Extensions](#date-extensions)
+- [Number Extensions](#number-extensions)
+  - [Future & Duration](#future--duration)
+- [String Extensions](#string-extensions)
+- [Avatar Image](#avatar-image)
+
+## About
+An extension to the widget helps reduce the boilerplate and adds some helpful methods. and you can make a responsive design.
+
+
 ## Theme Extensions
 #### TextStyle
 From the `TextStyle` Access properties right in the `context` instance.
 
 ```dart
 // Before
-Text('Hello World',style: Theme.of(context).textTheme.caption),
+Text('Hello World',style: Theme.of(context).textTheme.labelSmall),
+
+Text('Hello World', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 40)
+
 // After
-Text('Hello World',style: context.caption),
+Text('Hello World',style: context.labelSmall),
 // OR
-Text('Hello World',style: context.headline3),
+Text('Hello World',style: context.displaySmall),
 // If you want to bold text then 
-Text('Hello World',style: context.caption.bold),
+Text('Hello World',style: context.labelSmall.bold),   
 ```
 Similar fontWeight are:
 * `mostThick` The most thick - FontWeight.w900
@@ -64,6 +90,7 @@ Similar 2021 TextStyle are:
 * `context.labelMedium`
 * `context.labelSmall`
 
+#### Text
 If you dont want use theme, then we have some other methods:
 
 ```dart
@@ -72,6 +99,21 @@ Text('Hello World')
     .fontSize(25)
     .italic();
 ```
+
+Similar methods are:
+* `textScale()`  TextScale
+* `bold()`  Bold Text
+* `italic()`  Italic Text
+* `fontWeight()`  Specific FontWeight
+* `fontSize()`  Specific FontSize
+* `letterSpacing()`  Specific LetterSpacing
+* `wordSpacing()`  Specific WordSpacing
+* `fontFamily()`  Specific FontFamily
+* `textShadow()`  Specific TextShadow
+* `textColor()`   TextColor
+* `textAlignment()`  Specific TextAlignment
+* `withUnderLine()`  TextUnderLine
+
 
 #### Theme
 From the `Theme` class. Access your themes right in the `context` instance.
@@ -94,7 +136,22 @@ From the `Theme` class. Access your themes right in the `context` instance.
   
 ## Media Query Extensions For Responsive Layout
 From the `MediaQuery` Access properties right in the `context` instance.
-* `context.height`  /// Height of the Screen, Equivalent to : MediaQuery.of(context).size.height,
+
+```dart
+// Before
+ Container(
+     width: MediaQuery.of(context).size.width,
+     height: MediaQuery.of(context).size.width,
+        )
+// After
+Container(
+     width: context.width,
+     height: context.width,
+        )
+```
+
+Similar extensions are:
+* `context.height`  /// Height of the Screen, 
 * `context.width`   // Width of Screen
 * `context.mediaQuerySize`
 * `context.orientation`
@@ -123,6 +180,7 @@ MyPlatform.isMacOS
 MyPlatform.isWindows
 MyPlatform.isLinux
 MyPlatform.isFuchsia
+
 //Check the device type
 MyPlatform.isMobile
 MyPlatform.isDesktop
@@ -130,19 +188,39 @@ MyPlatform.isDesktop
 //You can tell if you are running inside a browser
 //on Windows, iOS, OSX, Android, etc.
 MyPlatform.isWeb
+
+
 // Returns a value<T> according to the screen size
 // can give value for:
 // mobile: if the shortestSide is smaller than 600
 // tablet: if the shortestSide is smaller than 1200
 // desktop: if width is largest than 1200
 context.responsiveValue<T>(
-  T? watch,
     T? mobile,
     T? tablet,
     T? desktop,
-)
-```
+),
 
+// Example
+Container(
+    child: context.responsiveValue(
+        mobile: Container(
+          color: Colors.yellow,
+          width: context.width,
+          height: context.height,
+        ),
+        tablet: Container(
+          color: Colors.green,
+          width: context.width,
+          height: context.height,
+        ),
+        desktop: Container(
+          color: Colors.black,
+          width: context.width,
+          height: context.height,
+        )),
+     )
+```
 
 ## Navigation Extensions
 From the `Navigator` Access properties right in the `context` instance.
@@ -153,15 +231,20 @@ Navigator.push(
     context,
     MaterialPageRoute(builder: (context) => SecondScreen()),
   );
+
 // After
+
 // for push
 context.push(SecondScreen());
 context.pushNamed('/home');
+
 // for back , you can also add back result data
 context.pop();
+
 // for replace
 context.pushReplacement(SecondScreen());
 context.pushReplacementNamed('/home');
+
 // popUntil
 context.popUntil('/login');
 ```
@@ -177,6 +260,7 @@ SizedBox(
 // After
 // make space of 20.0 height
 20.0.heightBox
+
 // for width
 20.0.widthBox
 ```
@@ -189,6 +273,7 @@ Padding(
   padding: const EdgeInsets.all(8.0),
   child: Text("text"),
 );
+
 // After
 Text("text").paddingAll(8.0),
 ```
@@ -224,7 +309,7 @@ context.showAlertDialog(title: 'title',
 ```
 
 #### Shimmer Effect
-
+![OYCE3](https://user-images.githubusercontent.com/31765271/177955655-66a856a6-108a-429f-bbad-64b1c3f114aa.gif)
 ```dart
 Container(height: 50,width: 50,).applyShimmer();
 ```
@@ -235,8 +320,10 @@ you can also change color of shimmer using `Color baseColor`, `Color highlightCo
 ```dart
 // for check two date are same or not
 date.isSameDate(otherdate);    // its return bool (true/false)
+
 // for check date is today's date
 date.isToday    // its return bool (true/false)
+
 // for check this date is yesterday's date
 date.isYesterday    // its return bool (true/false)
 ```
@@ -256,6 +343,7 @@ Easy way to make Durations from numbers.
 print(1.seconds + 200.milliseconds);
 print(1.hours + 30.minutes);
 print(1.5.hours);
+
 5.isLowerThan(4);
 5.isGreaterThan(4);
 5.isEqual(4);
@@ -263,14 +351,13 @@ print(1.5.hours);
 
 ## String Extensions
 ```dart
-//Check String is empty
-''.isBlank();
 //your name => Your Name,
 'your name'.capitalize();
 //your name => Your name,
 'your name'.capitalizeFirst();
 //your name => yourname
 'your name'.removeAllWhitespace();
+
 // match any RegExp
 'dsts'.hasMatch("'r'[A-Z]");
 //return bool if match RegExp
@@ -304,6 +391,7 @@ AvatarImage(
      child: Text('Lucky'),
           backgroundColor: Colors.red,
       ),
+
 AvatarImage(
     shape: AvatarImageShape.circle,
     child: Text('JP'),
