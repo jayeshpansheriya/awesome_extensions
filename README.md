@@ -310,7 +310,7 @@ context.showAlertDialog(title: 'title',
 ```
 
 #### Shimmer Effect
-
+![OYCE3](https://user-images.githubusercontent.com/31765271/177955655-66a856a6-108a-429f-bbad-64b1c3f114aa.gif)
 ```dart
 Container(height: 50,width: 50,).applyShimmer();
 ```
