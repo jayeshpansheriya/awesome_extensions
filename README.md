@@ -185,13 +185,31 @@ MyPlatform.isWeb
 // tablet: if the shortestSide is smaller than 1200
 // desktop: if width is largest than 1200
 context.responsiveValue<T>(
-  T? watch,
     T? mobile,
     T? tablet,
     T? desktop,
-)
-```
+),
 
+// Example
+Container(
+    child: context.responsiveValue(
+        mobile: Container(
+          color: Colors.yellow,
+          width: context.width,
+          height: context.height,
+        ),
+        tablet: Container(
+          color: Colors.green,
+          width: context.width,
+          height: context.height,
+        ),
+        desktop: Container(
+          color: Colors.black,
+          width: context.width,
+          height: context.height,
+        )),
+     )
+```
 
 ## Navigation Extensions
 From the `Navigator` Access properties right in the `context` instance.
