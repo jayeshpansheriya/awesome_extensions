@@ -28,6 +28,18 @@ dependencies:
   - [Text](#text)
   - [Theme](#theme)
 - [Media Query Extensions For Responsive Layout](#media-query-extensions-for-responsive-layout)
+- [Navigation Extensions](#navigation-extensions)
+- [Widget Extensions](#widget-extensions)
+  - [SizeBox](#sizebox)
+  - [Padding](#padding)
+  - [Other](#other)
+  - [Dialog](#other)
+- [Shimmer Effect](#shimmer-effect)
+- [Date Extensions](#date-extensions)
+- [Number Extensions](#number-extensions)
+  - [Future & Duration](#future--duration)
+- [String Extensions](#string-extensions)
+- [Avatar Image](#avatar-image)
 
 ## About
 An extension to the widget helps reduce the boilerplate and adds some helpful methods. and you can make a responsive design.
