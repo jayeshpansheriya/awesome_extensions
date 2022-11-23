@@ -1,3 +1,7 @@
+## [2.0.4] - 2022-11-23
+* Add new ``Nil` widget
+* Update Documentation
+
 ## [2.0.3] - 2022-08-01
 * Update Documentation
   
