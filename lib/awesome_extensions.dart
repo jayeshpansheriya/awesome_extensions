@@ -6,10 +6,12 @@ export 'package:awesome_extensions/src/platform.dart';
 export 'package:awesome_extensions/src/url_strategy.dart';
 export 'package:awesome_extensions/src/widgets/avatar_image.dart';
 import 'package:awesome_extensions/src/platform.dart';
-import 'package:awesome_extensions/src/shimmer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
+part 'src/shimmer.dart';
+part 'src/nil.dart';
 part 'context_extensions/media_query_extension.dart';
 part 'context_extensions/navigation_extension.dart';
 part 'context_extensions/theme_extension.dart';
