@@ -116,7 +116,7 @@ extension DialogExt on BuildContext {
     if (cancelButton != null) {
       TextButton action = TextButton(
         style: TextButton.styleFrom(
-          primary: cancelTitleColor,
+          foregroundColor: cancelTitleColor,
           textStyle: TextStyle(
             fontSize: fontSize,
           ),
@@ -135,7 +135,7 @@ extension DialogExt on BuildContext {
       for (String buttonTitle in buttons) {
         TextButton action = TextButton(
           style: TextButton.styleFrom(
-            primary: positiveTitleColor,
+            foregroundColor: positiveTitleColor,
             textStyle: TextStyle(
               fontSize: fontSize,
             ),

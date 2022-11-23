@@ -1,9 +1,9 @@
 # Awesome Extensions
 
 [![pub package](https://img.shields.io/pub/v/awesome_extensions.svg?label=awesome_extensions&color=blue)](https://pub.dev/packages/awesome_extensions)
-[![popularity](https://badges.bar/awesome_extensions/popularity)](https://pub.dev/packages/awesome_extensions/score)
-[![likes](https://badges.bar/awesome_extensions/likes)](https://pub.dev/packages/awesome_extensions/score)
-[![pub points](https://badges.bar/awesome_extensions/pub%20points)](https://pub.dev/packages/awesome_extensions/score)
+[![likes](https://img.shields.io/pub/likes/awesome_extensions)](https://pub.dev/packages/awesome_extensions/score)
+[![popularity](https://img.shields.io/pub/popularity/awesome_extensions)](https://pub.dev/packages/awesome_extensions/score)
+[![pub points](https://img.shields.io/pub/points/awesome_extensions)](https://pub.dev/packages/awesome_extensions/score)
 
 ![awesome_extensions](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/flutter_extension.png?raw=true)
 
@@ -22,24 +22,30 @@ dependencies:
 
 ## See [awesome_extensions](https://jayeshpansheriya.github.io/awesome_extensions) for docs & samples
 
-- [About Awesome Extensions](#about)
-- [Theme Extensions](#theme-extensions)
-  - [TextStyle](#textstyle)
-  - [Text](#text)
-  - [Theme](#theme)
-- [Media Query Extensions For Responsive Layout](#media-query-extensions-for-responsive-layout)
-- [Navigation Extensions](#navigation-extensions)
-- [Widget Extensions](#widget-extensions)
-  - [SizeBox](#sizebox)
-  - [Padding](#padding)
-  - [Other](#other)
-  - [Dialog](#other)
-- [Shimmer Effect](#shimmer-effect)
-- [Date Extensions](#date-extensions)
-- [Number Extensions](#number-extensions)
-  - [Future & Duration](#future--duration)
-- [String Extensions](#string-extensions)
-- [Avatar Image](#avatar-image)
+- [Awesome Extensions](#awesome-extensions)
+  - [Let get started 💪](#let-get-started-)
+  - [See awesome\_extensions for docs \& samples](#see-awesome_extensions-for-docs--samples)
+  - [About](#about)
+  - [Theme Extensions](#theme-extensions)
+      - [TextStyle](#textstyle)
+      - [Text](#text)
+      - [Theme](#theme)
+  - [Media Query Extensions For Responsive Layout](#media-query-extensions-for-responsive-layout)
+  - [Navigation Extensions](#navigation-extensions)
+  - [Widget Extensions](#widget-extensions)
+      - [SizeBox](#sizebox)
+      - [Padding](#padding)
+      - [Other](#other)
+      - [Shimmer Effect](#shimmer-effect)
+      - [Nil Widget](#nil-widget)
+  - [Date Extensions](#date-extensions)
+  - [Number Extensions](#number-extensions)
+      - [Future \& Duration](#future--duration)
+  - [String Extensions](#string-extensions)
+  - [Url Strategy](#url-strategy)
+  - [Avatar Image](#avatar-image)
+  - [Support](#support)
+  - [❤️❤️❤️](#️️️)
 
 ## About
 An extension to the widget helps reduce the boilerplate and adds some helpful methods. and you can make a responsive design.
@@ -315,6 +321,24 @@ context.showAlertDialog(title: 'title',
 Container(height: 50,width: 50,).applyShimmer();
 ```
 you can also change color of shimmer using `Color baseColor`, `Color highlightColor`.
+
+#### Nil Widget
+Sometimes, according to a condition, we want to display nothing. Usually when we can't return null, we would return something like `const SizedBox()` for example.
+
+This is good, but it has some performance impacts since `SizedBox` creates a `RenderObject`. The `RenderObject` lives in the render tree and some computations are performed on it, even if it paints nothing on the screen.
+
+We can do better, we can have a widget which does not create a `RenderObject`, while being still valid. The `Nil` widget is the minimal implementation for this use case. It only creates an `Element` and does nothing while it's building. Because the optimal way to use it, is to call `const Nil()`, it also comes with a `nil` constant that you can use everywhere (which is a `const Nil()`).
+
+```dart
+// Good
+text != null ? Text(text) : const Container()
+// Better
+text != null ? Text(text) : const SizedBox()
+// BEST
+text != null ? Text(text) : nil
+or
+if (text != null) Text(text)
+```
 
 ## Date Extensions
 
