@@ -1,9 +1,10 @@
 # Awesome Extensions
 
 [![pub package](https://img.shields.io/pub/v/awesome_extensions.svg?label=awesome_extensions&color=blue)](https://pub.dev/packages/awesome_extensions)
-[![popularity](https://badges.bar/awesome_extensions/popularity)](https://pub.dev/packages/awesome_extensions/score)
-[![likes](https://badges.bar/awesome_extensions/likes)](https://pub.dev/packages/awesome_extensions/score)
-[![pub points](https://badges.bar/awesome_extensions/pub%20points)](https://pub.dev/packages/awesome_extensions/score)
+[![likes](https://img.shields.io/pub/likes/awesome_extensions)](https://pub.dev/packages/awesome_extensions/score)
+[![popularity](https://img.shields.io/pub/popularity/awesome_extensions)](https://pub.dev/packages/awesome_extensions/score)
+[![pub points](https://img.shields.io/pub/points/awesome_extensions)](https://pub.dev/packages/awesome_extensions/score)
+ar/awesome_extensions/pub%20points)](https://pub.dev/packages/awesome_extensions/score)
 
 ![awesome_extensions](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/flutter_extension.png?raw=true)
 
@@ -22,24 +23,29 @@ dependencies:
 
 ## See [awesome_extensions](https://jayeshpansheriya.github.io/awesome_extensions) for docs & samples
 
-- [About Awesome Extensions](#about)
-- [Theme Extensions](#theme-extensions)
-  - [TextStyle](#textstyle)
-  - [Text](#text)
-  - [Theme](#theme)
-- [Media Query Extensions For Responsive Layout](#media-query-extensions-for-responsive-layout)
-- [Navigation Extensions](#navigation-extensions)
-- [Widget Extensions](#widget-extensions)
-  - [SizeBox](#sizebox)
-  - [Padding](#padding)
-  - [Other](#other)
-  - [Dialog](#other)
-- [Shimmer Effect](#shimmer-effect)
-- [Date Extensions](#date-extensions)
-- [Number Extensions](#number-extensions)
-  - [Future & Duration](#future--duration)
-- [String Extensions](#string-extensions)
-- [Avatar Image](#avatar-image)
+- [Awesome Extensions](#awesome-extensions)
+  - [Let get started 💪](#let-get-started-)
+  - [See awesome\_extensions for docs \& samples](#see-awesome_extensions-for-docs--samples)
+  - [About](#about)
+  - [Theme Extensions](#theme-extensions)
+      - [TextStyle](#textstyle)
+      - [Text](#text)
+      - [Theme](#theme)
+  - [Media Query Extensions For Responsive Layout](#media-query-extensions-for-responsive-layout)
+  - [Navigation Extensions](#navigation-extensions)
+  - [Widget Extensions](#widget-extensions)
+      - [SizeBox](#sizebox)
+      - [Padding](#padding)
+      - [Other](#other)
+      - [Shimmer Effect](#shimmer-effect)
+  - [Date Extensions](#date-extensions)
+  - [Number Extensions](#number-extensions)
+      - [Future \& Duration](#future--duration)
+  - [String Extensions](#string-extensions)
+  - [Url Strategy](#url-strategy)
+  - [Avatar Image](#avatar-image)
+  - [Support](#support)
+  - [❤️❤️❤️](#️️️)
 
 ## About
 An extension to the widget helps reduce the boilerplate and adds some helpful methods. and you can make a responsive design.
