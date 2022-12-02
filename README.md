@@ -5,8 +5,7 @@
 [![popularity](https://img.shields.io/pub/popularity/awesome_extensions)](https://pub.dev/packages/awesome_extensions/score)
 [![pub points](https://img.shields.io/pub/points/awesome_extensions)](https://pub.dev/packages/awesome_extensions/score)
 
-![awesome_extensions](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/flutter_extension.png?raw=true)
-
+![flutter_extension](https://user-images.githubusercontent.com/31765271/205228040-e9211b4a-8f8e-49c9-b0fd-3094120a0a5e.png)
 
 ## Let get started 💪
 
@@ -423,8 +422,8 @@ AvatarImage(
     backgroundColor: Colors.red,
       ),
 ```
-![avatar-image](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-image.jpeg)
-![avatar-image](https://github.com/jayeshpansheriya/awesome_extensions/blob/main/avatar-name.jpeg)
+![avatar-image](https://user-images.githubusercontent.com/31765271/205228265-a30afe80-1f12-4874-808f-177aafb25b4a.jpeg)
+![avatar-name](https://user-images.githubusercontent.com/31765271/205228285-e5a52b8e-0675-4796-858b-7257d1925a5b.jpeg)
 
 | Properties      | Description                                                                                                |
 | --------------- | ---------------------------------------------------------------------------------------------------------- |
