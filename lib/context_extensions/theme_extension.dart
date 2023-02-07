@@ -22,7 +22,7 @@ extension ThemeExt on BuildContext {
   // COLOR
 
   /// performs a simple [Theme.of(context).backgroundColor] action and returns given [backgroundColor]
-  Color get backgroundColor => Theme.of(this).colorScheme.background;
+  Color get backgroundColor => Theme.of(this).backgroundColor;
 
   /// performs a simple [Theme.of(context).primaryColor] action and returns given [primaryColor]
   Color get primaryColor => Theme.of(this).primaryColor;
