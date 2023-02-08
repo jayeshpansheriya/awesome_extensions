@@ -34,6 +34,7 @@ dependencies:
   - [Widget Extensions](#widget-extensions)
       - [SizeBox](#sizebox)
       - [Padding](#padding)
+      - [Opacity](#opacity)
       - [Other](#other)
       - [Shimmer Effect](#shimmer-effect)
       - [Nil Widget](#nil-widget)
