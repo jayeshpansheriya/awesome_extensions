@@ -35,6 +35,7 @@ dependencies:
       - [SizeBox](#sizebox)
       - [Padding](#padding)
       - [Opacity](#opacity)
+      - [Expanded](#expanded)
       - [Other](#other)
       - [Shimmer Effect](#shimmer-effect)
       - [Nil Widget](#nil-widget)
@@ -303,6 +304,18 @@ Opacity(
 
 // After
 Text("text").setOpacity(0.5)
+```
+
+### Expanded
+
+```dart
+/// Before
+Expanded(
+  child: Text("text"),
+)
+
+// After
+Text("text").expanded()
 ```
 
 #### Other
