@@ -291,6 +291,18 @@ Similar padding extensions are:
 * `paddingSymmetric` Creates insets with symmetrical vertical and horizontal offsets.
 * `paddingFromWindowPadding` Creates insets that match the given window padding.
 
+### Opacity
+
+```dart
+// Before
+Opacity(
+  opacity: 0.5,
+  child: Text("text"),
+)
+
+// After
+Text("text").setOpacity(0.5)
+```
 
 #### Other
 Now we can just add round corners, shadows, align, and added gestures to our Widgets.
