@@ -1,5 +1,10 @@
+## [2.0.5] - 2023-02-08
+* Add new `Opacity` Extension
+* Update Documentation
+* Update With Flutter 3.7
+
 ## [2.0.4] - 2022-11-23
-* Add new ``Nil` widget
+* Add new `Nil` widget
 * Update Documentation
 
 ## [2.0.3] - 2022-08-01

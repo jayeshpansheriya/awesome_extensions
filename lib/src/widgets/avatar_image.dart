@@ -85,7 +85,7 @@ class AvatarImage extends StatelessWidget {
     final Color? foregroundColor = this.foregroundColor;
     assert(debugCheckHasMediaQuery(context));
     final ThemeData theme = Theme.of(context);
-    TextStyle? textStyle = theme.primaryTextTheme.subtitle1?.copyWith(
+    TextStyle? textStyle = theme.primaryTextTheme.titleMedium?.copyWith(
       color: foregroundColor,
     );
     Color? effectiveBackgroundColor = backgroundColor;
