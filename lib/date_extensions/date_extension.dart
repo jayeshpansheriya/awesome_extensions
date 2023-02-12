@@ -12,8 +12,7 @@ extension DateOnlyCompare on DateTime {
 
   bool get isYesterday {
     final nowDate = DateTime.now();
-    return year == nowDate.year &&
-        month == nowDate.month &&
-        day == nowDate.day - 1;
+    const oneDay = Duration(days: 1);
+    return nowDate.subtract(oneDay).isSameDate(this);
   }
 }
