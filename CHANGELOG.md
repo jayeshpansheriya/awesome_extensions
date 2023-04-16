@@ -1,3 +1,8 @@
+## [2.0.6] - 2023-04-16
+* Add new `Expandable` Extension
+* Add new `Flexible` Extension
+* Update Documentation
+
 ## [2.0.5] - 2023-02-08
 * Add new `Opacity` Extension
 * Update Documentation

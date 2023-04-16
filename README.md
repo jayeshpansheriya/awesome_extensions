@@ -36,6 +36,7 @@ dependencies:
       - [Padding](#padding)
       - [Opacity](#opacity)
       - [Expanded](#expanded)
+      - [Flexible](#flexible)
       - [Other](#other)
       - [Shimmer Effect](#shimmer-effect)
       - [Nil Widget](#nil-widget)
@@ -316,6 +317,18 @@ Expanded(
 
 // After
 Text("text").expanded()
+```
+
+### Flexible
+
+```dart
+/// Before
+Flexible(
+  child: Text("text"),
+)
+
+// After
+Text("text").flexible()
 ```
 
 #### Other
