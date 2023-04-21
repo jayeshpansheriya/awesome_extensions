@@ -1,3 +1,6 @@
+## [2.0.7] - 2023-04-21
+* Fix naming issue in `Flexible` Extension
+
 ## [2.0.6] - 2023-04-16
 * Add new `Expandable` Extension
 * Add new `Flexible` Extension
