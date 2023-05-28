@@ -34,14 +34,14 @@ extension PaddingX on Widget {
         child: this,
       );
 
-  Padding paddingFromWindowPadding(
-    ui.WindowPadding padding,
+  Padding paddingFromViewPadding(
+    ViewPadding padding,
     double devicePixelRatio, {
     Key? key,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.fromWindowPadding(padding, devicePixelRatio),
+        padding: EdgeInsets.fromViewPadding(padding, devicePixelRatio),
         child: this,
       );
 

@@ -1,7 +1,7 @@
 library awesome_extensions;
 
 import 'dart:async';
-import 'dart:ui' as ui show WindowPadding;
+import 'dart:ui';
 
 import 'package:awesome_extensions/src/platform.dart';
 import 'package:flutter/cupertino.dart';

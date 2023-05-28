@@ -1,3 +1,6 @@
+## [2.0.8] - 2023-05-28
+* Remove `WindowPadding`, This feature was deprecated after v3.8.0-14.0.pre.
+
 ## [2.0.7] - 2023-04-21
 * Fix naming issue in `Flexible` Extension
 
