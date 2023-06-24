@@ -8,12 +8,12 @@ extension MediaQueryExt on BuildContext {
   /// Note: updates when you rezise your screen (like on a browser or
   /// desktop window)
   /// performs a simple [Theme.of(context).size] action and returns given [height or width]
-  double get height => MediaQuery.of(this).size.height;
+  double get height => mediaQuerySize.height;
 
   /// The same of [MediaQuery.of(context).size.width]
   /// Note: updates when you rezise your screen (like on a browser or
   /// desktop window)
-  double get width => MediaQuery.of(this).size.width;
+  double get width => mediaQuerySize.width;
 
   /// similar to [MediaQuery.of(context).padding]
   EdgeInsets get mediaQueryPadding => MediaQuery.of(this).padding;
@@ -80,4 +80,43 @@ extension MediaQueryExt on BuildContext {
     if (deviceWidth >= 600 && tablet != null) return tablet;
     return mobile;
   }
+
+  /// This change makes MediaQuery an InheritedModel rather than an InheritedWidget,
+  /// so any widget which knows it only depends on a
+  /// specific property of MediaQuery the ability to declare that when reading the MediaQuery from the context.
+
+  /// The same of MediaQuery.sizeOf(context)
+  Size get mqSize => MediaQuery.sizeOf(this);
+
+  /// The same of MediaQuery.sizeOf(context).height
+  double get mqHeight => mqSize.height;
+
+  /// The same of [MediaQuery.sizeOf(context).width]
+  /// Note: updates when you rezise your screen (like on a browser or
+  /// desktop window)
+  double get mqWidth => mqSize.width;
+
+  /// similar to [ MediaQuery.paddingOf(context)]
+  EdgeInsets get mqPadding => MediaQuery.paddingOf(this);
+
+  /// similar to [MediaQuery.viewPaddingOf(context)]
+  EdgeInsets get mqViewPadding => MediaQuery.viewPaddingOf(this);
+
+  /// similar to [MediaQuery.viewInsetsOf(context)]
+  EdgeInsets get mqViewInsets => MediaQuery.viewInsetsOf(this);
+
+  /// similar to [MediaQuery.orientationOf(context)]
+  Orientation get mqOrientation => MediaQuery.orientationOf(this);
+
+  /// similar to [MediaQuery.alwaysUse24HourFormatOf(context)]
+  bool get mqAlwaysUse24HourFormat => MediaQuery.alwaysUse24HourFormatOf(this);
+
+  /// similar to [MediaQuery.devicePixelRatioOf(context)]
+  double get mqDevicePixelRatio => MediaQuery.devicePixelRatioOf(this);
+
+  /// similar to [MediaQuery.platformBrightnessOf(context)]
+  Brightness get mqPlatformBrightness => MediaQuery.platformBrightnessOf(this);
+
+  /// similar to [MediaQuery.textScaleFactorOf(context)]
+  double get mqTextScaleFactor => MediaQuery.textScaleFactorOf(this);
 }
