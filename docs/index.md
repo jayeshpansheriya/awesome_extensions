@@ -34,6 +34,9 @@ dependencies:
   - [Widget Extensions](#widget-extensions)
       - [SizeBox](#sizebox)
       - [Padding](#padding)
+      - [Opacity](#opacity)
+      - [Expanded](#expanded)
+      - [Flexible](#flexible)
       - [Other](#other)
       - [Shimmer Effect](#shimmer-effect)
       - [Nil Widget](#nil-widget)
@@ -177,6 +180,31 @@ Similar extensions are:
 * `context.isSmallTablet`   // True if the shortestSide is largest than 600p
 * `context.isLargeTablet`    // True if the shortestSide is largest than 720p
 
+MediaQuery as Inherited Model
+Old Way X
+
+MediaQuery.of(context).size;
+MediaQuery.of(context).padding; MediaQuery.of (context). orientation;
+By calling MediaQuery.of(context).size, the widget will rebuild when any of the MediaQuery properties change (less performant).
+
+New Way ✓
+
+MediaQuery.sizeof(context);
+MediaQuery.paddingOf(context); MediaQuery.orientation of (context);
+By calling MediaQuery.sizeof(context), the widget will rebuild only when the size changes, avoiding unnecessary rebuilds.
+
+* `context.mqSize`  // The same of MediaQuery.sizeOf(context)
+* `context.mqHeight`  // The same of MediaQuery.sizeOf(context).height
+* `context.mqWidth`   
+* `context.mqPadding`    // similar to [MediaQuery.paddingOf(context)]
+* `context.mqViewPadding`
+* `context.mqViewInsets`
+* `context.mqOrientation`
+* `context.mqAlwaysUse24HourFormat`
+* `context.mqDevicePixelRatio`
+* `context.mqPlatformBrightness`
+* `context.mqTextScaleFactor`
+
 
 ```dart
 //Check in what platform the app is running
@@ -291,6 +319,42 @@ Similar padding extensions are:
 * `paddingSymmetric` Creates insets with symmetrical vertical and horizontal offsets.
 * `paddingFromWindowPadding` Creates insets that match the given window padding.
 
+### Opacity
+
+```dart
+// Before
+Opacity(
+  opacity: 0.5,
+  child: Text("text"),
+)
+
+// After
+Text("text").setOpacity(0.5)
+```
+
+### Expanded
+
+```dart
+/// Before
+Expanded(
+  child: Text("text"),
+)
+
+// After
+Text("text").expanded()
+```
+
+### Flexible
+
+```dart
+/// Before
+Flexible(
+  child: Text("text"),
+)
+
+// After
+Text("text").flexible()
+```
 
 #### Other
 Now we can just add round corners, shadows, align, and added gestures to our Widgets.

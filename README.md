@@ -180,6 +180,31 @@ Similar extensions are:
 * `context.isSmallTablet`   // True if the shortestSide is largest than 600p
 * `context.isLargeTablet`    // True if the shortestSide is largest than 720p
 
+MediaQuery as Inherited Model
+Old Way X
+
+MediaQuery.of(context).size;
+MediaQuery.of(context).padding; MediaQuery.of (context). orientation;
+By calling MediaQuery.of(context).size, the widget will rebuild when any of the MediaQuery properties change (less performant).
+
+New Way ✓
+
+MediaQuery.sizeof(context);
+MediaQuery.paddingOf(context); MediaQuery.orientation of (context);
+By calling MediaQuery.sizeof(context), the widget will rebuild only when the size changes, avoiding unnecessary rebuilds.
+
+* `context.mqSize`  // The same of MediaQuery.sizeOf(context)
+* `context.mqHeight`  // The same of MediaQuery.sizeOf(context).height
+* `context.mqWidth`   
+* `context.mqPadding`    // similar to [MediaQuery.paddingOf(context)]
+* `context.mqViewPadding`
+* `context.mqViewInsets`
+* `context.mqOrientation`
+* `context.mqAlwaysUse24HourFormat`
+* `context.mqDevicePixelRatio`
+* `context.mqPlatformBrightness`
+* `context.mqTextScaleFactor`
+
 
 ```dart
 //Check in what platform the app is running
