@@ -34,3 +34,4 @@ part 'widget_extensions/shimmer_extension.dart';
 part 'widget_extensions/tooltip_extension.dart';
 part 'widget_extensions/expanded_extension.dart';
 part 'widget_extensions/flexible_extension.dart';
+part 'widget_extensions/positioned_extension.dart';
