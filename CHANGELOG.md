@@ -1,4 +1,4 @@
-## [2.0.9-prerelease] - 2023-06-24
+## [2.0.9] - 2023-07-16
 * By calling `MediaQuery.sizeof(context)`, the widget will rebuild only when the size changes, avoiding unnecessary rebuilds.
 * Add Some media query extension using MediaQuery as Inherited Model
 
