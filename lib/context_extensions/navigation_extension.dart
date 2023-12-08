@@ -13,8 +13,12 @@ extension NavigatorExt on BuildContext {
     RouteSettings? settings,
     bool maintainState = true,
     bool fullscreenDialog = false,
+    bool rootNavigator = false,
   }) async =>
-      await Navigator.of(this).push(MaterialPageRoute(
+      await Navigator.of(
+        this,
+        rootNavigator: rootNavigator,
+      ).push(MaterialPageRoute(
         builder: (_) => screen,
         settings: settings,
         maintainState: maintainState,
@@ -27,8 +31,12 @@ extension NavigatorExt on BuildContext {
     RouteSettings? settings,
     bool maintainState = true,
     bool fullscreenDialog = false,
+    bool rootNavigator = false,
   }) async =>
-      await Navigator.of(this).pushReplacement(MaterialPageRoute(
+      await Navigator.of(
+        this,
+        rootNavigator: rootNavigator,
+      ).pushReplacement(MaterialPageRoute(
         builder: (_) => screen,
         settings: settings,
         maintainState: maintainState,
@@ -42,8 +50,12 @@ extension NavigatorExt on BuildContext {
     bool maintainState = true,
     bool fullscreenDialog = false,
     bool routes = false,
+    bool rootNavigator = false,
   }) async =>
-      await Navigator.of(this).pushAndRemoveUntil(
+      await Navigator.of(
+        this,
+        rootNavigator: rootNavigator,
+      ).pushAndRemoveUntil(
           MaterialPageRoute(
             builder: (_) => screen,
             settings: settings,
@@ -56,17 +68,31 @@ extension NavigatorExt on BuildContext {
   Future<dynamic> pushNamed(
     String screenName, {
     Object? arguments,
+    bool rootNavigator = false,
   }) async =>
-      await Navigator.of(this).pushNamed(screenName, arguments: arguments);
+      await Navigator.of(
+        this,
+        rootNavigator: rootNavigator,
+      ).pushNamed(screenName, arguments: arguments);
 
   /// perform replash with routeName
   Future<dynamic> pushReplacementNamed(
     String screenName, {
     Object? arguments,
+    bool rootNavigator = false,
   }) =>
-      Navigator.of(this).pushReplacementNamed(screenName, arguments: arguments);
+      Navigator.of(
+        this,
+        rootNavigator: rootNavigator,
+      ).pushReplacementNamed(screenName, arguments: arguments);
 
   /// perform replash with routeName
-  void popUntil(String screenName) =>
-      Navigator.of(this).popUntil(ModalRoute.withName(screenName));
+  void popUntil(
+    String screenName, {
+    bool rootNavigator = false,
+  }) =>
+      Navigator.of(
+        this,
+        rootNavigator: rootNavigator,
+      ).popUntil(ModalRoute.withName(screenName));
 }
