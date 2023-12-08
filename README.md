@@ -281,6 +281,11 @@ context.pushReplacementNamed('/home');
 
 // popUntil
 context.popUntil('/login');
+
+// with rootNavigator
+context.push(SecondScreen(), rootNavigator: true);
+context.pushReplacement(SecondScreen(), rootNavigator: true);
+context.popUntil('/login', rootNavigator: true);
 ```
 
 ## Widget Extensions
