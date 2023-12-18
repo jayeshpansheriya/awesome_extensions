@@ -68,7 +68,7 @@ Text('Hello World',style: context.labelSmall),
 // OR
 Text('Hello World',style: context.displaySmall),
 // If you want to bold text then 
-Text('Hello World',style: context.labelSmall.bold),   
+Text('Hello World',style: context.labelSmall?.bold),   
 ```
 Similar fontWeight are:
 * `mostThick` The most thick - FontWeight.w900
