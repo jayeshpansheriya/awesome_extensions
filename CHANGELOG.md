@@ -1,4 +1,4 @@
-## [2.0.10] - 2023-12-23
+## [2.0.11] - 2023-12-23
 * Update with flutter 3.16.5
 * Add rootNavigation in Navigator
 * Update Documentation

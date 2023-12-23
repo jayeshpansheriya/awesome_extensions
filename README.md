@@ -520,4 +520,3 @@ You liked this package? then give it a star. If you want to help then:
 Supported by [JetBrains Open Source](https://www.jetbrains.com/community/opensource/#support)
 
 [<img src="https://raw.githubusercontent.com/nslogx/flutter_easyloading/master/images/jetbrains.png" width=200 height=112/>](https://www.jetbrains.com/?from=FlutterEasyLoading)
-

@@ -68,7 +68,7 @@ Text('Hello World',style: context.labelSmall),
 // OR
 Text('Hello World',style: context.displaySmall),
 // If you want to bold text then 
-Text('Hello World',style: context.labelSmall.bold),   
+Text('Hello World',style: context.labelSmall?.bold),   
 ```
 Similar fontWeight are:
 * `mostThick` The most thick - FontWeight.w900
@@ -281,6 +281,11 @@ context.pushReplacementNamed('/home');
 
 // popUntil
 context.popUntil('/login');
+
+// with rootNavigator
+context.push(SecondScreen(), rootNavigator: true);
+context.pushReplacement(SecondScreen(), rootNavigator: true);
+context.popUntil('/login', rootNavigator: true);
 ```
 
 ## Widget Extensions
@@ -515,4 +520,3 @@ You liked this package? then give it a star. If you want to help then:
 Supported by [JetBrains Open Source](https://www.jetbrains.com/community/opensource/#support)
 
 [<img src="https://raw.githubusercontent.com/nslogx/flutter_easyloading/master/images/jetbrains.png" width=200 height=112/>](https://www.jetbrains.com/?from=FlutterEasyLoading)
-
