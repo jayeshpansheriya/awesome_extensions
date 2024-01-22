@@ -488,6 +488,9 @@ print(1.5.hours);
 
 ## Async Extensions
 
+An extention to help dealing with all the possible states of an `AsyncSnapshot` in a `StreamBuilder` / `FutureBuilder`.
+Reduces boilerplate code signifigantly by moving each possible state into it's own function.
+
 ```dart
 StreamBuilder(
   stream: incomingMessagesStream,
@@ -497,7 +500,7 @@ StreamBuilder(
         return Column(
           children: [
             Text('Latest Message: $data'),
-            if (isComplete) Text('Messages are complete'),
+            if (isComplete) Text('No More Message'),
           ]
         );
       },
