@@ -40,9 +40,6 @@ extension MediaQueryExt on BuildContext {
 
   Brightness get platformBrightness => MediaQuery.of(this).platformBrightness;
 
-  /// similar to [MediaQuery.of(this).textScaleFactor]
-  double get textScaleFactor => MediaQuery.of(this).textScaleFactor;
-
   /// get the shortestSide from screen
   double get mediaQueryShortestSide => mediaQuerySize.shortestSide;
 
@@ -118,5 +115,5 @@ extension MediaQueryExt on BuildContext {
   Brightness get mqPlatformBrightness => MediaQuery.platformBrightnessOf(this);
 
   /// similar to [MediaQuery.textScaleFactorOf(context)]
-  double get mqTextScaleFactor => MediaQuery.textScaleFactorOf(this);
+  TextScaler get mqTextScaleFactor => MediaQuery.textScalerOf(this);
 }

@@ -1,8 +1,10 @@
+## [2.0.12] - 2024-01-22
+* Remove Deprecated class as per flutter 3.16.8 
+
 ## [2.0.11] - 2023-12-23
 * Update with flutter 3.16.5
 * Add rootNavigation in Navigator
 * Update Documentation
-
 
 ## [2.0.10] - 2023-10-26
 * Update with flutter 3.13.9
