@@ -5,7 +5,7 @@ extension StringExtension on String {
   /// Example: your name => Your Name, your name => Your name
   String capitalize() {
     if (isEmpty) return this;
-    return split(' ').map((e) => e.capitalize()).join(' ');
+    return split(' ').map((e) => e.capitalizeFirst()).join(' ');
   }
 
   /// Uppercase first letter inside string and let the others lowercase
