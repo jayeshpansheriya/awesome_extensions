@@ -44,6 +44,7 @@ dependencies:
   - [Number Extensions](#number-extensions)
       - [Future \& Duration](#future--duration)
   - [String Extensions](#string-extensions)
+  - [Color Extensions](#color-extensions)
   - [Url Strategy](#url-strategy)
   - [Avatar Image](#avatar-image)
   - [Support](#support)
@@ -460,6 +461,23 @@ print(1.5.hours);
 'true'.isBool();
 ```
 
+## Color Extensions
+
+### Darken
+
+The `darken` method darkens the color by a specified percentage. The percentage should be between 0 and 100. By default, the color is darkened by 10%.
+
+```dart
+Color darkRed = Colors.red.darken(20); // Darkens the red color by 20%
+```
+
+### Lighten
+
+The lighten method lightens the color by a specified percentage. The percentage should be between 0 and 100. By default, the color is lightened by 10%.
+
+```dart
+Color lightRed = Colors.red.lighten(20); // Lightens the red color by 20%
+```
 ## Url Strategy
 
 With a simple call of `setPathUrlStrategy`, your Flutter web app does not have a leading `#`
