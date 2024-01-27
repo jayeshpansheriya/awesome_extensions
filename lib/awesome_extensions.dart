@@ -22,6 +22,7 @@ part 'num_extensions/number_extension.dart';
 part 'src/nil.dart';
 part 'src/shimmer.dart';
 part 'string_extensions/string_extension.dart';
+part 'color_extensions/color_extension.dart';
 part 'text_extensions/text_extension.dart';
 part 'text_extensions/text_style_extension.dart';
 part 'widget_extensions/align_extension.dart';
