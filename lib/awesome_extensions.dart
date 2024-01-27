@@ -12,6 +12,7 @@ export 'package:awesome_extensions/src/platform.dart';
 export 'package:awesome_extensions/src/url_strategy.dart';
 export 'package:awesome_extensions/src/widgets/avatar_image.dart';
 
+part 'async_extensions/async_snapshot_extension.dart';
 part 'context_extensions/dialog_extension.dart';
 part 'context_extensions/media_query_extension.dart';
 part 'context_extensions/navigation_extension.dart';
