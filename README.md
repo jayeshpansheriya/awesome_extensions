@@ -44,6 +44,7 @@ dependencies:
   - [Number Extensions](#number-extensions)
     - [Future \& Duration](#future--duration)
   - [String Extensions](#string-extensions)
+  - [Color Extensions](#color-extensions)
   - [Async Extentions](#async-extensions)
   - [Url Strategy](#url-strategy)
   - [Avatar Image](#avatar-image)
@@ -513,6 +514,53 @@ StreamBuilder(
     );
   },
 );
+```
+
+## Async Extensions
+
+An extention to help dealing with all the possible states of an `AsyncSnapshot` in a `StreamBuilder` / `FutureBuilder`.
+Reduces boilerplate code signifigantly by moving each possible state into it's own function.
+
+```dart
+StreamBuilder(
+  stream: incomingMessagesStream,
+  builder: (context, snapshot) {
+    snapshot.when(
+      data: (data, isComplete) {
+        return Column(
+          children: [
+            Text('Latest Message: $data'),
+            if (isComplete) Text('No More Message'),
+          ]
+        );
+      },
+      error: (error, stackTrace) {
+        return Text('We have an error');
+      },
+      loading: () {
+        return CircularProgressIndicator();
+      },
+    );
+  },
+);
+```
+
+## Color Extensions
+
+### Darken
+
+The `darken` method darkens the color by a specified percentage. The percentage should be between 0 and 100. By default, the color is darkened by 10%.
+
+```dart
+Color darkRed = Colors.red.darken(20); // Darkens the red color by 20%
+```
+
+### Lighten
+
+The lighten method lightens the color by a specified percentage. The percentage should be between 0 and 100. By default, the color is lightened by 10%.
+
+```dart
+Color lightRed = Colors.red.lighten(20); // Lightens the red color by 20%
 ```
 
 ## Url Strategy
