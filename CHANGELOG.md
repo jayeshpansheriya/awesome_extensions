@@ -1,3 +1,6 @@
+## [2.0.13] - 2024-02-28
+* Update with flutter 3.19.1
+
 ## [2.0.12] - 2024-01-22
 * Remove Deprecated class as per flutter 3.16.8 
 
