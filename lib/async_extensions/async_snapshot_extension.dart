@@ -54,13 +54,13 @@ extension AsyncSnapshotExt<T> on AsyncSnapshot<T> {
         return loading();
       case ConnectionState.active:
         if (hasError) {
-          return error(error, stackTrace);
+          return error(this.error!, stackTrace);
         } else {
           return data(this.data as T, false);
         }
       case ConnectionState.done:
         if (hasError) {
-          return error(error, stackTrace!);
+          return error(this.error!, stackTrace!);
         } else {
           return data(this.data as T, true);
         }
