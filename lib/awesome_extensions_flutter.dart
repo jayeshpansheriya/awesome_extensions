@@ -1,21 +1,21 @@
 library awesome_extensions;
 
 export 'package:awesome_extensions/src/platform.dart';
-export 'package:awesome_extensions/src/url_strategy.dart';
+export 'package:awesome_extensions/src/flutter/url_strategy.dart';
 export 'package:awesome_extensions/src/widgets/avatar_image.dart';
 
-export 'async_extensions/async_snapshot_extension.dart';
+export 'src/dart/async_snapshot_extension.dart';
 export 'context_extensions/dialog_extension.dart';
 export 'context_extensions/media_query_extension.dart';
 export 'context_extensions/navigation_extension.dart';
 export 'context_extensions/theme_extension.dart';
 export 'date_extensions/date_extension.dart';
-export 'double_extensions/size_box_extension.dart';
+export 'src/flutter/size_box_extension.dart';
 export 'num_extensions/number_extension.dart';
 export 'src/nil.dart';
 export 'src/shimmer.dart';
-export 'string_extensions/string_extension.dart';
-export 'color_extensions/color_extension.dart';
+export 'src/dart/string_extension.dart';
+export 'src/flutter/color_extension.dart';
 export 'text_extensions/text_extension.dart';
 export 'text_extensions/text_style_extension.dart';
 export 'widget_extensions/align_extension.dart';

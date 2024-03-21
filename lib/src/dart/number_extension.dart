@@ -1,7 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/widgets.dart';
-
 extension NumExtension on num {
   ///   print('+ wait for 2 seconds');
   ///   await 2.delay();
@@ -35,10 +33,4 @@ extension NumExtension on num {
   bool isGreaterThan(num b) => this > b;
 
   bool isEqual(num b) => this == b;
-}
-
-extension SizeBoxNumExtension on num {
-  Widget get widthBox => SizedBox(width: double.tryParse(toString()));
-
-  Widget get heightBox => SizedBox(height: double.tryParse(toString()));
 }
