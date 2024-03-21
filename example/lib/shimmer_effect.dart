@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:awesome_extensions/awesome_extensions.dart';
+import 'package:awesome_extensions/awesome_extensions_flutter.dart';
 import 'package:flutter/material.dart';
 
 class ShimmerEffectExample extends StatefulWidget {

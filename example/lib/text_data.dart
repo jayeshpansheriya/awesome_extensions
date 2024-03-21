@@ -1,5 +1,5 @@
+import 'package:awesome_extensions/awesome_extensions_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:awesome_extensions/awesome_extensions.dart';
 
 class TextExt extends StatelessWidget {
   const TextExt({Key? key}) : super(key: key);

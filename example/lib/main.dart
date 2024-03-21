@@ -1,4 +1,5 @@
-import 'package:awesome_extensions/awesome_extensions.dart';
+import 'package:awesome_extensions/awesome_extensions_dart.dart';
+import 'package:awesome_extensions/awesome_extensions_flutter.dart';
 import 'package:example/avtar_exp.dart';
 import 'package:example/padding_ext.dart';
 import 'package:example/shimmer_effect.dart';
