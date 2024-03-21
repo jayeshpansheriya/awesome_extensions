@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../awesome_extensions.dart';
+import 'package:awesome_extensions/awesome_extensions_flutter.dart';
 
 extension DialogExt on BuildContext {
   void showAlertDialog({

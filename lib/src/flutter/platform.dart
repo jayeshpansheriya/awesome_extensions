@@ -1,5 +1,5 @@
-import 'package:awesome_extensions/src/platform/platform_web.dart'
-    if (dart.library.io) 'package:awesome_extensions/src/platform/platform_io.dart';
+import 'package:awesome_extensions/src/flutter/platform/platform_web.dart'
+    if (dart.library.io) 'package:awesome_extensions/src/flutter/platform/platform_io.dart';
 
 class MyPlatform {
   static bool get isWeb => GeneralPlatform.isWeb;

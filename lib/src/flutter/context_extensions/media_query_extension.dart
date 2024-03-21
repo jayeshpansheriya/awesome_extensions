@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
 
-import '../awesome_extensions.dart';
+import 'package:awesome_extensions/awesome_extensions_flutter.dart';
 
 extension MediaQueryExt on BuildContext {
   /// The same of [MediaQuery.of(context).size]
