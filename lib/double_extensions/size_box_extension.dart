@@ -1,4 +1,4 @@
-part of '../awesome_extensions.dart';
+import 'package:flutter/material.dart';
 
 extension SizeBoxExtension on double {
   Widget get widthBox => SizedBox(width: this);

@@ -1,5 +1,3 @@
-part of '../awesome_extensions.dart';
-
 extension StringExtension on String {
   /// Capitalize each word inside string
   /// Example: your name => Your Name, your name => Your name

@@ -1,4 +1,4 @@
-part of '../awesome_extensions.dart';
+import 'package:flutter/widgets.dart';
 
 /// An extension on [AsyncSnapshot] providing a [when] method.
 extension AsyncSnapshotExt<T> on AsyncSnapshot<T> {

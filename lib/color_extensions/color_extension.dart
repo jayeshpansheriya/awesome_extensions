@@ -1,4 +1,4 @@
-part of '../awesome_extensions.dart';
+import 'dart:ui';
 
 /// Extension on the [Color] class to provide additional functionality.
 extension ColorExtension on Color {

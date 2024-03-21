@@ -1,4 +1,4 @@
-part of '../awesome_extensions.dart';
+import 'package:flutter/widgets.dart';
 
 /// A [Nil] instance, you can use in your layouts.
 const nil = Nil();

@@ -1,4 +1,4 @@
-part of '../awesome_extensions.dart';
+import 'package:flutter/material.dart';
 
 extension WidgetsExtension on Widget {
   Widget withTooltip(String message,

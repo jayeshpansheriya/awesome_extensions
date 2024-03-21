@@ -1,4 +1,6 @@
-part of '../awesome_extensions.dart';
+import 'dart:async';
+
+import 'package:flutter/widgets.dart';
 
 extension NumExtension on num {
   ///   print('+ wait for 2 seconds');

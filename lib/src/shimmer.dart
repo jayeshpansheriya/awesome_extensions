@@ -1,4 +1,5 @@
-part of '../awesome_extensions.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 
 ///
 /// An enum defines all supported directions of shimmer effect

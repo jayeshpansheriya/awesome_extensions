@@ -1,4 +1,4 @@
-part of '../awesome_extensions.dart';
+import 'package:flutter/material.dart';
 
 extension StyledText<T extends Text> on T {
   Text copyWith({

@@ -1,4 +1,4 @@
-part of '../awesome_extensions.dart';
+import 'package:flutter/material.dart';
 
 extension GestureDetectorExtensions on Widget {
   Widget onDoubleTap(Function() function) => GestureDetector(

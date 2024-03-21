@@ -1,4 +1,5 @@
-part of '../awesome_extensions.dart';
+import 'package:awesome_extensions/awesome_extensions.dart';
+import 'package:flutter/material.dart';
 
 extension ShimmerEffect on Widget {
   Widget applyShimmer(

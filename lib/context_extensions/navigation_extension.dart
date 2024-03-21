@@ -1,4 +1,4 @@
-part of '../awesome_extensions.dart';
+import 'package:flutter/material.dart';
 
 extension NavigatorExt on BuildContext {
   ///  just call this [canPop()] method and it would return true if this route can be popped and false if it’s not possible.

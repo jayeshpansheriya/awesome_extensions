@@ -1,4 +1,6 @@
-part of '../awesome_extensions.dart';
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
 
 extension PaddingX on Widget {
   Padding paddingAll(double value, {Key? key}) => Padding(
