@@ -37,15 +37,19 @@ dependencies:
     - [Opacity](#opacity)
     - [Expanded](#expanded)
     - [Flexible](#flexible)
-    - [Other](#other)
-    - [Shimmer Effect](#shimmer-effect)
-    - [Nil Widget](#nil-widget)
+      - [Other](#other)
+      - [Shimmer Effect](#shimmer-effect)
+      - [Nil Widget](#nil-widget)
+    - [SliverToBoxAdapter](#slivertoboxadapter)
   - [Date Extensions](#date-extensions)
   - [Number Extensions](#number-extensions)
     - [Future \& Duration](#future--duration)
   - [String Extensions](#string-extensions)
+  - [Async Extensions](#async-extensions)
+  - [Async Extensions](#async-extensions-1)
   - [Color Extensions](#color-extensions)
-  - [Async Extentions](#async-extensions)
+    - [Darken](#darken)
+    - [Lighten](#lighten)
   - [Url Strategy](#url-strategy)
   - [Avatar Image](#avatar-image)
   - [Support](#support)
@@ -295,6 +299,10 @@ context.popUntil('/login');
 context.push(SecondScreen(), rootNavigator: true);
 context.pushReplacement(SecondScreen(), rootNavigator: true);
 context.popUntil('/login', rootNavigator: true);
+
+context.routeSettings;
+context.routeName;
+context.routeArguments;
 ```
 
 ## Widget Extensions
@@ -427,6 +435,16 @@ text != null ? Text(text) : const SizedBox()
 text != null ? Text(text) : nil
 or
 if (text != null) Text(text)
+```
+
+### SliverToBoxAdapter
+
+```dart
+Text(text).sliver;
+// is same as
+SliverToBoxAdapter(
+  child: Text(text),
+);
 ```
 
 ## Date Extensions
