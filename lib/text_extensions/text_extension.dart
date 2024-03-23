@@ -57,7 +57,7 @@ extension StyledText<T extends Text> on T {
         ),
       ) as T;
 
-  Text rich({
+  Text copyWithRich({
     InlineSpan? textSpan,
     TextStyle? style,
     StrutStyle? strutStyle,
