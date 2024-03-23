@@ -75,17 +75,17 @@ Text('Hello World',style: context.displaySmall),
 Text('Hello World',style: context.labelSmall?.bold),
 ```
 
-Similar fontWeight are:
+FontWeight extensions that apply font weights on `TextStyle`:
 
-- `mostThick` The most thick - FontWeight.w900
-- `extraBold` Extra-bold - FontWeight.w800
-- `bold` Bold - FontWeight.bold - FontWeight.w700
-- `semiBold` Semi-bold - FontWeight.w600
-- `medium` Medium - FontWeight.w500
-- `regular` Regular - FontWeight.w400
-- `light` Light - FontWeight.w300
-- `extraLight` Extra-light - FontWeight.w200
-- `thin` Thin, the least thick - FontWeight.w100
+- `mostThick` or `w900` The most thick - FontWeight.w900
+- `extraBold` or `w800` Extra-bold - FontWeight.w800
+- `bold` or `w700` Bold - FontWeight.bold - FontWeight.w700
+- `semiBold` or `w600` Semi-bold - FontWeight.w600
+- `medium` or `w500` Medium - FontWeight.w500
+- `regular` or `w400` Regular - FontWeight.w400
+- `light` or `w300` Light - FontWeight.w300
+- `extraLight` or `w200` Extra-light - FontWeight.w200
+- `thin` or `w100` Thin, the least thick - FontWeight.w100
 
 Similar 2021 TextStyle are:
 
