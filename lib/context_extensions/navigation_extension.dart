@@ -95,4 +95,8 @@ extension NavigatorExt on BuildContext {
         this,
         rootNavigator: rootNavigator,
       ).popUntil(ModalRoute.withName(screenName));
+
+  Object? get routeSettings => ModalRoute.of(this)?.settings;
+  Object? get routeName => ModalRoute.of(this)?.settings.name;
+  Object? get routeArguments => ModalRoute.of(this)?.settings.arguments;
 }

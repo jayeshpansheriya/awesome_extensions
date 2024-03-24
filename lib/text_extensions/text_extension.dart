@@ -64,6 +64,42 @@ extension StyledText<T extends Text> on T {
         ),
       ) as T;
 
+  Text copyWithRich({
+    InlineSpan? textSpan,
+    TextStyle? style,
+    StrutStyle? strutStyle,
+    TextAlign? textAlign,
+    TextDirection? textDirection,
+    Locale? locale,
+    bool? softWrap,
+    TextOverflow? overflow,
+    double? textScaleFactor,
+    TextScaler? textScaler,
+    int? maxLines,
+    String? semanticsLabel,
+    TextWidthBasis? textWidthBasis,
+    TextHeightBehavior? textHeightBehavior,
+    Color? selectionColor,
+  }) =>
+      Text.rich(
+        textSpan ?? this.textSpan!,
+        style: style ?? this.style,
+        strutStyle: strutStyle ?? this.strutStyle,
+        textAlign: textAlign ?? this.textAlign,
+        locale: locale ?? this.locale,
+        maxLines: maxLines ?? this.maxLines,
+        overflow: overflow ?? this.overflow,
+        semanticsLabel: semanticsLabel ?? this.semanticsLabel,
+        softWrap: softWrap ?? this.softWrap,
+        textDirection: textDirection ?? this.textDirection,
+        // ignore: deprecated_member_use
+        textScaleFactor: textScaleFactor ?? this.textScaleFactor,
+        textScaler: textScaler ?? this.textScaler,
+        textWidthBasis: textWidthBasis ?? this.textWidthBasis,
+        textHeightBehavior: textHeightBehavior ?? this.textHeightBehavior,
+        selectionColor: selectionColor ?? this.selectionColor,
+      );
+
   T textScale(TextScaler textScaler) => copyWith(
         textScaler: textScaler,
       ) as T;
