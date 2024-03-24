@@ -36,11 +36,11 @@ dependencies:
     - [Padding](#padding)
     - [Opacity](#opacity)
     - [Expanded](#expanded)
-    - [Flexible](#flexible)
-      - [Other](#other)
-      - [Shimmer Effect](#shimmer-effect)
-      - [Nil Widget](#nil-widget)
+    - [Flexible](#flexible)  
+    - [Shimmer Effect](#shimmer-effect)
+    - [Nil Widget](#nil-widget)
     - [SliverToBoxAdapter](#slivertoboxadapter)
+    - [Other](#other)
   - [Date Extensions](#date-extensions)
   - [Number Extensions](#number-extensions)
     - [Future \& Duration](#future--duration)
@@ -382,32 +382,6 @@ Flexible(
 Text("text").flexible()
 ```
 
-#### Other
-
-Now we can just add round corners, shadows, align, and added gestures to our Widgets.
-
-```dart
-Container(
-      height: 100,
-       width: 100,)
-         .withRoundCorners(backgroundColor: Colors.grey)
-         .withShadow()
-         .alignAtCenter()
-         .toCenter()
-         .withTooltip('My Tooltip')
-         .paddingOnly(left: 10)
-         .paddingAll(20)
-         .onTap(() => print('tap'))
-         .onLongPress(() => print('long press'))
-```
-
-Automatic detect platform and show material and cupertino dialog
-
-```dart
-context.showAlertDialog(title: 'title',
-                        message: 'message',)
-```
-
 #### Shimmer Effect
 
 ![OYCE3](https://user-images.githubusercontent.com/31765271/177955655-66a856a6-108a-429f-bbad-64b1c3f114aa.gif)
@@ -445,6 +419,32 @@ Text(text).sliver;
 SliverToBoxAdapter(
   child: Text(text),
 );
+```
+
+#### Other
+
+Now we can just add round corners, shadows, align, and added gestures to our Widgets.
+
+```dart
+Container(
+      height: 100,
+       width: 100,)
+         .withRoundCorners(backgroundColor: Colors.grey)
+         .withShadow()
+         .alignAtCenter()
+         .toCenter()
+         .withTooltip('My Tooltip')
+         .paddingOnly(left: 10)
+         .paddingAll(20)
+         .onTap(() => print('tap'))
+         .onLongPress(() => print('long press'))
+```
+
+Automatic detect platform and show material and cupertino dialog
+
+```dart
+context.showAlertDialog(title: 'title',
+                        message: 'message',)
 ```
 
 ## Date Extensions
