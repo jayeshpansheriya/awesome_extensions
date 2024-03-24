@@ -14,6 +14,8 @@ extension StyledText<T extends Text> on T {
     int? maxLines,
     String? semanticsLabel,
     TextWidthBasis? textWidthBasis,
+    TextHeightBehavior? textHeightBehavior,
+    Color? selectionColor,
   }) =>
       Text(
         data ?? this.data ?? "",
@@ -28,6 +30,8 @@ extension StyledText<T extends Text> on T {
         textDirection: textDirection ?? this.textDirection,
         textScaler: textScaler ?? this.textScaler,
         textWidthBasis: textWidthBasis ?? this.textWidthBasis,
+        textHeightBehavior: textHeightBehavior ?? this.textHeightBehavior,
+        selectionColor: selectionColor ?? this.selectionColor,
       );
 
   T textStyle(TextStyle? style) => copyWith(
@@ -43,17 +47,20 @@ extension StyledText<T extends Text> on T {
           fontFamily: style?.fontFamily,
           fontFamilyFallback: style?.fontFamilyFallback,
           fontFeatures: style?.fontFeatures,
+          fontVariations: style?.fontVariations,
           fontSize: style?.fontSize,
           fontStyle: style?.fontStyle,
           fontWeight: style?.fontWeight,
           foreground: style?.foreground,
           height: style?.height,
+          leadingDistribution: style?.leadingDistribution,
           inherit: style?.inherit,
           letterSpacing: style?.letterSpacing,
           locale: style?.locale,
           shadows: style?.shadows,
           textBaseline: style?.textBaseline,
           wordSpacing: style?.wordSpacing,
+          overflow: style?.overflow,
         ),
       ) as T;
 
