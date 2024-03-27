@@ -44,61 +44,6 @@ extension DialogExt on BuildContext {
     }
   }
 
-  void _showIOSDialog(
-      BuildContext context,
-      String title,
-      String message,
-      List<String>? buttons,
-      String? cancelButton,
-      Function(int)? onDone,
-      Color? positiveTitleColor,
-      Color? cancelTitleColor,
-      double? fontSize,
-      bool barrierDismissible) {
-    List<Widget> arrWidget = [];
-
-    if (cancelButton != null) {
-      CupertinoDialogAction action = CupertinoDialogAction(
-        isDefaultAction: true,
-        textStyle: TextStyle(color: cancelTitleColor, fontSize: fontSize),
-        onPressed: () {
-          context.pop();
-        },
-        child: Text(cancelButton),
-      );
-      arrWidget.add(action);
-    }
-
-    if (buttons != null) {
-      for (String buttonTitle in buttons) {
-        CupertinoDialogAction action = CupertinoDialogAction(
-          isDefaultAction: true,
-          textStyle: TextStyle(color: positiveTitleColor, fontSize: fontSize),
-          onPressed: () {
-            int index = buttons.indexOf(buttonTitle);
-            if (onDone != null) {
-              onDone(index);
-            }
-            context.pop();
-          },
-          child: Text(buttonTitle),
-        );
-        arrWidget.add(action);
-      }
-    }
-
-    showDialog(
-        barrierDismissible: barrierDismissible,
-        context: context,
-        builder: (BuildContext context) {
-          return CupertinoAlertDialog(
-            title: Text(title),
-            content: Text(message),
-            actions: arrWidget,
-          );
-        });
-  }
-
   void _showAndroidDialog(
       BuildContext context,
       String title,
@@ -162,6 +107,61 @@ extension DialogExt on BuildContext {
           return AlertDialog(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            title: Text(title),
+            content: Text(message),
+            actions: arrWidget,
+          );
+        });
+  }
+
+  void _showIOSDialog(
+      BuildContext context,
+      String title,
+      String message,
+      List<String>? buttons,
+      String? cancelButton,
+      Function(int)? onDone,
+      Color? positiveTitleColor,
+      Color? cancelTitleColor,
+      double? fontSize,
+      bool barrierDismissible) {
+    List<Widget> arrWidget = [];
+
+    if (cancelButton != null) {
+      CupertinoDialogAction action = CupertinoDialogAction(
+        isDefaultAction: true,
+        textStyle: TextStyle(color: cancelTitleColor, fontSize: fontSize),
+        onPressed: () {
+          context.pop();
+        },
+        child: Text(cancelButton),
+      );
+      arrWidget.add(action);
+    }
+
+    if (buttons != null) {
+      for (String buttonTitle in buttons) {
+        CupertinoDialogAction action = CupertinoDialogAction(
+          isDefaultAction: true,
+          textStyle: TextStyle(color: positiveTitleColor, fontSize: fontSize),
+          onPressed: () {
+            int index = buttons.indexOf(buttonTitle);
+            if (onDone != null) {
+              onDone(index);
+            }
+            context.pop();
+          },
+          child: Text(buttonTitle),
+        );
+        arrWidget.add(action);
+      }
+    }
+
+    showDialog(
+        barrierDismissible: barrierDismissible,
+        context: context,
+        builder: (BuildContext context) {
+          return CupertinoAlertDialog(
             title: Text(title),
             content: Text(message),
             actions: arrWidget,

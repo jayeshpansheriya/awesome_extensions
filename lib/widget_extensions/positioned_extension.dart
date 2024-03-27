@@ -1,20 +1,6 @@
 part of '../awesome_extensions.dart';
 
 extension PositionedExtensions on Widget {
-  Positioned positionTop({
-    Key? key,
-    required double top,
-    double? width,
-    double? height,
-  }) =>
-      Positioned(
-        key: key,
-        top: top,
-        width: width,
-        height: height,
-        child: this,
-      );
-
   Positioned positionBottom({
     Key? key,
     required double bottom,
@@ -23,22 +9,6 @@ extension PositionedExtensions on Widget {
   }) =>
       Positioned(
         key: key,
-        bottom: bottom,
-        width: width,
-        height: height,
-        child: this,
-      );
-
-  Positioned positionTB({
-    Key? key,
-    required double top,
-    required double bottom,
-    double? width,
-    double? height,
-  }) =>
-      Positioned(
-        key: key,
-        top: top,
         bottom: bottom,
         width: width,
         height: height,
@@ -76,6 +46,36 @@ extension PositionedExtensions on Widget {
         bottom: bottom,
         left: left,
         right: right,
+        width: width,
+        height: height,
+        child: this,
+      );
+
+  Positioned positionTB({
+    Key? key,
+    required double top,
+    required double bottom,
+    double? width,
+    double? height,
+  }) =>
+      Positioned(
+        key: key,
+        top: top,
+        bottom: bottom,
+        width: width,
+        height: height,
+        child: this,
+      );
+
+  Positioned positionTop({
+    Key? key,
+    required double top,
+    double? width,
+    double? height,
+  }) =>
+      Positioned(
+        key: key,
+        top: top,
         width: width,
         height: height,
         child: this,

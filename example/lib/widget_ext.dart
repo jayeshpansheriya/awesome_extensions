@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class WidgetExt extends StatelessWidget {
   const WidgetExt({Key? key}) : super(key: key);
@@ -28,6 +29,22 @@ class WidgetExt extends StatelessWidget {
 
           /// Text Widget
           Text('Hello World').bold().fontSize(25).italic(),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget?>[
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.red,
+              ).showIf(true), // or any condition
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.green,
+              ).showIf(false), // or any condition
+            ].notNullWidget(), // returns only not null widgets
+          ),
         ],
       ),
     );

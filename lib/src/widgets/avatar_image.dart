@@ -1,22 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AvatarImage extends StatelessWidget {
-  /// Create Avatar of all types i,e, square, circle, standard with different sizes.
-  const AvatarImage(
-      {Key? key,
-      this.child,
-      this.backgroundColor,
-      this.backgroundImage,
-      this.foregroundColor,
-      this.radius,
-      this.minRadius,
-      this.maxRadius,
-      this.borderRadius,
-      this.shape = AvatarImageShape.circle,
-      this.size = ImageSize.medium})
-      : assert(radius == null || (minRadius == null && maxRadius == null)),
-        super(key: key);
-
   /// Typically a [Text] widget. If the [CircleAvatar] is to have an image, use [backgroundImage] instead.
   final Widget? child;
 
@@ -48,14 +32,31 @@ class AvatarImage extends StatelessWidget {
   /// Not applicable to circle shape
   final BorderRadius? borderRadius;
 
-  // /// The default max if only the min is specified.
-  // static const double _defaultMaxRadius = double.infinity;
+  /// Create Avatar of all types i,e, square, circle, standard with different sizes.
+  const AvatarImage(
+      {Key? key,
+      this.child,
+      this.backgroundColor,
+      this.backgroundImage,
+      this.foregroundColor,
+      this.radius,
+      this.minRadius,
+      this.maxRadius,
+      this.borderRadius,
+      this.shape = AvatarImageShape.circle,
+      this.size = ImageSize.medium})
+      : assert(radius == null || (minRadius == null && maxRadius == null)),
+        super(key: key);
 
-  double get _minDiameter {
-    if (radius == null && minRadius == null && maxRadius == null) {
-      return 1.5 * size;
+  BoxShape get _avatarShape {
+    if (shape == AvatarImageShape.circle) {
+      return BoxShape.circle;
+    } else if (shape == AvatarImageShape.square) {
+      return BoxShape.rectangle;
+    } else if (shape == AvatarImageShape.standard) {
+      return BoxShape.rectangle;
     } else {
-      return 2.0 * (radius ?? minRadius ?? 0);
+      return BoxShape.rectangle;
     }
   }
 
@@ -67,15 +68,14 @@ class AvatarImage extends StatelessWidget {
     }
   }
 
-  BoxShape get _avatarShape {
-    if (shape == AvatarImageShape.circle) {
-      return BoxShape.circle;
-    } else if (shape == AvatarImageShape.square) {
-      return BoxShape.rectangle;
-    } else if (shape == AvatarImageShape.standard) {
-      return BoxShape.rectangle;
+  // /// The default max if only the min is specified.
+  // static const double _defaultMaxRadius = double.infinity;
+
+  double get _minDiameter {
+    if (radius == null && minRadius == null && maxRadius == null) {
+      return 1.5 * size;
     } else {
-      return BoxShape.rectangle;
+      return 2.0 * (radius ?? minRadius ?? 0);
     }
   }
 

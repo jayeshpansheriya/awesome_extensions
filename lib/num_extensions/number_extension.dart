@@ -1,6 +1,26 @@
 part of '../awesome_extensions.dart';
 
 extension NumExtension on num {
+  Duration get days => Duration(hours: (this * Duration.hoursPerDay).round());
+
+  Duration get hours =>
+      Duration(minutes: (this * Duration.minutesPerHour).round());
+
+  /// print(1.seconds + 200.milliseconds);
+  /// print(1.hours + 30.minutes);
+  /// print(1.5.hours);
+  ///```
+  Duration get milliseconds => Duration(microseconds: (this * 1000).round());
+
+  Duration get minutes =>
+      Duration(seconds: (this * Duration.secondsPerMinute).round());
+
+  Duration get seconds => Duration(milliseconds: (this * 1000).round());
+
+  num add(num b) => this + b;
+
+  num decrement() => this - 1;
+
   ///   print('+ wait for 2 seconds');
   ///   await 2.delay();
   ///   print('- 2 seconds completed');
@@ -12,31 +32,27 @@ extension NumExtension on num {
         callback,
       );
 
-  /// print(1.seconds + 200.milliseconds);
-  /// print(1.hours + 30.minutes);
-  /// print(1.5.hours);
-  ///```
-  Duration get milliseconds => Duration(microseconds: (this * 1000).round());
+  num divide(num b) => this / b;
 
-  Duration get seconds => Duration(milliseconds: (this * 1000).round());
+  num increment() => this + 1;
 
-  Duration get minutes =>
-      Duration(seconds: (this * Duration.secondsPerMinute).round());
+  bool isEqual(num b) => this == b;
 
-  Duration get hours =>
-      Duration(minutes: (this * Duration.minutesPerHour).round());
-
-  Duration get days => Duration(hours: (this * Duration.hoursPerDay).round());
-
-  bool isLowerThan(num b) => this < b;
+  bool isGreaterOrEqual(num b) => this >= b;
 
   bool isGreaterThan(num b) => this > b;
 
-  bool isEqual(num b) => this == b;
+  bool isLowerOrEqual(num b) => this <= b;
+
+  bool isLowerThan(num b) => this < b;
+
+  num multiply(num b) => this * b;
+
+  num subtract(num b) => this - b;
 }
 
 extension SizeBoxNumExtension on num {
-  Widget get widthBox => SizedBox(width: double.tryParse(toString()));
-
   Widget get heightBox => SizedBox(height: double.tryParse(toString()));
+
+  Widget get widthBox => SizedBox(width: double.tryParse(toString()));
 }
