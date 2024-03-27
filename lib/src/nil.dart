@@ -17,6 +17,9 @@ class _NilElement extends Element {
   _NilElement(Nil widget) : super(widget);
 
   @override
+  bool get debugDoingBuild => false;
+
+  @override
   void mount(Element? parent, dynamic newSlot) {
     assert(parent is! MultiChildRenderObjectElement, """
         You are using Nil under a MultiChildRenderObjectElement.
@@ -27,9 +30,6 @@ class _NilElement extends Element {
 
     super.mount(parent, newSlot);
   }
-
-  @override
-  bool get debugDoingBuild => false;
 
   @override
   void performRebuild() {

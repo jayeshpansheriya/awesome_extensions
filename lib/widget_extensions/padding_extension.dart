@@ -7,17 +7,14 @@ extension PaddingX on Widget {
         child: this,
       );
 
-  Padding paddingOnly({
-    double left = 0.0,
-    double top = 0.0,
-    double right = 0.0,
-    double bottom = 0.0,
+  Padding paddingFromViewPadding(
+    ViewPadding padding,
+    double devicePixelRatio, {
     Key? key,
   }) =>
       Padding(
         key: key,
-        padding:
-            EdgeInsets.only(top: top, left: left, bottom: bottom, right: right),
+        padding: EdgeInsets.fromViewPadding(padding, devicePixelRatio),
         child: this,
       );
 
@@ -34,14 +31,17 @@ extension PaddingX on Widget {
         child: this,
       );
 
-  Padding paddingFromViewPadding(
-    ViewPadding padding,
-    double devicePixelRatio, {
+  Padding paddingOnly({
+    double left = 0.0,
+    double top = 0.0,
+    double right = 0.0,
+    double bottom = 0.0,
     Key? key,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.fromViewPadding(padding, devicePixelRatio),
+        padding:
+            EdgeInsets.only(top: top, left: left, bottom: bottom, right: right),
         child: this,
       );
 
