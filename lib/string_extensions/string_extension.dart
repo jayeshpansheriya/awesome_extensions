@@ -123,11 +123,7 @@ extension StringExtension on String {
   String ifIsEmpty(String fallback) => isEmpty ? fallback : this;
 
   /// Launch the string as a URL
-  ///
-  /// Returns false if the string is empty or can't be launched
-  ///
-  /// [mode] is optional and defaults to [LaunchMode.platformDefault]
-
+  /// [mode] is the launch mode, default is [LaunchMode.platformDefault]
   Future<bool> launch({
     LaunchMode mode = LaunchMode.platformDefault,
   }) async {
@@ -138,54 +134,42 @@ extension StringExtension on String {
   }
 
   /// Automatically launch the string as an email
-  ///
   /// Adding "mailto:" prefix to the string
-  ///
-  /// Returns false if the string is empty or can't be launched
-
   Future<bool> launchAsEmail() async {
-    if (isEmpty || !await canLaunchUrlString(this)) {
+    final email = 'mailto:$this';
+    if (isEmpty || !await canLaunchUrlString(email)) {
       return false;
     }
-    return await launchUrlString('mailto:$this!');
+    return await launchUrlString(email);
+  }
+
+  /// Automatically launch open file
+  /// Adding "file://" prefix to the string
+  Future<bool> launchAsFile() async {
+    final file = 'file://$this';
+    if (isEmpty || !await canLaunchUrlString(file)) {
+      return false;
+    }
+    return await launchUrlString(file);
   }
 
   /// Automatically launch the string as a phone number
-  ///
   /// Adding "tel:" prefix to the string
-  ///
-  /// Returns false if the string is empty or can't be launched
-
   Future<bool> launchAsPhone() async {
-    if (isEmpty || !await canLaunchUrlString(this)) {
+    final phone = 'tel:$this';
+    if (isEmpty || !await canLaunchUrlString(phone)) {
       return false;
     }
-    return await launchUrlString('tel:$this!');
-  }
-
-  /// Automatically launch the string as a SMS number
-  ///
-  /// Adding "sms:" prefix to the string
-  ///
-  /// Returns false if the string is empty or can't be launched
-
-  Future<bool> launchAsSMS() async {
-    if (isEmpty || !await canLaunchUrlString(this)) {
-      return false;
-    }
-    return await launchUrlString('sms:$this!');
+    return await launchUrlString(phone);
   }
 
   /// Automatically launch the string as a WhatsApp number
-  ///
   /// Adding "https://wa.me/" prefix to the string
-  ///
-  /// Returns false if the string is empty or can't be launched
-
   Future<bool> launchAsWhatsApp() async {
-    if (isEmpty || !await canLaunchUrlString(this)) {
+    final whatsapp = 'https://wa.me/$this';
+    if (isEmpty || !await canLaunchUrlString(whatsapp)) {
       return false;
     }
-    return await launchUrlString('https://wa.me/$this!');
+    return await launchUrlString(whatsapp);
   }
 }
