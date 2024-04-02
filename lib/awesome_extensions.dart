@@ -7,8 +7,6 @@ import 'package:awesome_extensions/src/platform.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:intl/intl.dart' as intl;
-import 'package:url_launcher/url_launcher_string.dart';
 
 export 'package:awesome_extensions/src/platform.dart';
 export 'package:awesome_extensions/src/url_strategy.dart';

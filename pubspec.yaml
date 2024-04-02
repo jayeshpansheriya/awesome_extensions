@@ -14,8 +14,6 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  intl: ^0.19.0
-  url_launcher: ^6.0.6
 
 dev_dependencies:
   flutter_test:
