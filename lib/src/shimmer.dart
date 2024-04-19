@@ -1,16 +1,6 @@
 part of '../awesome_extensions.dart';
 
 ///
-/// An enum defines all supported directions of shimmer effect
-///
-/// * [ShimmerDirection.ltr] left to right direction
-/// * [ShimmerDirection.rtl] right to left direction
-/// * [ShimmerDirection.ttb] top to bottom direction
-/// * [ShimmerDirection.btt] bottom to top direction
-///
-enum ShimmerDirection { ltr, rtl, ttb, btt }
-
-///
 /// A widget renders shimmer effect over [child] widget tree.
 ///
 /// [child] defines an area that shimmer effect blends on. You can build [child]
@@ -114,9 +104,49 @@ class Shimmer extends StatefulWidget {
   }
 }
 
+///
+/// An enum defines all supported directions of shimmer effect
+///
+/// * [ShimmerDirection.ltr] left to right direction
+/// * [ShimmerDirection.rtl] right to left direction
+/// * [ShimmerDirection.ttb] top to bottom direction
+/// * [ShimmerDirection.btt] bottom to top direction
+///
+enum ShimmerDirection { ltr, rtl, ttb, btt }
+
 class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   int _count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      child: widget.child,
+      builder: (BuildContext context, Widget? child) => _Shimmer(
+        direction: widget.direction,
+        gradient: widget.gradient,
+        percent: _controller.value,
+        child: child,
+      ),
+    );
+  }
+
+  @override
+  void didUpdateWidget(Shimmer oldWidget) {
+    if (widget.enabled) {
+      _controller.forward();
+    } else {
+      _controller.stop();
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -136,36 +166,6 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
     if (widget.enabled) {
       _controller.forward();
     }
-  }
-
-  @override
-  void didUpdateWidget(Shimmer oldWidget) {
-    if (widget.enabled) {
-      _controller.forward();
-    } else {
-      _controller.stop();
-    }
-    super.didUpdateWidget(oldWidget);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _controller,
-      child: widget.child,
-      builder: (BuildContext context, Widget? child) => _Shimmer(
-        direction: widget.direction,
-        gradient: widget.gradient,
-        percent: _controller.value,
-        child: child,
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 }
 
@@ -203,17 +203,14 @@ class _ShimmerFilter extends RenderProxyBox {
   _ShimmerFilter(this._percent, this._direction, this._gradient);
 
   @override
-  ShaderMaskLayer? get layer => super.layer as ShaderMaskLayer?;
-
-  @override
   bool get alwaysNeedsCompositing => child != null;
 
-  set percent(double newValue) {
-    if (newValue == _percent) {
+  set direction(ShimmerDirection newDirection) {
+    if (newDirection == _direction) {
       return;
     }
-    _percent = newValue;
-    markNeedsPaint();
+    _direction = newDirection;
+    markNeedsLayout();
   }
 
   set gradient(Gradient newValue) {
@@ -224,12 +221,15 @@ class _ShimmerFilter extends RenderProxyBox {
     markNeedsPaint();
   }
 
-  set direction(ShimmerDirection newDirection) {
-    if (newDirection == _direction) {
+  @override
+  ShaderMaskLayer? get layer => super.layer as ShaderMaskLayer?;
+
+  set percent(double newValue) {
+    if (newValue == _percent) {
       return;
     }
-    _direction = newDirection;
-    markNeedsLayout();
+    _percent = newValue;
+    markNeedsPaint();
   }
 
   @override

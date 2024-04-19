@@ -6,13 +6,13 @@ extension GestureDetectorExtensions on Widget {
         child: this,
       );
 
-  Widget onTap(Function() function) => GestureDetector(
-        onTap: function,
+  Widget onLongPress(Function() function) => GestureDetector(
+        onLongPress: function,
         child: this,
       );
 
-  Widget onLongPress(Function() function) => GestureDetector(
-        onLongPress: function,
+  Widget onTap(Function() function) => GestureDetector(
+        onTap: function,
         child: this,
       );
 }
