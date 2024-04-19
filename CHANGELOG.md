@@ -1,3 +1,7 @@
+## [2.0.14] - 2024-04-19
+* Update with flutter 3.19.6
+* Add some extra `color` `theme` and `num` extensions.
+
 ## [2.0.13] - 2024-02-28
 * Update with flutter 3.19.1
 
