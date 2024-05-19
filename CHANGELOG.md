@@ -1,3 +1,6 @@
+## [2.0.16] - 2024-05-19
+* Support to Flutter web WASM
+
 ## [2.0.15] - 2024-05-19
 * Update with flutter 3.22.0
     

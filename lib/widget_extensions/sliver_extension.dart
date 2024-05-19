@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+part of '../awesome_extensions.dart';
 
 extension WidgetSliver on Widget {
   Widget get sliver {

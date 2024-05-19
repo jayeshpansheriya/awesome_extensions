@@ -40,3 +40,4 @@ part 'widget_extensions/padding_extension.dart';
 part 'widget_extensions/positioned_extension.dart';
 part 'widget_extensions/shimmer_extension.dart';
 part 'widget_extensions/tooltip_extension.dart';
+part 'widget_extensions/sliver_extension.dart';
