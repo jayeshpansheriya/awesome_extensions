@@ -7,7 +7,10 @@ extension ThemeExt on BuildContext {
   AppBarTheme get appBarTheme => Theme.of(this).appBarTheme;
 
   /// performs a simple [Theme.of(context).backgroundColor] action and returns given [backgroundColor]
-  Color get backgroundColor => Theme.of(this).colorScheme.background;
+  Color get backgroundColor => Theme.of(this).colorScheme.surface;
+
+  /// performs a simple [Theme.of(context).backgroundColor] action and returns given [backgroundColor]
+  Color get surface => Theme.of(this).colorScheme.surface;
 
   /// Middle size of the body styles.
   ///
