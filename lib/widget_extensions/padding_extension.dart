@@ -1,58 +1,98 @@
 part of '../awesome_extensions.dart';
 
 extension PaddingX on Widget {
-  Padding paddingAll(double value, {Key? key}) => Padding(
-        key: key,
-        padding: EdgeInsets.all(value),
-        child: this,
-      );
+  Widget paddingAll(double value, {Key? key}) {
+    final padding = EdgeInsets.all(value);
 
-  Padding paddingFromViewPadding(
+    return isSliver()
+        ? SliverPadding(
+            key: key,
+            padding: padding,
+            sliver: this,
+          )
+        : Padding(
+            key: key,
+            padding: padding,
+            child: this,
+          );
+  }
+
+  Widget paddingFromViewPadding(
     ViewPadding padding,
     double devicePixelRatio, {
     Key? key,
-  }) =>
-      Padding(
-        key: key,
-        padding: EdgeInsets.fromViewPadding(padding, devicePixelRatio),
-        child: this,
-      );
+  }) {
+    final viewPadding = EdgeInsets.fromViewPadding(padding, devicePixelRatio);
 
-  Padding paddingLTRB(
+    return isSliver()
+        ? SliverPadding(
+            key: key,
+            padding: viewPadding,
+            sliver: this,
+          )
+        : Padding(
+            key: key,
+            padding: viewPadding,
+            child: this,
+          );
+  }
+
+  Widget paddingLTRB(
     double left,
     double top,
     double right,
     double bottom, {
     Key? key,
-  }) =>
-      Padding(
-        key: key,
-        padding: EdgeInsets.fromLTRB(left, top, right, bottom),
-        child: this,
-      );
+  }) {
+    final padding = EdgeInsets.fromLTRB(left, top, right, bottom);
 
-  Padding paddingOnly({
+    return isSliver()
+        ? SliverPadding(
+            key: key,
+            padding: padding,
+            sliver: this,
+          )
+        : Padding(
+            key: key,
+            padding: padding,
+            child: this,
+          );
+  }
+
+  Widget paddingOnly({
     double left = 0.0,
     double top = 0.0,
     double right = 0.0,
     double bottom = 0.0,
     Key? key,
-  }) =>
-      Padding(
-        key: key,
-        padding:
-            EdgeInsets.only(top: top, left: left, bottom: bottom, right: right),
-        child: this,
-      );
+  }) {
+    final padding = EdgeInsets.only(left: left, top: top, right: right, bottom: bottom);
 
-  Padding paddingSymmetric(
-          {double vertical = 0.0, double horizontal = 0.0, Key? key}) =>
-      Padding(
-        key: key,
-        padding: EdgeInsets.symmetric(
-          vertical: vertical,
-          horizontal: horizontal,
-        ),
-        child: this,
-      );
+    return isSliver()
+        ? SliverPadding(
+            padding: padding,
+            sliver: this,
+          )
+        : Padding(
+            key: key,
+            padding: padding,
+            child: this,
+          );
+  }
+
+  Widget paddingSymmetric({double vert = 0.0, double horiz = 0.0, Key? key}) {
+    final padding = EdgeInsets.symmetric(vertical: vert, horizontal: horiz);
+
+    return isSliver()
+        ? SliverPadding(
+            key: key,
+            padding: padding,
+            sliver: this,
+          )
+        : Padding(
+            key: key,
+            padding: padding,
+            child: this,
+          );
+  }
 }

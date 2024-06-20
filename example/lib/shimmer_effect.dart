@@ -35,17 +35,20 @@ class _ShimmerEffectState extends State<ShimmerEffectExample> {
         builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
           if (snapshot.data == null) {
             return Container(
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: 3,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: EdgeInsets.all(10),
-                    color: Colors.blue,
-                    height: 150,
-                    width: 50,
-                  ).applyShimmer();
-                },
+              child: CustomScrollView(
+                slivers: [
+                  SliverList.builder(
+                    itemCount: 3,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        margin: EdgeInsets.all(10),
+                        color: Colors.blue,
+                        height: 150,
+                        width: 50,
+                      ).applyShimmer();
+                    },
+                  ).paddingOnly(left: 56),
+                ],
               ),
             );
           }

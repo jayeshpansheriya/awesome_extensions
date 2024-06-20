@@ -1,7 +1,7 @@
 part of '../awesome_extensions.dart';
 
 extension WidgetSliver on Widget {
-  Widget get sliver {
+  Widget toSliver() {
     return SliverToBoxAdapter(
       child: this,
     );
