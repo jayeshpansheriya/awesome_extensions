@@ -111,13 +111,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
               ///Date Extensions
               Text('${dateTime.isToday}'),
-              Text('${dateTime.isToday}'),
+              Text('${dateTime.isYesterday}'),
               Text('${dateTime.isSameDate(dateTime)}'),
 
               ///Platform Extension
               if (MyPlatform.isWeb)
                 Text(
-                  'Hello World',
+                  'Hello World Web',
                 ).paddingAll(10.0),
 
               ///Show Platform dialog
