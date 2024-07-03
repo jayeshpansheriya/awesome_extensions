@@ -1,8 +1,11 @@
 part of '../awesome_extensions.dart';
 
-extension ExpandedExtension on Widget {
-  Expanded expanded({int flex = 1}) => Expanded(
-        flex: flex,
-        child: this,
-      );
+extension ExpandedExt on Widget {
+  Expanded expanded({Key? key, int flex = 1}) {
+    return Expanded(
+      key: key,
+      flex: flex,
+      child: this,
+    );
+  }
 }

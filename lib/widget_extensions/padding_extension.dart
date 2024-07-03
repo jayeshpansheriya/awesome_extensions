@@ -1,7 +1,7 @@
 part of '../awesome_extensions.dart';
 
-extension PaddingX on Widget {
-  Widget paddingAll(double value, {Key? key}) {
+extension PaddingExt on Widget {
+  Widget gap(double value, {Key? key}) {
     final padding = EdgeInsets.all(value);
 
     return isSliver()
@@ -17,11 +17,7 @@ extension PaddingX on Widget {
           );
   }
 
-  Widget paddingFromViewPadding(
-    ViewPadding padding,
-    double devicePixelRatio, {
-    Key? key,
-  }) {
+  Widget gapFromViewPadding(ViewPadding padding, double devicePixelRatio, {Key? key}) {
     final viewPadding = EdgeInsets.fromViewPadding(padding, devicePixelRatio);
 
     return isSliver()
@@ -37,13 +33,7 @@ extension PaddingX on Widget {
           );
   }
 
-  Widget paddingLTRB(
-    double left,
-    double top,
-    double right,
-    double bottom, {
-    Key? key,
-  }) {
+  Widget gapLTRB(double left, double top, double right, double bottom, {Key? key}) {
     final padding = EdgeInsets.fromLTRB(left, top, right, bottom);
 
     return isSliver()
@@ -59,13 +49,7 @@ extension PaddingX on Widget {
           );
   }
 
-  Widget paddingOnly({
-    double left = 0.0,
-    double top = 0.0,
-    double right = 0.0,
-    double bottom = 0.0,
-    Key? key,
-  }) {
+  Widget gapOnly({double left = 0.0, double top = 0.0, double right = 0.0, double bottom = 0.0, Key? key}) {
     final padding = EdgeInsets.only(left: left, top: top, right: right, bottom: bottom);
 
     return isSliver()
@@ -80,7 +64,7 @@ extension PaddingX on Widget {
           );
   }
 
-  Widget paddingSymmetric({double vert = 0.0, double horiz = 0.0, Key? key}) {
+  Widget gapSymmetric({double vert = 0.0, double horiz = 0.0, Key? key}) {
     final padding = EdgeInsets.symmetric(vertical: vert, horizontal: horiz);
 
     return isSliver()

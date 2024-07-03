@@ -2,7 +2,6 @@ import 'package:web/web.dart' as html;
 
 html.Navigator _navigator = html.window.navigator;
 
-// ignore: avoid_classes_with_only_static_members
 class GeneralPlatform {
   // @check https://developer.chrome.com/multidevice/user-agent
   static bool get isAndroid => _navigator.appVersion.contains('Android ');

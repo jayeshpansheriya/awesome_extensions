@@ -1,58 +1,74 @@
 part of '../awesome_extensions.dart';
 
-extension NumExtension on num {
-  Duration get days => Duration(hours: (this * Duration.hoursPerDay).round());
+extension NumExt on num {
+  Duration get days {
+    return Duration(hours: (this * Duration.hoursPerDay).round());
+  }
 
-  Duration get hours =>
-      Duration(minutes: (this * Duration.minutesPerHour).round());
+  Duration get hours {
+    return Duration(minutes: (this * Duration.minutesPerHour).round());
+  }
 
-  /// print(1.seconds + 200.milliseconds);
-  /// print(1.hours + 30.minutes);
-  /// print(1.5.hours);
-  ///```
-  Duration get milliseconds => Duration(microseconds: (this * 1000).round());
+  Duration get minutes {
+    return Duration(seconds: (this * Duration.secondsPerMinute).round());
+  }
 
-  Duration get minutes =>
-      Duration(seconds: (this * Duration.secondsPerMinute).round());
+  Duration get seconds {
+    return Duration(milliseconds: (this * 1000).round());
+  }
 
-  Duration get seconds => Duration(milliseconds: (this * 1000).round());
+  Duration get milliseconds {
+    return Duration(microseconds: (this * 1000).round());
+  }
 
-  num add(num b) => this + b;
+  Future delay([FutureOr Function()? callback]) async {
+    return Future.delayed(
+      Duration(milliseconds: (this * 1000).round()),
+      callback,
+    );
+  }
 
-  num decrement() => this - 1;
+  num increment() {
+    return this + 1;
+  }
 
-  ///   print('+ wait for 2 seconds');
-  ///   await 2.delay();
-  ///   print('- 2 seconds completed');
-  ///   print('+ callback in 1.2sec');
-  ///   1.delay(() => print('- 1.2sec callback called'));
-  ///   print('currently running callback 1.2sec');
-  Future delay([FutureOr Function()? callback]) async => Future.delayed(
-        Duration(milliseconds: (this * 1000).round()),
-        callback,
-      );
+  num decrement() {
+    return this - 1;
+  }
 
-  num divide(num b) => this / b;
+  num add(num b) {
+    return this + b;
+  }
 
-  num increment() => this + 1;
+  num subtract(num b) {
+    return this - b;
+  }
 
-  bool isEqual(num b) => this == b;
+  num multiply(num b) {
+    return this * b;
+  }
 
-  bool isGreaterOrEqual(num b) => this >= b;
+  num divide(num b) {
+    return this / b;
+  }
 
-  bool isGreaterThan(num b) => this > b;
+  bool isEqual(num b) {
+    return this == b;
+  }
 
-  bool isLowerOrEqual(num b) => this <= b;
+  bool isGreaterThan(num b) {
+    return this > b;
+  }
 
-  bool isLowerThan(num b) => this < b;
+  bool isGreaterOrEqual(num b) {
+    return this >= b;
+  }
 
-  num multiply(num b) => this * b;
+  bool isLowerThan(num b) {
+    return this < b;
+  }
 
-  num subtract(num b) => this - b;
-}
-
-extension SizeBoxNumExtension on num {
-  Widget get heightBox => SizedBox(height: double.tryParse(toString()));
-
-  Widget get widthBox => SizedBox(width: double.tryParse(toString()));
+  bool isLowerOrEqual(num b) {
+    return this <= b;
+  }
 }

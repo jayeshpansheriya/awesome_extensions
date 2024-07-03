@@ -1,6 +1,6 @@
 part of '../awesome_extensions.dart';
 
-extension DateOnlyCompare on DateTime {
+extension DateExt on DateTime {
   bool get isToday {
     final nowDate = DateTime.now();
     return year == nowDate.year && month == nowDate.month && day == nowDate.day;
