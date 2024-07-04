@@ -1,51 +1,56 @@
 part of '../awesome_extensions.dart';
 
 extension SnackbarExt on BuildContext {
-  void showSnackBar({
-    required String message,
-    Duration duration = const Duration(seconds: 3),
-    SnackBarAction? action,
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason> snackbar({
+    Key? key,
+    Widget? content,
+    String? message,
+    TextStyle? style,
+    TextAlign? textAlign = TextAlign.center,
     Color? backgroundColor,
     double? elevation,
     EdgeInsetsGeometry? margin,
     EdgeInsetsGeometry? padding,
+    double? width,
     ShapeBorder? shape,
-    bool isDismissible = true,
-    bool showIcon = false,
-    IconData? icon,
-    Color? iconColor,
-    double? iconSize,
-    TextStyle? textStyle,
-    SnackBarBehavior behavior = SnackBarBehavior.floating,
-    DismissDirection dismissDirection = DismissDirection.horizontal,
+    HitTestBehavior? hitTestBehavior,
+    SnackBarBehavior? behavior = SnackBarBehavior.floating,
+    SnackBarAction? action,
     double? actionOverflowThreshold,
+    bool? showCloseIcon,
+    Color? closeIconColor,
+    Duration duration = const Duration(seconds: 3),
+    Animation<double>? animation,
     void Function()? onVisible,
+    DismissDirection? dismissDirection,
+    Clip clipBehavior = Clip.antiAlias,
   }) {
-    ScaffoldMessenger.of(this).showSnackBar(
+    return ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
-        content: Row(
-          children: [
-            if (showIcon) Icon(icon, color: iconColor, size: iconSize),
-            const SizedBox(width: 10),
-            Expanded(
-              child: Text(
-                message,
-                style: textStyle,
-              ),
+        key: key,
+        content: content ??
+            Text(
+              message ?? '',
+              style: style,
+              textAlign: textAlign,
             ),
-          ],
-        ),
-        duration: duration,
-        action: action,
         backgroundColor: backgroundColor,
         elevation: elevation,
         margin: margin,
         padding: padding,
+        width: width,
         shape: shape,
-        behavior: behavior,
+        action: action,
+        actionOverflowThreshold: actionOverflowThreshold,
+        duration: duration,
+        animation: animation,
         onVisible: onVisible,
         dismissDirection: dismissDirection,
-        actionOverflowThreshold: actionOverflowThreshold,
+        behavior: behavior,
+        clipBehavior: clipBehavior,
+        hitTestBehavior: hitTestBehavior,
+        showCloseIcon: showCloseIcon,
+        closeIconColor: closeIconColor,
       ),
     );
   }

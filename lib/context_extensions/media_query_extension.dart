@@ -1,119 +1,104 @@
 part of '../awesome_extensions.dart';
 
+/// Common breakpoints for screen sizes
+const double _phoneBreakpoint = 768.0;
+
+const double _tabletBreakpoint = 1024.0;
+
 extension MediaQueryExt on BuildContext {
-  bool get alwaysUse24HourFormat => MediaQuery.of(this).alwaysUse24HourFormat;
+  MediaQueryData get mediaQuery => MediaQuery.of(this);
 
-  /// similar to [MediaQuery.of(this).devicePixelRatio]
-  double get devicePixelRatio => MediaQuery.of(this).devicePixelRatio;
-
-  /// The same of [MediaQuery.of(context).size.height]
-  /// Note: updates when you rezise your screen (like on a browser or
-  /// desktop window)
-  /// performs a simple [Theme.of(context).size] action and returns given [height or width]
-  double get height => mediaQuerySize.height;
-
-  /// check if device is on landscape mode
-  bool get isLandscape => orientation == Orientation.landscape;
-
-  /// True if the shortestSide is largest than 720p
-  bool get isLargeTablet => (mediaQueryShortestSide >= 720);
-
-  /// True if the shortestSide is smaller than 600p
-  bool get isPhone => (mediaQueryShortestSide < 600);
-
-  /// check if device is on portrait mode
-  bool get isPortrait => orientation == Orientation.portrait;
-
-  /// True if the shortestSide is largest than 600p
-  bool get isSmallTablet => (mediaQueryShortestSide >= 600);
-
-  /// True if the current device is Tablet
-  bool get isTablet => isSmallTablet || isLargeTablet;
-
-  /// similar to [MediaQuery.of(context).padding]
-  EdgeInsets get mediaQueryPadding => MediaQuery.of(this).padding;
-
-  /// get the shortestSide from screen
-  double get mediaQueryShortestSide => mediaQuerySize.shortestSide;
-
-  /// The same of [MediaQuery.of(context).size]
-  Size get mediaQuerySize => MediaQuery.of(this).size;
-
-  /// similar to [MediaQuery.of(context).viewInsets]
-  EdgeInsets get mediaQueryViewInsets => MediaQuery.of(this).viewInsets;
-
-  /// similar to [MediaQuery.of(context).viewPadding]
-  EdgeInsets get mediaQueryViewPadding => MediaQuery.of(this).viewPadding;
-
-  /// similar to [MediaQuery.alwaysUse24HourFormatOf(context)]
-  bool get mqAlwaysUse24HourFormat => MediaQuery.alwaysUse24HourFormatOf(this);
-
-  /// similar to [MediaQuery.devicePixelRatioOf(context)]
-  double get mqDevicePixelRatio => MediaQuery.devicePixelRatioOf(this);
-
-  /// The same of MediaQuery.sizeOf(context).height
-  double get mqHeight => mqSize.height;
-
-  /// similar to [MediaQuery.orientationOf(context)]
-  Orientation get mqOrientation => MediaQuery.orientationOf(this);
-
-  /// similar to [ MediaQuery.paddingOf(context)]
-  EdgeInsets get mqPadding => MediaQuery.paddingOf(this);
-
-  /// similar to [MediaQuery.platformBrightnessOf(context)]
-  Brightness get mqPlatformBrightness => MediaQuery.platformBrightnessOf(this);
-
-  /// This change makes MediaQuery an InheritedModel rather than an InheritedWidget,
-  /// so any widget which knows it only depends on a
-  /// specific property of MediaQuery the ability to declare that when reading the MediaQuery from the context.
-
-  /// The same of MediaQuery.sizeOf(context)
   Size get mqSize => MediaQuery.sizeOf(this);
 
-  /// similar to [MediaQuery.textScaleFactorOf(context)]
-  TextScaler get mqTextScaleFactor => MediaQuery.textScalerOf(this);
+  double get height => mqSize.height;
 
-  /// similar to [MediaQuery.viewInsetsOf(context)]
-  EdgeInsets get mqViewInsets => MediaQuery.viewInsetsOf(this);
+  double get width => mqSize.width;
 
-  /// similar to [MediaQuery.viewPaddingOf(context)]
-  EdgeInsets get mqViewPadding => MediaQuery.viewPaddingOf(this);
+  double get shortestSide => mqSize.shortestSide;
 
-  /// The same of [MediaQuery.sizeOf(context).width]
-  /// Note: updates when you rezise your screen (like on a browser or
-  /// desktop window)
-  double get mqWidth => mqSize.width;
+  double get longestSide => mqSize.longestSide;
 
-  /// similar to [MediaQuery.of(context).orientation]
-  Orientation get orientation => MediaQuery.of(this).orientation;
+  double get aspectRation => mqSize.aspectRatio;
 
-  Brightness get platformBrightness => MediaQuery.of(this).platformBrightness;
+  EdgeInsets get mqPadding => MediaQuery.paddingOf(this);
 
-  /// True if width be larger than 800
-  bool get showNavbar => (width > 800);
+  bool get use24HourFormat => MediaQuery.alwaysUse24HourFormatOf(this);
 
-  /// The same of [MediaQuery.of(context).size.width]
-  /// Note: updates when you rezise your screen (like on a browser or
-  /// desktop window)
-  double get width => mediaQuerySize.width;
+  bool get isInvertColors => MediaQuery.invertColorsOf(this);
 
-  /// Returns a specific value according to the screen size
-  /// if the device width is higher than or equal to 1200 return
-  /// [desktop] value. if the device width is higher than  or equal to 600
-  /// and less than 1200 return [tablet] value.
-  /// if the device width is less than 300  return [watch] value.
-  /// in other cases return [mobile] value.
+  double get pixelRatio => MediaQuery.devicePixelRatioOf(this);
+
+  EdgeInsets get viewInsets => MediaQuery.viewInsetsOf(this);
+
+  EdgeInsets get viewPadding => MediaQuery.viewPaddingOf(this);
+
+  Orientation get orientation => MediaQuery.orientationOf(this);
+
+  TextScaler get textScaleFactor => MediaQuery.textScalerOf(this);
+
+  Brightness get platformBrightness => MediaQuery.platformBrightnessOf(this);
+
+  bool get isDisableAnimations => MediaQuery.disableAnimationsOf(this);
+
+  bool get isAccessibleNavigation => MediaQuery.accessibleNavigationOf(this);
+
+  bool get platformIsDarkMode => platformBrightness == Brightness.dark;
+
+  bool get platformIsLightMode => platformBrightness == Brightness.light;
+
+  EdgeInsets get horzMargin => EdgeInsets.symmetric(horizontal: width * 0.05);
+
+  EdgeInsets get vertMargin => EdgeInsets.symmetric(vertical: height * 0.05);
+
+  EdgeInsets get margin => EdgeInsets.all(width * 0.05);
+
+  double get systemOverlaySize => MediaQuery.systemGestureInsetsOf(this).bottom;
+
+  double get statusBarSize => mqPadding.top;
+
+  double get appbarHeight => kToolbarHeight;
+
+  double get navbarHeight => kBottomNavigationBarHeight;
+
+  bool get isPortrait => orientation == Orientation.portrait;
+
+  bool get isLandscape => orientation == Orientation.landscape;
+
+  bool get isSmallPhone => shortestSide <= 360;
+
+  bool get isMediumPhone => shortestSide > 360 && shortestSide <= 480;
+
+  bool get isLargePhone => shortestSide > 480 && shortestSide <= _phoneBreakpoint;
+
+  bool get isPhone => shortestSide <= _phoneBreakpoint;
+
+  bool get isSmallTablet => shortestSide > 768 && shortestSide <= 1024;
+
+  bool get isLargeTablet => shortestSide > 1024 && shortestSide <= 1366;
+
+  bool get isTablet => shortestSide > _phoneBreakpoint && shortestSide <= _tabletBreakpoint;
+
+  bool get isDesktop => width > _tabletBreakpoint;
+
+  bool get showNavbar => isPhone;
+
+  bool get showSidebar => isTablet;
+
+  bool get showExpandedSidebar => isDesktop;
+
   T? responsiveValue<T>({
     T? mobile,
     T? tablet,
+    double tabletBreakpoint = _phoneBreakpoint,
     T? desktop,
+    double desktopBreakpoint = _tabletBreakpoint,
   }) {
-    var deviceWidth = mediaQuerySize.shortestSide;
+    var deviceWidth = shortestSide;
     if (MyPlatform.isDesktop) {
-      deviceWidth = mediaQuerySize.width;
+      deviceWidth = width;
     }
-    if (deviceWidth >= 1200 && desktop != null) return desktop;
-    if (deviceWidth >= 600 && tablet != null) return tablet;
+    if (deviceWidth >= tabletBreakpoint && desktop != null) return desktop;
+    if (deviceWidth >= desktopBreakpoint && tablet != null) return tablet;
     return mobile;
   }
 }

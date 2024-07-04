@@ -2,9 +2,9 @@ library awesome_extensions;
 
 import 'dart:async';
 import 'dart:ui';
+import 'dart:convert';
 
 import 'package:awesome_extensions/src/platform.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -24,12 +24,16 @@ part 'context_extensions/media_query_extension.dart';
 part 'context_extensions/navigation_extension.dart';
 part 'context_extensions/snackbar_extension.dart';
 part 'context_extensions/theme_extension.dart';
+part 'context_extensions/date_extension.dart';
+part 'context_extensions/bottom_sheet_extension.dart';
 
 part 'date_extensions/date_extension.dart';
 
 part 'list_extensions/list_extensions.dart';
 
 part 'int_extensions/int_extension.dart';
+
+part 'map_extensions/map_extension.dart';
 
 part 'double_extensions/double_extension.dart';
 part 'double_extensions/sizedbox_extension.dart';
