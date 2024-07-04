@@ -55,32 +55,32 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text('Shimmer Effect')),
 
-              20.0.heightBox,
+              20.0.vertBox,
 
               /// Text Theme Extensions
               ElevatedButton(
                   onPressed: () {
-                    context.push(TextExt());
+                    context.push(TextExtensionView());
                   },
                   child: Text('Text Theme')),
 
               ///SizeBox Extensions
-              20.0.heightBox,
-              20.0.widthBox,
+              20.0.vertBox,
+              20.0.horzBox,
 
               Row(
                 children: [
                   Text(
                     'Hello World',
                   ),
-                  20.0.widthBox,
+                  20.0.horzBox,
                   Text(
                     'Hello World',
                   )
                 ],
               ),
 
-              20.0.heightBox,
+              20.0.vertBox,
 
               /// Widget Extensions
               ElevatedButton(
@@ -89,16 +89,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text('Widget Ext')),
 
-              20.0.heightBox,
+              20.0.vertBox,
 
               ///Padding Extensions
               ElevatedButton(
                   onPressed: () {
-                    context.push(PaddingExt());
+                    context.push(PaddingExtensionView());
                   },
                   child: Text('Pedding Ext')),
 
-              20.0.heightBox,
+              20.0.vertBox,
 
               ///Avatar
               ElevatedButton(
@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text('Avatar')),
 
-              20.0.heightBox,
+              20.0.vertBox,
 
               ///Date Extensions
               Text('${dateTime.isToday}'),
@@ -118,19 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
               if (MyPlatform.isWeb)
                 Text(
                   'Hello World Web',
-                ).paddingAll(10.0),
-
-              ///Show Platform dialog
-              ElevatedButton(
-                  onPressed: () {
-                    context.showAlertDialog(
-                        title: 'title',
-                        message: 'message',
-                        cancelButtonTitle: 'ok',
-                        cancelTitleColor: Colors.green,
-                        fontSize: 20);
-                  },
-                  child: Text('Show Dialog')),
+                ).gap(10.0),
             ],
           ),
         ));

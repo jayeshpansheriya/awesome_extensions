@@ -15,8 +15,6 @@ export 'package:awesome_extensions/src/widgets/avatar_image.dart';
 part 'src/nil.dart';
 part 'src/shimmer.dart';
 
-part 'async_extensions/async_snapshot_extension.dart';
-
 part 'color_extensions/color_extension.dart';
 
 part 'context_extensions/dialog_extension.dart';
@@ -58,3 +56,5 @@ part 'widget_extensions/padding_extension.dart';
 part 'widget_extensions/positioned_extension.dart';
 part 'widget_extensions/shimmer_extension.dart';
 part 'widget_extensions/sliver_extension.dart';
+part 'widget_extensions/transform_extension.dart';
+part 'widget_extensions/aspect_ratio_extension.dart';

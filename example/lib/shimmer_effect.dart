@@ -45,9 +45,9 @@ class _ShimmerEffectState extends State<ShimmerEffectExample> {
                         color: Colors.blue,
                         height: 150,
                         width: 50,
-                      ).applyShimmer();
+                      ).shimmer();
                     },
-                  ).paddingOnly(left: 56),
+                  ).gapOnly(left: 56),
                 ],
               ),
             );

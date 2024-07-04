@@ -13,44 +13,40 @@ class AvatarExample extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            10.0.heightBox,
+            10.0.vertBox,
             Row(
               children: [
                 AvatarImage(
-                    backgroundImage: NetworkImage(
-                        'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+                    backgroundImage: NetworkImage('https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
                     shape: AvatarImageShape.circle),
-                10.0.widthBox,
+                10.0.horzBox,
                 AvatarImage(
-                    backgroundImage: NetworkImage(
-                        'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+                    backgroundImage: NetworkImage('https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
                     shape: AvatarImageShape.square),
-                10.0.widthBox,
+                10.0.horzBox,
                 AvatarImage(
-                    backgroundImage: NetworkImage(
-                        'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+                    backgroundImage: NetworkImage('https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
                     shape: AvatarImageShape.standard),
               ],
             ),
 
-            10.0.heightBox,
+            10.0.vertBox,
 
             Row(
               children: [
                 AvatarImage(
-                  backgroundImage: NetworkImage(
-                      'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+                  backgroundImage: NetworkImage('https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
                   shape: AvatarImageShape.standard,
                   size: ImageSize.large,
                   child: Text('Lucky'),
                   backgroundColor: Colors.red,
                 ),
-                10.0.widthBox,
+                10.0.horzBox,
                 AvatarImage(
                   shape: AvatarImageShape.standard,
                   child: Text('JP'),
                 ),
-                10.0.widthBox,
+                10.0.horzBox,
                 AvatarImage(
                   shape: AvatarImageShape.circle,
                   child: Text('JP'),
@@ -60,7 +56,7 @@ class AvatarExample extends StatelessWidget {
               ],
             ),
 
-            10.0.heightBox,
+            10.0.vertBox,
             // Avatar(
             //   image: Image.asset('images/avatar.jpeg', scale: 2),
             //   width: 75,

@@ -16,18 +16,18 @@ class WidgetExt extends StatelessWidget {
             height: 100,
             width: 100,
           )
-              .withRoundCorners(backgroundColor: Colors.grey)
-              .withShadow()
-              .alignAtCenter()
-              .toCenter()
-              .withTooltip('just a tooltip')
-              .paddingOnly(left: 10)
-              .paddingAll(20)
+              .radius(backgroundColor: Colors.grey)
+              .shadow()
+              .align()
+              .center()
+              .tooltip('just a tooltip')
+              .gapOnly(left: 10)
+              .gap(20)
               .onTap(() => print('tap'))
               .onLongPress(() => print('long press')),
 
           /// Text Widget
-          Text('Hello World').bold().fontSize(25).italic(),
+          Text('Hello World').bold().size(25).italic(),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

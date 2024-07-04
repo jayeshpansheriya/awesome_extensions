@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 
-class TextExt extends StatelessWidget {
-  const TextExt({Key? key}) : super(key: key);
+class TextExtensionView extends StatelessWidget {
+  const TextExtensionView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class TextExt extends StatelessWidget {
             ),
 
             /// Text Widget
-            Text('Hello World').bold().fontSize(25).italic(),
+            Text('Hello World').bold().size(25).italic(),
           ],
         ),
       ),
