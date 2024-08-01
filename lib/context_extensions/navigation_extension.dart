@@ -80,16 +80,19 @@ extension NavigatorExt on BuildContext {
     bool maintainState = true,
     bool fullscreenDialog = false,
     bool rootNavigator = false,
+    dynamic result,
   }) async =>
       await Navigator.of(
         this,
         rootNavigator: rootNavigator,
-      ).pushReplacement(MaterialPageRoute(
-        builder: (_) => screen,
-        settings: settings,
-        maintainState: maintainState,
-        fullscreenDialog: fullscreenDialog,
-      ));
+      ).pushReplacement(
+          MaterialPageRoute(
+            builder: (_) => screen,
+            settings: settings,
+            maintainState: maintainState,
+            fullscreenDialog: fullscreenDialog,
+          ),
+          result: result);
 
   /// perform replash with routeName
   Future<dynamic> pushReplacementNamed(

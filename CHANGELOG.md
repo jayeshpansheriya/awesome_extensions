@@ -1,3 +1,6 @@
+## [2.0.17] - 2024-08-01
+* Update navigation extension
+
 ## [2.0.16] - 2024-05-19
 * Support to Flutter web WASM
 

@@ -1,6 +1,6 @@
 name: awesome_extensions
 description: An extension to the widget that helps to reduce the boilerplate and adds some helpful methods. and you can make responsive design.
-version: 2.0.16
+version: 2.0.17
 homepage: https://jayeshpansheriya.github.io/awesome_extensions
 repository: https://github.com/jayeshpansheriya/awesome_extensions
 issue_tracker: https://github.com/jayeshpansheriya/awesome_extensions/issues
@@ -14,7 +14,7 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  web: ^0.5.1
+  web: ^1.0.0
 
 dev_dependencies:
   flutter_test:
