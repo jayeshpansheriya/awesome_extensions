@@ -106,6 +106,12 @@ extension StyledText<T extends Text> on T {
         ),
       ) as T;
 
+  T height(double height) => copyWith(
+        style: (style ?? const TextStyle()).copyWith(
+          height: height,
+        ),
+      ) as T;
+
   T textAlignment(TextAlign align) => copyWith(textAlign: align) as T;
 
   T textBaseline(TextBaseline textBaseline) => copyWith(

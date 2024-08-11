@@ -127,6 +127,7 @@ Similar methods are:
 - `fontWeight()` Specific FontWeight
 - `fontSize()` Specific FontSize
 - `letterSpacing()` Specific LetterSpacing
+- `height()` Specific Height
 - `wordSpacing()` Specific WordSpacing
 - `fontFamily()` Specific FontFamily
 - `textShadow()` Specific TextShadow
