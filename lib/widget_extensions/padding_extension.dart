@@ -31,6 +31,19 @@ extension PaddingX on Widget {
         child: this,
       );
 
+  Padding paddingSTEB(
+    double start,
+    double top,
+    double end,
+    double bottom, {
+    Key? key,
+  }) =>
+      Padding(
+        key: key,
+        padding: EdgeInsetsDirectional.fromSTEB(start, top, end, bottom),
+        child: this,
+      );
+
   Padding paddingOnly({
     double left = 0.0,
     double top = 0.0,
