@@ -9,7 +9,10 @@ extension AsyncSnapshotExt<T> on AsyncSnapshot<T> {
 
   /// Check if the [AsyncSnapshot] has an error.
 
-  bool get hasError => connectionState == ConnectionState.done && error != null;
+  bool get hasError =>
+      (connectionState == ConnectionState.active ||
+          connectionState == ConnectionState.done) &&
+      error != null;
 
   /// Check if the [AsyncSnapshot] is still waiting for data.
   bool get isLoading => connectionState == ConnectionState.waiting;
