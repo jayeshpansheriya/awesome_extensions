@@ -3,23 +3,23 @@ import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 
 class ShimmerEffectExample extends StatefulWidget {
-  const ShimmerEffectExample({Key? key}) : super(key: key);
+  const ShimmerEffectExample({super.key});
 
   @override
-  _ShimmerEffectState createState() => _ShimmerEffectState();
+  ShimmerEffectState createState() => ShimmerEffectState();
 }
 
-class _ShimmerEffectState extends State<ShimmerEffectExample> {
+class ShimmerEffectState extends State<ShimmerEffectExample> {
   late StreamController<int> _events;
   @override
   initState() {
     super.initState();
-    _events = new StreamController<int>();
+    _events = StreamController<int>();
     addData();
   }
 
   addData() {
-    Future.delayed(Duration(seconds: 10), () {
+    Future.delayed(const Duration(seconds: 10), () {
       _events.add(0);
     });
   }
@@ -28,36 +28,32 @@ class _ShimmerEffectState extends State<ShimmerEffectExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shimmer Effect'),
+        title: const Text('Shimmer Effect'),
       ),
       body: StreamBuilder<int>(
         stream: _events.stream,
         builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
           if (snapshot.data == null) {
-            return Container(
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: 3,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: EdgeInsets.all(10),
-                    color: Colors.blue,
-                    height: 150,
-                    width: 50,
-                  ).applyShimmer();
-                },
-              ),
+            return ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: 3,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  margin: const EdgeInsets.all(10),
+                  color: Colors.blue,
+                  height: 150,
+                  width: 50,
+                ).applyShimmer();
+              },
             );
           }
 
-          return Container(
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 5,
-              itemBuilder: (BuildContext context, int index) {
-                return Container();
-              },
-            ),
+          return ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 5,
+            itemBuilder: (BuildContext context, int index) {
+              return Container();
+            },
           );
         },
       ),

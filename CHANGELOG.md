@@ -1,3 +1,6 @@
+## [2.0.18-pre] - 2024-09-15
+* Update navigation extension
+
 ## [2.0.17] - 2024-08-01
 * Update navigation extension
 

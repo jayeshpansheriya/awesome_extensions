@@ -10,10 +10,12 @@ void main() {
   // Here we set the URL strategy for our web app.
   // It is safe to call this function when running on mobile or desktop as well.
   setPathUrlStrategy();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,20 +25,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   final String? title;
-  MyHomePage({Key? key, this.title}) : super(key: key);
+  const MyHomePage({super.key, this.title});
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   DateTime dateTime = DateTime.now();
 
   @override
@@ -51,18 +53,18 @@ class _MyHomePageState extends State<MyHomePage> {
               /// Shimmer Effect
               ElevatedButton(
                   onPressed: () {
-                    context.push(ShimmerEffectExample());
+                    context.push(const ShimmerEffectExample());
                   },
-                  child: Text('Shimmer Effect')),
+                  child: const Text('Shimmer Effect')),
 
               20.0.heightBox,
 
               /// Text Theme Extensions
               ElevatedButton(
                   onPressed: () {
-                    context.push(TextExt());
+                    context.push(const TextExt());
                   },
-                  child: Text('Text Theme')),
+                  child: const Text('Text Theme')),
 
               ///SizeBox Extensions
               20.0.heightBox,
@@ -70,11 +72,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
               Row(
                 children: [
-                  Text(
+                  const Text(
                     'Hello World',
                   ),
                   20.0.widthBox,
-                  Text(
+                  const Text(
                     'Hello World',
                   )
                 ],
@@ -85,27 +87,27 @@ class _MyHomePageState extends State<MyHomePage> {
               /// Widget Extensions
               ElevatedButton(
                   onPressed: () {
-                    context.push(WidgetExt());
+                    context.push(const WidgetExt());
                   },
-                  child: Text('Widget Ext')),
+                  child: const Text('Widget Ext')),
 
               20.0.heightBox,
 
               ///Padding Extensions
               ElevatedButton(
                   onPressed: () {
-                    context.push(PaddingExt());
+                    context.push(const PaddingExt());
                   },
-                  child: Text('Pedding Ext')),
+                  child: const Text('Pedding Ext')),
 
               20.0.heightBox,
 
               ///Avatar
               ElevatedButton(
                   onPressed: () {
-                    context.push(AvatarExample());
+                    context.push(const AvatarExample());
                   },
-                  child: Text('Avatar')),
+                  child: const Text('Avatar')),
 
               20.0.heightBox,
 
@@ -116,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
               ///Platform Extension
               if (MyPlatform.isWeb)
-                Text(
+                const Text(
                   'Hello World',
                 ).paddingAll(10.0),
 
@@ -130,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         cancelTitleColor: Colors.green,
                         fontSize: 20);
                   },
-                  child: Text('Show Dialog')),
+                  child: const Text('Show Dialog')),
             ],
           ),
         ));
