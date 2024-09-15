@@ -98,7 +98,7 @@ class MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     context.push(const PaddingExt());
                   },
-                  child: const Text('Pedding Ext')),
+                  child: const Text('Padding Ext')),
 
               20.0.heightBox,
 
