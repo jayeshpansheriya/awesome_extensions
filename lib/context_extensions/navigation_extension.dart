@@ -11,7 +11,10 @@ extension NavigatorExt on BuildContext {
   bool canPop() => Navigator.canPop(this);
 
   /// performs a simple [Navigator.pop] action and returns given [result]
-  void pop<T>({result}) => Navigator.pop(this, result);
+  void pop<T extends Object?>([T? result]) => Navigator.pop(
+        this,
+        result,
+      );
 
   /// perform replash with routeName
   void popUntil(
@@ -24,7 +27,7 @@ extension NavigatorExt on BuildContext {
       ).popUntil(ModalRoute.withName(screenName));
 
   /// performs a simple [Navigator.push] action with given [route]
-  Future<dynamic> push(
+  Future<T?> push<T extends Object?>(
     Widget screen, {
     RouteSettings? settings,
     bool maintainState = true,
@@ -42,7 +45,7 @@ extension NavigatorExt on BuildContext {
       ));
 
   /// perform push and remove route
-  Future<dynamic> pushAndRemoveUntil(
+  Future<T?> pushAndRemoveUntil<T extends Object?>(
     Widget screen, {
     RouteSettings? settings,
     bool maintainState = true,
@@ -54,27 +57,31 @@ extension NavigatorExt on BuildContext {
         this,
         rootNavigator: rootNavigator,
       ).pushAndRemoveUntil(
-          MaterialPageRoute(
-            builder: (_) => screen,
-            settings: settings,
-            maintainState: maintainState,
-            fullscreenDialog: fullscreenDialog,
-          ),
-          (Route<dynamic> route) => routes);
+        MaterialPageRoute(
+          builder: (_) => screen,
+          settings: settings,
+          maintainState: maintainState,
+          fullscreenDialog: fullscreenDialog,
+        ),
+        (Route<dynamic> route) => routes,
+      );
 
   /// perform push with routeName
-  Future<dynamic> pushNamed(
-    String screenName, {
+  Future<T?> pushNamed<T extends Object?>(
+    String routeName, {
     Object? arguments,
     bool rootNavigator = false,
   }) async =>
       await Navigator.of(
         this,
         rootNavigator: rootNavigator,
-      ).pushNamed(screenName, arguments: arguments);
+      ).pushNamed(
+        routeName,
+        arguments: arguments,
+      );
 
   /// performs a simple [Navigator.pushReplacement] action with given [route]
-  Future<dynamic> pushReplacement(
+  Future<T> pushReplacement<T extends Object?>(
     Widget screen, {
     RouteSettings? settings,
     bool maintainState = true,
@@ -86,22 +93,28 @@ extension NavigatorExt on BuildContext {
         this,
         rootNavigator: rootNavigator,
       ).pushReplacement(
-          MaterialPageRoute(
-            builder: (_) => screen,
-            settings: settings,
-            maintainState: maintainState,
-            fullscreenDialog: fullscreenDialog,
-          ),
-          result: result);
+        MaterialPageRoute(
+          builder: (_) => screen,
+          settings: settings,
+          maintainState: maintainState,
+          fullscreenDialog: fullscreenDialog,
+        ),
+        result: result,
+      );
 
   /// perform replash with routeName
-  Future<dynamic> pushReplacementNamed(
-    String screenName, {
+  Future<T?> pushReplacementNamed<T extends Object?, TO extends Object?>(
+    String routeName, {
+    TO? result,
     Object? arguments,
     bool rootNavigator = false,
   }) =>
       Navigator.of(
         this,
         rootNavigator: rootNavigator,
-      ).pushReplacementNamed(screenName, arguments: arguments);
+      ).pushReplacementNamed(
+        routeName,
+        result: result,
+        arguments: arguments,
+      );
 }

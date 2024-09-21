@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 
 class AvatarExample extends StatelessWidget {
-  const AvatarExample({Key? key}) : super(key: key);
+  const AvatarExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Avatar'),
+        title: const Text('Avatar'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -16,17 +16,17 @@ class AvatarExample extends StatelessWidget {
             10.0.heightBox,
             Row(
               children: [
-                AvatarImage(
+                const AvatarImage(
                     backgroundImage: NetworkImage(
                         'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
                     shape: AvatarImageShape.circle),
                 10.0.widthBox,
-                AvatarImage(
+                const AvatarImage(
                     backgroundImage: NetworkImage(
                         'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
                     shape: AvatarImageShape.square),
                 10.0.widthBox,
-                AvatarImage(
+                const AvatarImage(
                     backgroundImage: NetworkImage(
                         'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
                     shape: AvatarImageShape.standard),
@@ -37,24 +37,24 @@ class AvatarExample extends StatelessWidget {
 
             Row(
               children: [
-                AvatarImage(
+                const AvatarImage(
                   backgroundImage: NetworkImage(
                       'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
                   shape: AvatarImageShape.standard,
                   size: ImageSize.large,
-                  child: Text('Lucky'),
                   backgroundColor: Colors.red,
+                  child: Text('Lucky'),
                 ),
                 10.0.widthBox,
-                AvatarImage(
+                const AvatarImage(
                   shape: AvatarImageShape.standard,
                   child: Text('JP'),
                 ),
                 10.0.widthBox,
-                AvatarImage(
+                const AvatarImage(
                   shape: AvatarImageShape.circle,
-                  child: Text('JP'),
                   backgroundColor: Colors.red,
+                  child: Text('JP'),
                   // borderRadius: BorderRadius.circular(10),
                 ),
               ],
