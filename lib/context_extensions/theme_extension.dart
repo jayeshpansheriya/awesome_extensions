@@ -193,4 +193,10 @@ extension ThemeExt on BuildContext {
   /// Titles are smaller than headline styles and should be used for shorter,
   /// medium-emphasis text.
   TextStyle? get titleSmall => textTheme.titleSmall;
+
+  /// Checks if the current theme is dark.
+  bool get isDark => Theme.of(this).brightness == Brightness.dark;
+
+  /// Checks if the current theme is light.
+  bool get isLight => Theme.of(this).brightness == Brightness.light;
 }
