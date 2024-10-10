@@ -47,7 +47,20 @@ class WidgetExt extends StatelessWidget {
               ).showIf(false), // or any condition
             ].notNullWidget(), // returns only not null widgets
           ),
-        ],
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Hello').paddingAll(5),
+              const Text('World').paddingAll(5),
+              const Text('Seperated').paddingAll(5),
+              const Text('By').paddingAll(5),
+              const Text('Commas').paddingAll(5),
+            ].separatedby(
+              const Text(','),
+            ),
+          ),
+        ].separatedby(10.heightBox)
       ),
     );
   }

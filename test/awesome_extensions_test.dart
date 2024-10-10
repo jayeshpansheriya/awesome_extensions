@@ -290,4 +290,48 @@ void main() {
       });
     });
   });
+
+    group('separatedby', () {
+    test('seperate should insert separator between elements', () {
+      final List<Widget> widgets = [
+        const Text('Item 1'),
+        const Text('Item 2'),
+        const Text('Item 3'),
+      ];
+      const Widget separator = Divider();
+
+      final List<Widget> result = widgets.separatedby(separator);
+
+      expect(result.length, 5);
+      expect(result[0], isInstanceOf<Text>());
+      expect(result[1], isInstanceOf<Divider>());
+      expect(result[2], isInstanceOf<Text>());
+      expect(result[3], isInstanceOf<Divider>());
+      expect(result[4], isInstanceOf<Text>());
+    });
+
+    test('seperate should return empty list when original list is empty', () {
+      final List<Widget> widgets = [];
+      const Widget separator = Divider();
+
+      final List<Widget> result = widgets.separatedby(separator);
+
+      expect(result, isEmpty);
+    });
+
+    test('seperate should return the same list when it contains only one element', () {
+      final List<Widget> widgets = [const Text('Item 1')];
+      const Widget separator = Divider();
+
+      final List<Widget> result = widgets.separatedby(separator);
+
+      expect(result.length, 1);
+      expect(result[0], isInstanceOf<Text>());
+    });
+
+    test('seperate should assert when list is not a List<Widget>', () {
+      final List<int> widgets = [1, 2, 3];
+      expect(() => widgets.separatedby(const Divider()), throwsAssertionError);
+    });
+  });
 }

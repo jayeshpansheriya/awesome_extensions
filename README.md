@@ -41,6 +41,7 @@ dependencies:
     - [Nil Widget](#nil-widget)
     - [SliverToBoxAdapter](#slivertoboxadapter)
     - [Other](#other)
+  - [List Extensions](#list-extensions)
   - [Date Extensions](#date-extensions)
   - [Number Extensions](#number-extensions)
     - [Future \& Duration](#future--duration)
@@ -446,6 +447,48 @@ Automatic detect platform and show material and cupertino dialog
 context.showAlertDialog(title: 'title',
                         message: 'message',)
 ```
+
+## List Extensions
+
+#### notNullWidget
+  
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: <Widget?>[
+    Container(
+      height: 100,
+      width: 100,
+      color: Colors.red,
+    ).showIf(true),
+    Container(
+      height: 100,
+      width: 100,
+      color: Colors.green,
+    ).showIf(false),
+  ].notNullWidget(), // returns only not null widgets
+),
+```
+
+#### SeparatedBy
+
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    const Text('Hello').paddingAll(5),
+    const Text('World').paddingAll(5),
+    const Text('Seperated').paddingAll(5),
+    const Text('By').paddingAll(5),
+    const Text('Commas').paddingAll(5),
+  ].separatedby(
+    const Text(','),
+  ),
+),
+```
+
+
+<img  alt="Screenshot 2024-10-10 at 13 34 14" src="https://github.com/user-attachments/assets/b64a6a65-468b-43be-88b5-9ee2271971b9">
 
 ## Date Extensions
 
