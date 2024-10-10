@@ -450,6 +450,26 @@ context.showAlertDialog(title: 'title',
 
 ## List Extensions
 
+#### notNullWidget
+  
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: <Widget?>[
+    Container(
+      height: 100,
+      width: 100,
+      color: Colors.red,
+    ).showIf(true),
+    Container(
+      height: 100,
+      width: 100,
+      color: Colors.green,
+    ).showIf(false),
+  ].notNullWidget(), // returns only not null widgets
+),
+```
+
 #### SeparatedBy
 
 ```dart
