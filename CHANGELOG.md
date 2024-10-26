@@ -1,3 +1,7 @@
+## [2.0.19] - 2024-10-26
+* Add light and dark theme extensions
+* Add 'separatedby' method to ListExtension
+
 ## [2.0.18] - 2024-09-24
 * Update navigation extension
 
