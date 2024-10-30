@@ -1,6 +1,7 @@
 part of '../awesome_extensions.dart';
 
 extension DialogExt on BuildContext {
+  @Deprecated('use showAdaptiveAlertDialog')
   void showAlertDialog({
     required String title,
     required String message,
@@ -167,5 +168,108 @@ extension DialogExt on BuildContext {
             actions: arrWidget,
           );
         });
+  }
+
+  Future<T?> showAdaptiveAlertDialog<T>({
+    required String title,
+    required String message,
+    bool? barrierDismissible,
+    Color? barrierColor,
+    String? barrierLabel,
+    bool useSafeArea = true,
+    bool useRootNavigator = true,
+    RouteSettings? routeSettings,
+    Offset? anchorPoint,
+    TraversalEdgeBehavior? traversalEdgeBehavior,
+    double? fontSize,
+    String? cancelButtonText,
+    Color? cancelButtonTextColor,
+    Function()? onCancelPress,
+    List<String>? positiveButtonTexts,
+    Color? positiveTextColor,
+    Function(int index)? onPositivePress,
+  }) =>
+      showAdaptiveDialog(
+        context: this,
+        barrierDismissible: barrierDismissible,
+        barrierColor: barrierColor,
+        barrierLabel: barrierLabel,
+        useSafeArea: useSafeArea,
+        useRootNavigator: useRootNavigator,
+        routeSettings: routeSettings,
+        anchorPoint: anchorPoint,
+        traversalEdgeBehavior: traversalEdgeBehavior,
+        builder: (context) {
+          List<Widget> actions = [];
+
+          if (cancelButtonText != null) {
+            actions.add(
+              adaptiveAction(
+                context: context,
+                onPressed: () {
+                  if (onCancelPress != null) {
+                    onCancelPress.call();
+                  } else {
+                    context.pop();
+                  }
+                },
+                child: Text(
+                  cancelButtonText,
+                  style: TextStyle(
+                    color: cancelButtonTextColor,
+                    fontSize: fontSize,
+                  ),
+                ),
+              ),
+            );
+          }
+
+          if (positiveButtonTexts != null) {
+            for (String buttonText in positiveButtonTexts) {
+              actions.add(
+                adaptiveAction(
+                  context: context,
+                  onPressed: () {
+                    int index = positiveButtonTexts.indexOf(buttonText);
+                    context.pop();
+                    if (onPositivePress != null) {
+                      onPositivePress.call(index);
+                    }
+                  },
+                  child: Text(
+                    buttonText,
+                    style: TextStyle(
+                      color: positiveTextColor,
+                      fontSize: fontSize,
+                    ),
+                  ),
+                ),
+              );
+            }
+          }
+
+          return AlertDialog.adaptive(
+            title: Text(title),
+            content: Text(message),
+            actions: actions,
+          );
+        },
+      );
+
+  Widget adaptiveAction({
+    required BuildContext context,
+    required VoidCallback onPressed,
+    required Widget child,
+  }) {
+    switch (theme.platform) {
+      case TargetPlatform.android:
+      case TargetPlatform.fuchsia:
+      case TargetPlatform.linux:
+      case TargetPlatform.windows:
+        return TextButton(onPressed: onPressed, child: child);
+      case TargetPlatform.iOS:
+      case TargetPlatform.macOS:
+        return CupertinoDialogAction(onPressed: onPressed, child: child);
+    }
   }
 }

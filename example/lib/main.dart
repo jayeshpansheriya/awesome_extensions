@@ -125,12 +125,12 @@ class MyHomePageState extends State<MyHomePage> {
               ///Show Platform dialog
               ElevatedButton(
                   onPressed: () {
-                    context.showAlertDialog(
-                        title: 'title',
-                        message: 'message',
-                        cancelButtonTitle: 'ok',
-                        cancelTitleColor: Colors.green,
-                        fontSize: 20);
+                    context.showAdaptiveAlertDialog(
+                      title: 'title',
+                      message: 'message',
+                      cancelButtonText: 'ok',
+                      cancelButtonTextColor: Colors.red,
+                    );
                   },
                   child: const Text('Show Dialog')),
             ],

@@ -291,7 +291,7 @@ void main() {
     });
   });
 
-    group('separatedby', () {
+  group('separatedby', () {
     test('seperate should insert separator between elements', () {
       final List<Widget> widgets = [
         const Text('Item 1'),
@@ -319,7 +319,9 @@ void main() {
       expect(result, isEmpty);
     });
 
-    test('seperate should return the same list when it contains only one element', () {
+    test(
+        'seperate should return the same list when it contains only one element',
+        () {
       final List<Widget> widgets = [const Text('Item 1')];
       const Widget separator = Divider();
 
