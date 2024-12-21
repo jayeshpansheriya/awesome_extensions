@@ -1,139 +1,200 @@
+# Changelog
+
+## [2.0.20] - 2024-12-21
+### Added
+- **Adoptive Dialog**: Replaced deprecated `showAlertDialog` method in context extension with a new implementation, ensuring compatibility with future versions of Flutter.
+- **Color Extension Update**: Enhanced and updated the color extension to align with the latest Flutter theming and color management practices.
+
+### Changed
+- **Flutter 3.27.1 Compatibility**: Refactored the codebase to ensure compatibility with Flutter 3.27.1, addressing API deprecations and breaking changes.
+
 ## [2.0.19] - 2024-10-26
-* Add light and dark theme extensions
-* Add 'separatedby' method to ListExtension
+### Added
+- **Light and Dark Theme Extensions**: Introduced extensions for easier management of light and dark themes in Flutter.
+- **`separatedBy` Method**: Added a new `separatedBy` method to `ListExtension`.
 
 ## [2.0.18] - 2024-09-24
-* Update navigation extension
+### Changed
+- **Navigation Extension Update**: Improved the functionality of the navigation extension.
 
 ## [2.0.17] - 2024-08-01
-* Update navigation extension
+### Changed
+- **Navigation Extension Update**: Further updates and optimizations to the navigation extension.
 
 ## [2.0.16] - 2024-05-19
-* Support to Flutter web WASM
+### Added
+- **Flutter Web WASM Support**: Added support for Flutter Web with WASM (WebAssembly).
 
 ## [2.0.15] - 2024-05-19
-* Update with flutter 3.22.0
-    
+### Changed
+- **Flutter 3.22.0 Compatibility**: Updated the codebase to be compatible with Flutter 3.22.0.
+
 ## [2.0.14] - 2024-04-19
-* Update with flutter 3.19.6
-* Add some extra `color` `theme` and `num` extensions.
+### Changed
+- **Flutter 3.19.6 Compatibility**: Updated the codebase to be compatible with Flutter 3.19.6.
+
+### Added
+- **Color, Theme, and Num Extensions**: Added additional extensions for color, theme, and number handling.
 
 ## [2.0.13] - 2024-02-28
-* Update with flutter 3.19.1
+### Changed
+- **Flutter 3.19.1 Compatibility**: Updated the codebase to be compatible with Flutter 3.19.1.
 
 ## [2.0.12] - 2024-01-22
-* Remove Deprecated class as per flutter 3.16.8 
+### Removed
+- **Deprecated Classes**: Removed deprecated classes as per Flutter 3.16.8.
 
 ## [2.0.11] - 2023-12-23
-* Update with flutter 3.16.5
-* Add rootNavigation in Navigator
-* Update Documentation
+### Changed
+- **Flutter 3.16.5 Compatibility**: Updated the codebase to be compatible with Flutter 3.16.5.
+
+### Added
+- **Root Navigation**: Added `rootNavigation` to the Navigator extension.
+- **Documentation Updates**: Improved and updated the project documentation.
 
 ## [2.0.10] - 2023-10-26
-* Update with flutter 3.13.9
+### Changed
+- **Flutter 3.13.9 Compatibility**: Updated the codebase to be compatible with Flutter 3.13.9.
 
 ## [2.0.9] - 2023-07-16
-* By calling `MediaQuery.sizeof(context)`, the widget will rebuild only when the size changes, avoiding unnecessary rebuilds.
-* Add Some media query extension using MediaQuery as Inherited Model
+### Added
+- **Media Query Extension**: By calling `MediaQuery.sizeOf(context)`, the widget will now rebuild only when the size changes, preventing unnecessary rebuilds.
+- **Inherited Model Media Query**: Added extensions for better handling of media queries using Inherited Model.
 
 ## [2.0.8] - 2023-05-28
-* Remove `WindowPadding`, This feature was deprecated after v3.8.0-14.0.pre.
+### Removed
+- **`WindowPadding`**: This feature was deprecated after `v3.8.0-14.0.pre`.
 
 ## [2.0.7] - 2023-04-21
-* Fix naming issue in `Flexible` Extension
+### Fixed
+- **Naming Issue in `Flexible` Extension**: Corrected naming issues within the `Flexible` extension.
 
 ## [2.0.6] - 2023-04-16
-* Add new `Expandable` Extension
-* Add new `Flexible` Extension
-* Update Documentation
+### Added
+- **`Expandable` Extension**: Introduced a new extension for expandable widgets.
+- **`Flexible` Extension**: Added a new extension to handle flexible layouts more easily.
+
+### Updated
+- **Documentation**: Improved the project documentation for better clarity.
 
 ## [2.0.5] - 2023-02-08
-* Add new `Opacity` Extension
-* Update Documentation
-* Update With Flutter 3.7
+### Added
+- **`Opacity` Extension**: Introduced an extension for better opacity control.
+
+### Updated
+- **Documentation**: Updated project documentation.
+- **Flutter 3.7 Compatibility**: Updated the project to support Flutter 3.7.
 
 ## [2.0.4] - 2022-11-23
-* Add new `Nil` widget
-* Update Documentation
+### Added
+- **Nil Widget**: Added a new `Nil` widget for better handling of empty or null states.
+
+### Updated
+- **Documentation**: Improved project documentation for easier usage.
 
 ## [2.0.3] - 2022-08-01
-* Update Documentation
-  
+### Updated
+- **Documentation**: Continued improving documentation.
+
 ## [2.0.2] - 2022-05-27
-* Update Code With Flutter 3.
+### Changed
+- **Flutter 3.0 Support**: Updated the codebase to be compatible with Flutter 3.0.
 
 ## [2.0.0] - 2022-05-01
-* Update documentation
-* Remove 2018 text style
-* Changes in navigation extention name, read readme file for more detail
-* Add more `num` extension
-* Add `String` extension
-* Add `alert dialog` extension
+### Updated
+- **Documentation**: Comprehensive update to the project documentation.
+- **Removed 2018 Text Style**: Removed deprecated 2018 text style.
+- **Navigation Extension Rename**: Renamed navigation extension. Refer to the README for more details.
+
+### Added
+- **Num Extension**: Introduced additional extensions for number handling.
+- **String Extension**: Added new extensions for string manipulation.
+- **Alert Dialog Extension**: Added new alert dialog extension.
 
 ## [1.1.0] - 2022-03-12
-* Update documentation
-* Introduce Flutter SDK constraint minimum of 2.10
-* Update 2018 text style names to 2021 text style names (`display`, `headline`, `title`, `body`, `label` X `large`, `medium`, `small`)
+### Updated
+- **Documentation**: Updated project documentation.
+- **Flutter SDK Constraint**: Introduced a minimum Flutter SDK version of 2.10.
+- **Text Style Renaming**: Updated text style names from 2018 to 2021 (`display`, `headline`, `title`, `body`, `label`, etc.).
 
 ## [1.0.8] - 2022-02-26
-* Update documentation
-* Update example
-  
+### Updated
+- **Documentation**: Updated the project documentation.
+- **Example Updates**: Updated the example code for clarity.
+
 ## [1.0.7] - 2021-12-05
-* Update navigation extension
+### Updated
+- **Navigation Extension**: Updated the navigation extension for better functionality.
 
 ## [1.0.6] - 2021-09-14
-* Add `num` extension
-* Update example
-* Update readme file
+### Added
+- **Num Extension**: Added a new extension for handling numeric values.
+
+### Updated
+- **Example**: Updated the example code to reflect the new changes.
+- **README**: Updated the README file with more details.
 
 ## [1.0.5] - 2021-07-25
-* Add `Avtar` image widget
-* Update example
-* Update readme file
+### Added
+- **Avatar Widget**: Introduced an `Avatar` image widget for profile images.
+
+### Updated
+- **Example**: Updated the example code.
+- **README**: Updated the README file.
 
 ## [1.0.4] - 2021-07-01
-* Update example
-* Update readme file
+### Updated
+- **Example**: Updated the example code.
+- **README**: Updated the README file.
 
 ## [1.0.3] - 2021-06-24
-* Add `Text` extension
-* Add `Align` extension
-* Add `Center` extension
-* Add `Container` extension
-* Add `Gesture Detector` extension
-* Add `ToolTip` extension
+### Added
+- **Text Extension**: Added an extension for `Text` widget manipulation.
+- **Align Extension**: Added an extension for `Align` widget manipulation.
+- **Center Extension**: Added an extension for `Center` widget manipulation.
+- **Container Extension**: Added an extension for `Container` widget manipulation.
+- **Gesture Detector Extension**: Added an extension for `GestureDetector` widget manipulation.
+- **ToolTip Extension**: Added an extension for `Tooltip` widget manipulation.
 
 ## [1.0.2] - 2021-06-09
-* Add Url Strategy for web url
-* Update example with null safety
+### Added
+- **URL Strategy for Web**: Introduced a URL strategy for better handling of web URLs.
+- **Example Update**: Updated the example to support null safety.
 
 ## [1.0.1] - 2021-04-26
-* Add new `Theme` related extenstion
-* Add `Platform` related extension
-* Add more extension for responsive screen according to the screen size
+### Added
+- **Theme Extensions**: Added new theme-related extensions for easier management.
+- **Platform Extensions**: Added platform-specific extensions for better platform handling.
+- **Responsive Screen Extensions**: Added extensions for responsive screen layouts based on screen size.
 
 ## [1.0.0] - 2021-04-22
-* Migrate to full null safety
+### Changed
+- **Null Safety Migration**: Migrated the project to full null safety support.
 
 ## [0.0.6] - 2021-04-03
-* Add some context extension for `MediaQuery`
+### Added
+- **Context Extension for `MediaQuery`**: Added context extensions for better handling of media queries.
 
 ## [0.0.5] - 2021-03-06
-* Add `Shimmer` extension
+### Added
+- **Shimmer Extension**: Added a new `Shimmer` extension for shimmer effects.
 
 ## [0.0.4] - 2021-02-11
-* Add `BuildContext` extension
+### Added
+- **BuildContext Extension**: Added new extensions for `BuildContext`.
 
 ## [0.0.3] - 2021-02-09
-* Update example
-* Update readme file
+### Updated
+- **Example**: Updated the example.
+- **README**: Updated the README file.
 
 ## [0.0.2] - 2021-02-08
-* Add example
-* Add readme file
+### Added
+- **Example**: Added an example project.
+- **README**: Added the
 
 ## [0.0.1] - 2021-02-08
-* Add `TEXT` style extension
-* Add `DATE` extension
-* Add `SizedBox` extension
+### Added
+- **`TEXT` Style Extension**: Introduced a `TEXT` extension for easier manipulation and usage of text styles.
+- **`DATE` Extension**: Added a `DATE` extension for handling date-related operations.
+- **`SizedBox` Extension**: Added an extension for `SizedBox` for more flexible and reusable sizing.
