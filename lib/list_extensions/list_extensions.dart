@@ -6,7 +6,6 @@ extension ListExtension on List {
     return whereType<Widget>().toList();
   }
 
-
   /// Returns a new list of widgets with the specified separator widget inserted
   /// between each pair of widgets from the original list.
   ///
