@@ -1,5 +1,5 @@
+import 'package:awesome_extensions/awesome_extensions_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:awesome_extensions/awesome_extensions.dart';
 
 class AvatarExample extends StatelessWidget {
   const AvatarExample({super.key});

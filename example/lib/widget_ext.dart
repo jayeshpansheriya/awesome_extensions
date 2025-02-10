@@ -1,6 +1,7 @@
 import 'dart:developer';
 
-import 'package:awesome_extensions/awesome_extensions.dart';
+import 'package:awesome_extensions/awesome_extensions_dart.dart';
+import 'package:awesome_extensions/awesome_extensions_flutter.dart';
 import 'package:flutter/material.dart';
 
 class WidgetExt extends StatelessWidget {
