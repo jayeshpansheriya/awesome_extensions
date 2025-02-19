@@ -1,5 +1,9 @@
 # Changelog
 
+## [3.0.0] - 2025-02-10
+### Changed
+- Split Package into Dart and Flutter Modules
+
 ## [2.0.20] - 2024-12-21
 ### Added
 - **Adoptive Dialog**: Replaced deprecated `showAlertDialog` method in context extension with a new implementation, ensuring compatibility with future versions of Flutter.
