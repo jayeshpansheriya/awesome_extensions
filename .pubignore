@@ -1,5 +1,7 @@
 # FVM
 .fvm/fvm_config.json
 
+example/pubspec.lock
+  
 # Doc Website
 docs/
