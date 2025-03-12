@@ -10,7 +10,6 @@ export 'platform.dart';
 export 'shimmer.dart';
 export 'size_box_extension.dart';
 export 'size_box_num_extension.dart';
-export 'sliver_extension.dart';
 export 'text_extensions/text_extension.dart';
 export 'text_extensions/text_style_extension.dart';
 export 'url_strategy.dart';

@@ -1,6 +1,6 @@
 # Changelog
 
-## [3.0.0] - 2025-02-10
+## [2.0.21] - 2025-03-12
 ### Changed
 - Split Package into Dart and Flutter Modules
 
