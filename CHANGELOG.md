@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.22] - 2025-06-15
+### Added
+- **Color Extension Enhancement**: Added `alphaPercent` method to `ColorExtension` for setting alpha transparency using percentage values (0-100).
+
+### Changed
+- **Flutter 3.32.4 Compatibility**: Updated Flutter SDK version from 3.29.1 to 3.32.4 for latest features and improvements.
+- **Tooltip Extension Update**: Replaced deprecated `height` parameter with `constraints` parameter in `withTooltip` extension method to align with Flutter's latest API changes.
+- **Development Dependencies**: Updated `flutter_lints` to version ^6.0.0 for improved code analysis and linting.
+
 ## [2.0.21] - 2025-03-12
 ### Changed
 - Split Package into Dart and Flutter Modules
