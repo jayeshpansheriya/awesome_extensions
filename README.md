@@ -7,17 +7,17 @@
 
 ![flutter_extension](https://user-images.githubusercontent.com/31765271/205228040-e9211b4a-8f8e-49c9-b0fd-3094120a0a5e.png)
 
-## Let get started 💪
+## Let's get started 💪
 
 1. Go to `pubspec.yaml`
-2. add a awesome_extensions and replace `[version]` with the latest version:
+2. Add awesome_extensions and replace `[version]` with the latest version:
 
-```dart
+```yaml
 dependencies:
- awesome_extensions: ^[version]
+  awesome_extensions: ^[version]
 ```
 
-3. click the packages get button or _flutter pub get_
+3. Click the packages get button or run `flutter pub get`
 
 ## See [awesome_extensions](https://jayeshpansheriya.github.io/awesome_extensions) for docs & samples
 
@@ -57,7 +57,7 @@ dependencies:
 
 ## About
 
-An extension to the widget helps reduce the boilerplate and adds some helpful methods. and you can make a responsive design.
+A comprehensive Flutter extension package that helps reduce boilerplate code and adds helpful methods to widgets, enabling you to create responsive designs with ease. This package provides extensions for widgets, themes, navigation, colors, strings, dates, and much more.
 
 ## Theme Extensions
 
@@ -67,16 +67,16 @@ From the `TextStyle` Access properties right in the `context` instance.
 
 ```dart
 // Before
-Text('Hello World',style: Theme.of(context).textTheme.labelSmall),
+Text('Hello World', style: Theme.of(context).textTheme.labelSmall),
 
-Text('Hello World', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 40)
+Text('Hello World', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 40)),
 
 // After
-Text('Hello World',style: context.labelSmall),
+Text('Hello World', style: context.labelSmall),
 // OR
-Text('Hello World',style: context.displaySmall),
+Text('Hello World', style: context.displaySmall),
 // If you want to bold text then
-Text('Hello World',style: context.labelSmall?.bold),
+Text('Hello World', style: context.labelSmall?.bold),
 ```
 
 FontWeight extensions that apply font weights on `TextStyle`:
@@ -111,7 +111,7 @@ Similar 2021 TextStyle are:
 
 #### Text
 
-If you dont want use theme, then we have some other methods:
+If you don't want to use theme styles, then we have some other methods:
 
 ```dart
 Text('Hello World')
@@ -194,18 +194,23 @@ Similar extensions are:
 - `context.isSmallTablet` // True if the shortestSide is largest than 600p
 - `context.isLargeTablet` // True if the shortestSide is largest than 720p
 
-MediaQuery as Inherited Model
-Old Way X
+### MediaQuery as Inherited Model
 
+**Old Way ❌**
+```dart
 MediaQuery.of(context).size;
-MediaQuery.of(context).padding; MediaQuery.of (context). orientation;
-By calling MediaQuery.of(context).size, the widget will rebuild when any of the MediaQuery properties change (less performant).
+MediaQuery.of(context).padding;
+MediaQuery.of(context).orientation;
+```
+By calling `MediaQuery.of(context).size`, the widget will rebuild when any of the MediaQuery properties change (less performant).
 
-New Way ✓
-
-MediaQuery.sizeof(context);
-MediaQuery.paddingOf(context); MediaQuery.orientation of (context);
-By calling MediaQuery.sizeof(context), the widget will rebuild only when the size changes, avoiding unnecessary rebuilds.
+**New Way ✅**
+```dart
+MediaQuery.sizeOf(context);
+MediaQuery.paddingOf(context);
+MediaQuery.orientationOf(context);
+```
+By calling `MediaQuery.sizeOf(context)`, the widget will rebuild only when the size changes, avoiding unnecessary rebuilds.
 
 - `context.mqSize` // The same of MediaQuery.sizeOf(context)
 - `context.mqHeight` // The same of MediaQuery.sizeOf(context).height
@@ -388,10 +393,18 @@ Text("text").flexible()
 ![OYCE3](https://user-images.githubusercontent.com/31765271/177955655-66a856a6-108a-429f-bbad-64b1c3f114aa.gif)
 
 ```dart
-Container(height: 50,width: 50,).applyShimmer();
+Container(height: 50, width: 50).applyShimmer();
 ```
 
-you can also change color of shimmer using `Color baseColor`, `Color highlightColor`.
+You can also change the shimmer colors using `baseColor` and `highlightColor` parameters:
+
+```dart
+Container(height: 50, width: 50)
+    .applyShimmer(
+      baseColor: Colors.grey[300]!,
+      highlightColor: Colors.grey[100]!,
+    );
+```
 
 #### Nil Widget
 
@@ -428,24 +441,27 @@ Now we can just add round corners, shadows, align, and added gestures to our Wid
 
 ```dart
 Container(
-      height: 100,
-       width: 100,)
-         .withRoundCorners(backgroundColor: Colors.grey)
-         .withShadow()
-         .alignAtCenter()
-         .toCenter()
-         .withTooltip('My Tooltip')
-         .paddingOnly(left: 10)
-         .paddingAll(20)
-         .onTap(() => print('tap'))
-         .onLongPress(() => print('long press'))
+  height: 100,
+  width: 100,
+)
+  .withRoundCorners(backgroundColor: Colors.grey)
+  .withShadow()
+  .alignAtCenter()
+  .toCenter()
+  .withTooltip('My Tooltip')
+  .paddingOnly(left: 10)
+  .paddingAll(20)
+  .onTap(() => print('tap'))
+  .onLongPress(() => print('long press'));
 ```
 
-Automatic detect platform and show material and cupertino dialog
+Automatically detect platform and show material and cupertino dialog
 
 ```dart
-context.showAlertDialog(title: 'title',
-                        message: 'message',)
+context.showAlertDialog(
+  title: 'title',
+  message: 'message',
+);
 ```
 
 ## List Extensions
@@ -481,7 +497,7 @@ Row(
     const Text('Seperated').paddingAll(5),
     const Text('By').paddingAll(5),
     const Text('Commas').paddingAll(5),
-  ].separatedby(
+  ].separatedBy(
     const Text(','),
   ),
 ),
@@ -532,26 +548,29 @@ print(1.5.hours);
 ## String Extensions
 
 ```dart
-//your name => Your Name,
+// your name => Your Name
 'your name'.capitalize();
-//your name => Your name,
+
+// your name => Your name
 'your name'.capitalizeFirst();
-//your name => yourname
+
+// your name => yourname
 'your name'.removeAllWhitespace();
 
-// match any RegExp
-'dsts'.hasMatch("'r'[A-Z]");
-//return bool if match RegExp
-'123'.isNumericOnly();
-'dsf'.isAlphabetOnly();
-'Ajh'.hasCapitalletter();
-'true'.isBool();
+// Match any RegExp
+'test123'.hasMatch(r'[0-9]'); // true
+
+// Return bool if matches pattern
+'123'.isNumericOnly();        // true
+'abc'.isAlphabetOnly();       // true
+'Hello'.hasCapitalLetter();   // true
+'true'.isBool();              // true
 ```
 
 ## Async Extensions
 
-An extention to help dealing with all the possible states of an `AsyncSnapshot` in a `StreamBuilder` / `FutureBuilder`.
-Reduces boilerplate code signifigantly by moving each possible state into it's own function.
+An extension to help dealing with all the possible states of an `AsyncSnapshot` in a `StreamBuilder` / `FutureBuilder`.
+Reduces boilerplate code significantly by moving each possible state into its own function.
 
 ```dart
 StreamBuilder(
@@ -576,11 +595,11 @@ StreamBuilder(
   },
 );
 ```
-also you can use `maybeWhen`, Similar to [when], but allows [data] callback to be optional.
+Also you can use `maybeWhen`, similar to [when], but allows [data] callback to be optional.
 
 ## Color Extensions
 
-Darken
+### Darken
 
 The `darken` method darkens the color by a specified percentage. The percentage should be between 0 and 100. By default, the color is darkened by 10%.
 
@@ -588,15 +607,24 @@ The `darken` method darkens the color by a specified percentage. The percentage 
 Color darkRed = Colors.red.darken(20); // Darkens the red color by 20%
 ```
 
-Lighten
+### Lighten
 
-The lighten method lightens the color by a specified percentage. The percentage should be between 0 and 100. By default, the color is lightened by 10%.
+The `lighten` method lightens the color by a specified percentage. The percentage should be between 0 and 100. By default, the color is lightened by 10%.
 
 ```dart
 Color lightRed = Colors.red.lighten(20); // Lightens the red color by 20%
 ```
 
-Also Added Some Extra color extensions like: string hax to color, brightness, and change specific RGB color value.
+### Alpha Percentage
+
+The `alphaPercent` method sets the alpha transparency using percentage values (0-100).
+
+```dart
+Color semiTransparent = Colors.blue.alphaPercent(50); // 50% transparency
+Color almostOpaque = Colors.red.alphaPercent(90);     // 90% opacity
+```
+
+Also added some extra color extensions like: string hex to color, brightness, and change specific RGB color value.
 
 ## Url Strategy
 
@@ -605,10 +633,10 @@ in the URL anymore 🚀
 
 ```dart
 void main() {
-// Here we set the URL strategy for our web app.
-// It is safe to call this function when running on mobile or desktop as well.
-setPathUrlStrategy();
-runApp(MyApp());
+  // Here we set the URL strategy for our web app.
+  // It is safe to call this function when running on mobile or desktop as well.
+  setPathUrlStrategy();
+  runApp(MyApp());
 }
 ```
 
@@ -616,19 +644,20 @@ runApp(MyApp());
 
 ```dart
 AvatarImage(
-   backgroundImage: NetworkImage(
-    'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
-     shape: AvatarImageShape.standard,
-     size: ImageSize.LARGE,
-     child: Text('Lucky'),
-          backgroundColor: Colors.red,
-      ),
+  backgroundImage: NetworkImage(
+    'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg',
+  ),
+  shape: AvatarImageShape.standard,
+  size: ImageSize.LARGE,
+  child: Text('Lucky'),
+  backgroundColor: Colors.red,
+),
 
 AvatarImage(
-    shape: AvatarImageShape.circle,
-    child: Text('JP'),
-    backgroundColor: Colors.red,
-      ),
+  shape: AvatarImageShape.circle,
+  child: Text('JP'),
+  backgroundColor: Colors.red,
+),
 ```
 
 ![avatar-image](https://user-images.githubusercontent.com/31765271/205228265-a30afe80-1f12-4874-808f-177aafb25b4a.jpeg)
@@ -648,12 +677,12 @@ AvatarImage(
 
 ## Support
 
-You liked this package? then give it a star. If you want to help then:
+You liked this package? Then give it a star! If you want to help then:
 
-- Start this repository
-- Send a Pull Request with new features
-- Share this package
-- Create issues if you find a Bug or want to suggest something
+- ⭐ Star this repository
+- 🔧 Send a Pull Request with new features
+- 📢 Share this package
+- 🐛 Create issues if you find a bug or want to suggest something
 
 ## ❤️❤️❤️
 
