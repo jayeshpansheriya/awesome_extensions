@@ -89,6 +89,11 @@ extension ColorExtension on Color {
     return Color.fromARGB(alpha, redValue, greenValue, blueValue);
   }
 
+  Color alphaPercent(double percent) {
+    assert(percent >= 0 && percent <= 100, 'Percent must be between 0 and 100');
+    return withAlpha((255 * (percent / 100)).round());
+  }
+
   /// Returns a new [Color] object with the specified blue value.
   ///
   /// The [blue] parameter specifies the new blue value, which should be between 0 and 255.
