@@ -6,8 +6,8 @@ repository: https://github.com/jayeshpansheriya/awesome_extensions
 issue_tracker: https://github.com/jayeshpansheriya/awesome_extensions/issues
 
 environment:
-  sdk: ">=2.12.0 <4.0.0"
-  flutter: ">=2.10.0"
+  sdk: ">=3.8.0 <4.0.0"
+  flutter: ">=3.32.0 <4.0.0"
 
 dependencies:
   flutter:
