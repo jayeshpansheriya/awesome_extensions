@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.23] - 2025-06-22
+### Changed
+- **Minimum SDK Requirement**: Now requires Flutter 3.32.0 or higher and Dart 3.8.0 or higher.
+
 ## [2.0.22] - 2025-06-15
 ### Added
 - **Color Extension Enhancement**: Added `alphaPercent` method to `ColorExtension` for setting alpha transparency using percentage values (0-100).
