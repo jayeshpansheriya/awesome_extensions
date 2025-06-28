@@ -27,10 +27,8 @@ extension NumExtension on num {
   ///   print('+ callback in 1.2sec');
   ///   1.delay(() => print('- 1.2sec callback called'));
   ///   print('currently running callback 1.2sec');
-  Future delay([FutureOr Function()? callback]) async => Future.delayed(
-        Duration(milliseconds: (this * 1000).round()),
-        callback,
-      );
+  Future delay([FutureOr Function()? callback]) async =>
+      Future.delayed(Duration(milliseconds: (this * 1000).round()), callback);
 
   num divide(num b) => this / b;
 

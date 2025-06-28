@@ -108,8 +108,12 @@ extension ColorExtension on Color {
   Color withBrightness(double brightness) {
     assert(0 <= brightness && brightness <= 1);
     final newBrightness = brightness * 255;
-    return Color.fromARGB(alphaValue, newBrightness.toInt(),
-        newBrightness.toInt(), newBrightness.toInt());
+    return Color.fromARGB(
+      alphaValue,
+      newBrightness.toInt(),
+      newBrightness.toInt(),
+      newBrightness.toInt(),
+    );
   }
 
   /// Returns a new [Color] object with the specified green value.

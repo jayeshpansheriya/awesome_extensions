@@ -107,11 +107,7 @@ extension MediaQueryExt on BuildContext {
   /// and less than 1200 return [tablet] value.
   /// if the device width is less than 300  return [watch] value.
   /// in other cases return [mobile] value.
-  T? responsiveValue<T>({
-    T? mobile,
-    T? tablet,
-    T? desktop,
-  }) {
+  T? responsiveValue<T>({T? mobile, T? tablet, T? desktop}) {
     var deviceWidth = mediaQuerySize.shortestSide;
     if (MyPlatform.isDesktop) {
       deviceWidth = mediaQuerySize.width;

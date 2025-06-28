@@ -27,9 +27,7 @@ class ShimmerEffectState extends State<ShimmerEffectExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Shimmer Effect'),
-      ),
+      appBar: AppBar(title: const Text('Shimmer Effect')),
       body: StreamBuilder<int>(
         stream: _events.stream,
         builder: (BuildContext context, AsyncSnapshot<int> snapshot) {

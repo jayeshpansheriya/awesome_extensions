@@ -49,16 +49,17 @@ extension DialogExt on BuildContext {
   }
 
   void _showAndroidDialog(
-      BuildContext context,
-      String title,
-      String message,
-      List<String>? buttons,
-      String? cancelButton,
-      Function(int)? onDone,
-      Color? positiveTitleColor,
-      Color? cancelTitleColor,
-      double? fontSize,
-      bool barrierDismissible) {
+    BuildContext context,
+    String title,
+    String message,
+    List<String>? buttons,
+    String? cancelButton,
+    Function(int)? onDone,
+    Color? positiveTitleColor,
+    Color? cancelTitleColor,
+    double? fontSize,
+    bool barrierDismissible,
+  ) {
     // flutter defined function
     List<Widget> arrWidget = [];
 
@@ -66,13 +67,9 @@ extension DialogExt on BuildContext {
       TextButton action = TextButton(
         style: TextButton.styleFrom(
           foregroundColor: cancelTitleColor,
-          textStyle: TextStyle(
-            fontSize: fontSize,
-          ),
+          textStyle: TextStyle(fontSize: fontSize),
         ),
-        child: Text(
-          cancelButton,
-        ),
+        child: Text(cancelButton),
         onPressed: () {
           context.pop();
         },
@@ -85,13 +82,9 @@ extension DialogExt on BuildContext {
         TextButton action = TextButton(
           style: TextButton.styleFrom(
             foregroundColor: positiveTitleColor,
-            textStyle: TextStyle(
-              fontSize: fontSize,
-            ),
+            textStyle: TextStyle(fontSize: fontSize),
           ),
-          child: Text(
-            buttonTitle,
-          ),
+          child: Text(buttonTitle),
           onPressed: () {
             int index = buttons.indexOf(buttonTitle);
             if (onDone != null) {
@@ -105,30 +98,33 @@ extension DialogExt on BuildContext {
     }
 
     showDialog(
-        barrierDismissible: barrierDismissible,
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            title: Text(title),
-            content: Text(message),
-            actions: arrWidget,
-          );
-        });
+      barrierDismissible: barrierDismissible,
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          title: Text(title),
+          content: Text(message),
+          actions: arrWidget,
+        );
+      },
+    );
   }
 
   void _showIOSDialog(
-      BuildContext context,
-      String title,
-      String message,
-      List<String>? buttons,
-      String? cancelButton,
-      Function(int)? onDone,
-      Color? positiveTitleColor,
-      Color? cancelTitleColor,
-      double? fontSize,
-      bool barrierDismissible) {
+    BuildContext context,
+    String title,
+    String message,
+    List<String>? buttons,
+    String? cancelButton,
+    Function(int)? onDone,
+    Color? positiveTitleColor,
+    Color? cancelTitleColor,
+    double? fontSize,
+    bool barrierDismissible,
+  ) {
     List<Widget> arrWidget = [];
 
     if (cancelButton != null) {
@@ -162,15 +158,16 @@ extension DialogExt on BuildContext {
     }
 
     showDialog(
-        barrierDismissible: barrierDismissible,
-        context: context,
-        builder: (BuildContext context) {
-          return CupertinoAlertDialog(
-            title: Text(title),
-            content: Text(message),
-            actions: arrWidget,
-          );
-        });
+      barrierDismissible: barrierDismissible,
+      context: context,
+      builder: (BuildContext context) {
+        return CupertinoAlertDialog(
+          title: Text(title),
+          content: Text(message),
+          actions: arrWidget,
+        );
+      },
+    );
   }
 
   Future<T?> showAdaptiveAlertDialog<T>({
@@ -191,73 +188,69 @@ extension DialogExt on BuildContext {
     List<String>? positiveButtonTexts,
     Color? positiveTextColor,
     Function(int index)? onPositivePress,
-  }) =>
-      showAdaptiveDialog(
-        context: this,
-        barrierDismissible: barrierDismissible,
-        barrierColor: barrierColor,
-        barrierLabel: barrierLabel,
-        useSafeArea: useSafeArea,
-        useRootNavigator: useRootNavigator,
-        routeSettings: routeSettings,
-        anchorPoint: anchorPoint,
-        traversalEdgeBehavior: traversalEdgeBehavior,
-        builder: (context) {
-          List<Widget> actions = [];
+  }) => showAdaptiveDialog(
+    context: this,
+    barrierDismissible: barrierDismissible,
+    barrierColor: barrierColor,
+    barrierLabel: barrierLabel,
+    useSafeArea: useSafeArea,
+    useRootNavigator: useRootNavigator,
+    routeSettings: routeSettings,
+    anchorPoint: anchorPoint,
+    traversalEdgeBehavior: traversalEdgeBehavior,
+    builder: (context) {
+      List<Widget> actions = [];
 
-          if (cancelButtonText != null) {
-            actions.add(
-              adaptiveAction(
-                context: context,
-                onPressed: () {
-                  if (onCancelPress != null) {
-                    onCancelPress.call();
-                  } else {
-                    context.pop();
-                  }
-                },
-                child: Text(
-                  cancelButtonText,
-                  style: TextStyle(
-                    color: cancelButtonTextColor,
-                    fontSize: fontSize,
-                  ),
-                ),
+      if (cancelButtonText != null) {
+        actions.add(
+          adaptiveAction(
+            context: context,
+            onPressed: () {
+              if (onCancelPress != null) {
+                onCancelPress.call();
+              } else {
+                context.pop();
+              }
+            },
+            child: Text(
+              cancelButtonText,
+              style: TextStyle(
+                color: cancelButtonTextColor,
+                fontSize: fontSize,
               ),
-            );
-          }
+            ),
+          ),
+        );
+      }
 
-          if (positiveButtonTexts != null) {
-            for (String buttonText in positiveButtonTexts) {
-              actions.add(
-                adaptiveAction(
-                  context: context,
-                  onPressed: () {
-                    int index = positiveButtonTexts.indexOf(buttonText);
-                    context.pop();
-                    if (onPositivePress != null) {
-                      onPositivePress.call(index);
-                    }
-                  },
-                  child: Text(
-                    buttonText,
-                    style: TextStyle(
-                      color: positiveTextColor,
-                      fontSize: fontSize,
-                    ),
-                  ),
-                ),
-              );
-            }
-          }
-
-          return AlertDialog.adaptive(
-            title: Text(title),
-            content: Text(message),
-            actions: actions,
+      if (positiveButtonTexts != null) {
+        for (String buttonText in positiveButtonTexts) {
+          actions.add(
+            adaptiveAction(
+              context: context,
+              onPressed: () {
+                int index = positiveButtonTexts.indexOf(buttonText);
+                context.pop();
+                if (onPositivePress != null) {
+                  onPositivePress.call(index);
+                }
+              },
+              child: Text(
+                buttonText,
+                style: TextStyle(color: positiveTextColor, fontSize: fontSize),
+              ),
+            ),
           );
-        },
+        }
+      }
+
+      return AlertDialog.adaptive(
+        title: Text(title),
+        content: Text(message),
+        actions: actions,
       );
+    },
+  );
 
   Widget adaptiveAction({
     required BuildContext context,

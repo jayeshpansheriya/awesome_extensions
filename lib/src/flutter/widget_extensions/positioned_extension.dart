@@ -6,14 +6,13 @@ extension PositionedExtensions on Widget {
     required double bottom,
     double? width,
     double? height,
-  }) =>
-      Positioned(
-        key: key,
-        bottom: bottom,
-        width: width,
-        height: height,
-        child: this,
-      );
+  }) => Positioned(
+    key: key,
+    bottom: bottom,
+    width: width,
+    height: height,
+    child: this,
+  );
 
   Positioned positionLR({
     Key? key,
@@ -21,15 +20,14 @@ extension PositionedExtensions on Widget {
     required double right,
     double? width,
     double? height,
-  }) =>
-      Positioned(
-        key: key,
-        left: left,
-        right: right,
-        width: width,
-        height: height,
-        child: this,
-      );
+  }) => Positioned(
+    key: key,
+    left: left,
+    right: right,
+    width: width,
+    height: height,
+    child: this,
+  );
 
   Positioned positionLRTB({
     Key? key,
@@ -39,17 +37,16 @@ extension PositionedExtensions on Widget {
     required double right,
     double? width,
     double? height,
-  }) =>
-      Positioned(
-        key: key,
-        top: top,
-        bottom: bottom,
-        left: left,
-        right: right,
-        width: width,
-        height: height,
-        child: this,
-      );
+  }) => Positioned(
+    key: key,
+    top: top,
+    bottom: bottom,
+    left: left,
+    right: right,
+    width: width,
+    height: height,
+    child: this,
+  );
 
   Positioned positionTB({
     Key? key,
@@ -57,15 +54,14 @@ extension PositionedExtensions on Widget {
     required double bottom,
     double? width,
     double? height,
-  }) =>
-      Positioned(
-        key: key,
-        top: top,
-        bottom: bottom,
-        width: width,
-        height: height,
-        child: this,
-      );
+  }) => Positioned(
+    key: key,
+    top: top,
+    bottom: bottom,
+    width: width,
+    height: height,
+    child: this,
+  );
 
   Positioned positionTop({
     Key? key,
@@ -73,11 +69,5 @@ extension PositionedExtensions on Widget {
     double? width,
     double? height,
   }) =>
-      Positioned(
-        key: key,
-        top: top,
-        width: width,
-        height: height,
-        child: this,
-      );
+      Positioned(key: key, top: top, width: width, height: height, child: this);
 }

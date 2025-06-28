@@ -27,12 +27,7 @@ extension SnackbarExt on BuildContext {
           children: [
             if (showIcon) Icon(icon, color: iconColor, size: iconSize),
             const SizedBox(width: 10),
-            Expanded(
-              child: Text(
-                message,
-                style: textStyle,
-              ),
-            ),
+            Expanded(child: Text(message, style: textStyle)),
           ],
         ),
         duration: duration,

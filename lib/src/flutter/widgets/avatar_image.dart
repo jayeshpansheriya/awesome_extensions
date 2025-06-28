@@ -33,20 +33,20 @@ class AvatarImage extends StatelessWidget {
   final BorderRadius? borderRadius;
 
   /// Create Avatar of all types i,e, square, circle, standard with different sizes.
-  const AvatarImage(
-      {Key? key,
-      this.child,
-      this.backgroundColor,
-      this.backgroundImage,
-      this.foregroundColor,
-      this.radius,
-      this.minRadius,
-      this.maxRadius,
-      this.borderRadius,
-      this.shape = AvatarImageShape.circle,
-      this.size = ImageSize.medium})
-      : assert(radius == null || (minRadius == null && maxRadius == null)),
-        super(key: key);
+  const AvatarImage({
+    Key? key,
+    this.child,
+    this.backgroundColor,
+    this.backgroundImage,
+    this.foregroundColor,
+    this.radius,
+    this.minRadius,
+    this.maxRadius,
+    this.borderRadius,
+    this.shape = AvatarImageShape.circle,
+    this.size = ImageSize.medium,
+  }) : assert(radius == null || (minRadius == null && maxRadius == null)),
+       super(key: key);
 
   BoxShape get _avatarShape {
     if (shape == AvatarImageShape.circle) {
@@ -122,10 +122,7 @@ class AvatarImage extends StatelessWidget {
       decoration: BoxDecoration(
         color: effectiveBackgroundColor,
         image: backgroundImage != null
-            ? DecorationImage(
-                image: backgroundImage!,
-                fit: BoxFit.cover,
-              )
+            ? DecorationImage(image: backgroundImage!, fit: BoxFit.cover)
             : null,
         shape: _avatarShape,
         borderRadius: shape == AvatarImageShape.standard && borderRadius == null
@@ -136,14 +133,12 @@ class AvatarImage extends StatelessWidget {
           ? null
           : Center(
               child: MediaQuery(
-                data: MediaQuery.of(context)
-                    .copyWith(textScaler: const TextScaler.linear(1)),
+                data: MediaQuery.of(
+                  context,
+                ).copyWith(textScaler: const TextScaler.linear(1)),
                 child: IconTheme(
                   data: theme.iconTheme.copyWith(color: textStyle?.color),
-                  child: DefaultTextStyle(
-                    style: textStyle!,
-                    child: child!,
-                  ),
+                  child: DefaultTextStyle(style: textStyle!, child: child!),
                 ),
               ),
             ),

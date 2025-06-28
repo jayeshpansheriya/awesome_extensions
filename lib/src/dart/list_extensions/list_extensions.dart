@@ -22,8 +22,10 @@ extension ListExtension on List {
   /// - Parameter separator: The widget to insert between each pair of widgets.
   /// - Returns: A new list of widgets with the separator inserted.
   List<Widget> separatedby(Widget seperator) {
-    assert(this is List<Widget>,
-        'List should be a List<Widget> but is $runtimeType');
+    assert(
+      this is List<Widget>,
+      'List should be a List<Widget> but is $runtimeType',
+    );
     final List<Widget> list = <Widget>[];
     for (int i = 0; i < length; i++) {
       list.add(this[i]);

@@ -45,97 +45,95 @@ class MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title ?? ''),
+      appBar: AppBar(title: Text(widget.title ?? '')),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            /// Shimmer Effect
+            ElevatedButton(
+              onPressed: () {
+                context.push(const ShimmerEffectExample());
+              },
+              child: const Text('Shimmer Effect'),
+            ),
+
+            20.0.heightBox,
+
+            /// Text Theme Extensions
+            ElevatedButton(
+              onPressed: () {
+                context.push(const TextExt());
+              },
+              child: const Text('Text Theme'),
+            ),
+
+            ///SizeBox Extensions
+            20.0.heightBox,
+            20.0.widthBox,
+
+            Row(
+              children: [
+                const Text('Hello World'),
+                20.0.widthBox,
+                const Text('Hello World'),
+              ],
+            ),
+
+            20.0.heightBox,
+
+            /// Widget Extensions
+            ElevatedButton(
+              onPressed: () {
+                context.push(const WidgetExt());
+              },
+              child: const Text('Widget Ext'),
+            ),
+
+            20.0.heightBox,
+
+            ///Padding Extensions
+            ElevatedButton(
+              onPressed: () {
+                context.push(const PaddingExt());
+              },
+              child: const Text('Padding Ext'),
+            ),
+
+            20.0.heightBox,
+
+            ///Avatar
+            ElevatedButton(
+              onPressed: () {
+                context.push(const AvatarExample());
+              },
+              child: const Text('Avatar'),
+            ),
+
+            20.0.heightBox,
+
+            ///Date Extensions
+            Text('${dateTime.isToday}'),
+            Text('${dateTime.isToday}'),
+            Text('${dateTime.isSameDate(dateTime)}'),
+
+            ///Platform Extension
+            if (MyPlatform.isWeb) const Text('Hello World').paddingAll(10.0),
+
+            ///Show Platform dialog
+            ElevatedButton(
+              onPressed: () {
+                context.showAdaptiveAlertDialog(
+                  title: 'title',
+                  message: 'message',
+                  cancelButtonText: 'ok',
+                  cancelButtonTextColor: Colors.red,
+                );
+              },
+              child: const Text('Show Dialog'),
+            ),
+          ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              /// Shimmer Effect
-              ElevatedButton(
-                  onPressed: () {
-                    context.push(const ShimmerEffectExample());
-                  },
-                  child: const Text('Shimmer Effect')),
-
-              20.0.heightBox,
-
-              /// Text Theme Extensions
-              ElevatedButton(
-                  onPressed: () {
-                    context.push(const TextExt());
-                  },
-                  child: const Text('Text Theme')),
-
-              ///SizeBox Extensions
-              20.0.heightBox,
-              20.0.widthBox,
-
-              Row(
-                children: [
-                  const Text(
-                    'Hello World',
-                  ),
-                  20.0.widthBox,
-                  const Text(
-                    'Hello World',
-                  )
-                ],
-              ),
-
-              20.0.heightBox,
-
-              /// Widget Extensions
-              ElevatedButton(
-                  onPressed: () {
-                    context.push(const WidgetExt());
-                  },
-                  child: const Text('Widget Ext')),
-
-              20.0.heightBox,
-
-              ///Padding Extensions
-              ElevatedButton(
-                  onPressed: () {
-                    context.push(const PaddingExt());
-                  },
-                  child: const Text('Padding Ext')),
-
-              20.0.heightBox,
-
-              ///Avatar
-              ElevatedButton(
-                  onPressed: () {
-                    context.push(const AvatarExample());
-                  },
-                  child: const Text('Avatar')),
-
-              20.0.heightBox,
-
-              ///Date Extensions
-              Text('${dateTime.isToday}'),
-              Text('${dateTime.isToday}'),
-              Text('${dateTime.isSameDate(dateTime)}'),
-
-              ///Platform Extension
-              if (MyPlatform.isWeb)
-                const Text(
-                  'Hello World',
-                ).paddingAll(10.0),
-
-              ///Show Platform dialog
-              ElevatedButton(
-                  onPressed: () {
-                    context.showAdaptiveAlertDialog(
-                      title: 'title',
-                      message: 'message',
-                      cancelButtonText: 'ok',
-                      cancelButtonTextColor: Colors.red,
-                    );
-                  },
-                  child: const Text('Show Dialog')),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }

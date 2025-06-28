@@ -7,9 +7,7 @@ class AvatarExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Avatar'),
-      ),
+      appBar: AppBar(title: const Text('Avatar')),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -17,19 +15,25 @@ class AvatarExample extends StatelessWidget {
             Row(
               children: [
                 const AvatarImage(
-                    backgroundImage: NetworkImage(
-                        'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
-                    shape: AvatarImageShape.circle),
+                  backgroundImage: NetworkImage(
+                    'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg',
+                  ),
+                  shape: AvatarImageShape.circle,
+                ),
                 10.0.widthBox,
                 const AvatarImage(
-                    backgroundImage: NetworkImage(
-                        'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
-                    shape: AvatarImageShape.square),
+                  backgroundImage: NetworkImage(
+                    'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg',
+                  ),
+                  shape: AvatarImageShape.square,
+                ),
                 10.0.widthBox,
                 const AvatarImage(
-                    backgroundImage: NetworkImage(
-                        'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
-                    shape: AvatarImageShape.standard),
+                  backgroundImage: NetworkImage(
+                    'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg',
+                  ),
+                  shape: AvatarImageShape.standard,
+                ),
               ],
             ),
 
@@ -39,7 +43,8 @@ class AvatarExample extends StatelessWidget {
               children: [
                 const AvatarImage(
                   backgroundImage: NetworkImage(
-                      'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
+                    'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg',
+                  ),
                   shape: AvatarImageShape.standard,
                   size: ImageSize.large,
                   backgroundColor: Colors.red,
