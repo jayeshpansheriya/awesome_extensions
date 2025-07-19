@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.24] - 2025-07-19
+### Added
+- **Padding Extension**: Added support for EdgeInsetsDirectional.only(start: ...) and EdgeInsetsDirectional.only(end: ...) through new widget extensions to ensure RTL-compatible horizontal padding.
+
 ## [2.0.23] - 2025-06-22
 ### Changed
 - **Minimum SDK Requirement**: Now requires Flutter 3.32.0 or higher and Dart 3.8.0 or higher.
