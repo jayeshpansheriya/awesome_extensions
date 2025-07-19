@@ -28,18 +28,6 @@ extension PaddingX on Widget {
     child: this,
   );
 
-  Padding paddingSTEB(
-    double start,
-    double top,
-    double end,
-    double bottom, {
-    Key? key,
-  }) => Padding(
-    key: key,
-    padding: EdgeInsetsDirectional.fromSTEB(start, top, end, bottom),
-    child: this,
-  );
-
   Padding paddingOnly({
     double left = 0.0,
     double top = 0.0,
@@ -76,6 +64,28 @@ extension PaddingX on Widget {
   Padding paddingVertical(double value, {Key? key}) => Padding(
     key: key,
     padding: EdgeInsets.symmetric(vertical: value),
+    child: this,
+  );
+
+  Padding paddingSTEB(
+    double start,
+    double top,
+    double end,
+    double bottom, {
+    Key? key,
+  }) => Padding(
+    key: key,
+    padding: EdgeInsetsDirectional.fromSTEB(start, top, end, bottom),
+    child: this,
+  );
+
+  Padding paddingStart(double start, {Key? key}) => Padding(
+    padding: EdgeInsetsDirectional.only(start: start),
+    child: this,
+  );
+
+  Padding paddingEnd(double end, {Key? key}) => Padding(
+    padding: EdgeInsetsDirectional.only(end: end),
     child: this,
   );
 }
