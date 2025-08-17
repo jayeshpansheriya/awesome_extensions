@@ -4,7 +4,7 @@ extension ThemeExt on BuildContext {
   //  THEMES
 
   /// performs a simple [Theme.of(context).appBarTheme] action and returns given [appBarTheme]
-  AppBarTheme get appBarTheme => Theme.of(this).appBarTheme;
+  AppBarThemeData get appBarTheme => Theme.of(this).appBarTheme;
 
   /// performs a simple [Theme.of(context).backgroundColor] action and returns given [backgroundColor]
   Color get backgroundColor => Theme.of(this).colorScheme.surface;
@@ -32,7 +32,8 @@ extension ThemeExt on BuildContext {
   TextStyle? get bodySmall => textTheme.bodySmall;
 
   /// performs a simple [Theme.of(context).bottomAppBarTheme] action and returns given [bottomAppBarTheme]
-  BottomAppBarTheme get bottomAppBarTheme => Theme.of(this).bottomAppBarTheme;
+  BottomAppBarThemeData get bottomAppBarTheme =>
+      Theme.of(this).bottomAppBarTheme;
 
   // COLOR
 
