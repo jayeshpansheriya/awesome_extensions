@@ -34,7 +34,7 @@ class AvatarImage extends StatelessWidget {
 
   /// Create Avatar of all types i,e, square, circle, standard with different sizes.
   const AvatarImage({
-    Key? key,
+    super.key,
     this.child,
     this.backgroundColor,
     this.backgroundImage,
@@ -45,8 +45,7 @@ class AvatarImage extends StatelessWidget {
     this.borderRadius,
     this.shape = AvatarImageShape.circle,
     this.size = ImageSize.medium,
-  }) : assert(radius == null || (minRadius == null && maxRadius == null)),
-       super(key: key);
+  }) : assert(radius == null || (minRadius == null && maxRadius == null));
 
   BoxShape get _avatarShape {
     if (shape == AvatarImageShape.circle) {

@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.25] - 2025-08-19
+### Added
+- **Theme ColorScheme Extensions**: Added comprehensive `ColorSchemeExt` getters on `BuildContext` (e.g., `context.primary`, `context.surfaceContainerHigh`, etc.) with documentation comments for all relevant `ColorScheme` fields.
+
+### Changed
+- **Flutter Compatibility**: Verified with Flutter 3.35.1 and Dart 3.9.0. Minimum constraints updated to Flutter >= 3.35.0 and Dart >= 3.9.0.
+- **Deprecations Addressed**: Replaced deprecated `surfaceVariant` with `surfaceContainerHighest`, and mapped `background`/`onBackground` to `surface`/`onSurface` within the extensions.
+
 ## [2.0.24] - 2025-07-19
 ### Added
 - **Padding Extension**: Added support for EdgeInsetsDirectional.only(start: ...) and EdgeInsetsDirectional.only(end: ...) through new widget extensions to ensure RTL-compatible horizontal padding.
