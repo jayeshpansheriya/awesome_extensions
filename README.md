@@ -42,6 +42,7 @@ dependencies:
     - [SliverToBoxAdapter](#slivertoboxadapter)
     - [Other](#other)
   - [List Extensions](#list-extensions)
+  - [Map Extensions](#map-extensions)
   - [Date Extensions](#date-extensions)
   - [Number Extensions](#number-extensions)
     - [Future \& Duration](#future--duration)
@@ -505,6 +506,76 @@ Row(
 
 
 <img  alt="Screenshot 2024-10-10 at 13 34 14" src="https://github.com/user-attachments/assets/b64a6a65-468b-43be-88b5-9ee2271971b9">
+
+## Map Extensions
+
+A comprehensive set of extensions for advanced `Map` manipulation, ensuring you write less boilerplate and more expressive code.
+
+### Safe Access
+
+Avoid null errors with safe access methods that provide default values.
+
+```dart
+final map = {'name': 'John'};
+
+// Before
+final age = map.containsKey('age') ? map['age'] : 30;
+
+// After
+final age = map.getOrDefault('age', 30); // Returns 30
+```
+
+- `getOrDefault(key, defaultValue)`: Returns the value for the given key or the `defaultValue` if the key is not in the map.
+- `getOrElse(key, function)`: Returns the value for the given key or computes it from a function if the key is not in the map.
+
+### Filtering
+
+Easily filter maps by keys or values.
+
+```dart
+final scores = {'math': 95, 'science': 88, 'history': 75};
+
+// Filter by keys
+final scienceScores = scores.filterKeys((key) => key.startsWith('s')); // {'science': 88}
+
+// Filter by values
+final highScores = scores.filterValues((value) => value > 90); // {'math': 95}
+```
+
+### Transformation & Merging
+
+Transform maps into different formats or merge them safely.
+
+```dart
+// Convert to a URL query string
+final params = {'user': 'john_doe', 'page': 2};
+final query = params.toQueryString(); // "user=john_doe&page=2"
+
+// Merge two maps
+final map1 = {'a': 1, 'b': 2};
+final map2 = {'b': 3, 'c': 4};
+final merged = map1.merge(map2); // {'a': 1, 'b': 3, 'c': 4}
+```
+
+### Nested Operations
+
+Access and manipulate nested map data with ease using dot notation.
+
+```dart
+final data = {
+  'user': {
+    'profile': {
+      'name': 'Jane Doe'
+    }
+  }
+};
+
+// Get a nested value
+final name = data.getNested('user.profile.name'); // 'Jane Doe'
+
+// Set a nested value
+data.setNested('user.profile.age', 28);
+```
 
 ## Date Extensions
 

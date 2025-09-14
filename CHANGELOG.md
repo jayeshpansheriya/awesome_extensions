@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.26] - 2025-09-14
+### Added
+- **Map Extensions**: Added a comprehensive set of `Map` extensions for advanced data manipulation, including safe access (`getOrDefault`), filtering (`filterKeys`, `filterValues`), transformation (`toQueryString`), and nested map operations (`getNested`, `setNested`).
+
 ## [2.0.25] - 2025-08-19
 ### Added
 - **Theme ColorScheme Extensions**: Added comprehensive `ColorSchemeExt` getters on `BuildContext` (e.g., `context.primary`, `context.surfaceContainerHigh`, etc.) with documentation comments for all relevant `ColorScheme` fields.
