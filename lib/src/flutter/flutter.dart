@@ -5,6 +5,7 @@ export 'context_extensions/media_query_extension.dart';
 export 'context_extensions/navigation_extension.dart';
 export 'context_extensions/snackbar_extension.dart';
 export 'context_extensions/theme_extension.dart';
+export 'context_extensions/color_scheme_extension.dart';
 export 'nil.dart';
 export 'platform.dart';
 export 'shimmer.dart';
