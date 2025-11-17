@@ -11,8 +11,7 @@ extension MapExtension<K, V> on Map<K, V> {
   /// Get value or compute default if key doesn't exist
   ///
   /// Example: map.getOrElse('count', () => expensiveComputation()) only calls expensiveComputation() if needed
-  V getOrElse(K key, V Function() defaultValue) => 
-      this[key] ?? defaultValue();
+  V getOrElse(K key, V Function() defaultValue) => this[key] ?? defaultValue();
 
   /// Get value or null if key doesn't exist (explicit version)
   ///
@@ -24,7 +23,10 @@ extension MapExtension<K, V> on Map<K, V> {
   /// Example: {'name': 'John', 'age': '30'}.toQueryString() returns "name=John&age=30"
   String toQueryString() {
     return entries
-        .map((e) => '${Uri.encodeComponent(e.key.toString())}=${Uri.encodeComponent(e.value.toString())}')
+        .map(
+          (e) =>
+              '${Uri.encodeComponent(e.key.toString())}=${Uri.encodeComponent(e.value.toString())}',
+        )
         .join('&');
   }
 
@@ -33,38 +35,41 @@ extension MapExtension<K, V> on Map<K, V> {
   /// Example: {'name': 'John Doe'}.toJsonQueryString() returns "name=John%20Doe"
   String toJsonQueryString() {
     return entries
-        .map((e) => '${e.key.toString()}=${Uri.encodeComponent(e.value.toString())}')
+        .map(
+          (e) =>
+              '${e.key.toString()}=${Uri.encodeComponent(e.value.toString())}',
+        )
         .join('&');
   }
 
   /// Filter map by keys that match predicate
   ///
   /// Example: map.filterKeys((key) => key.startsWith('user_')) returns only entries with keys starting with 'user_'
-  Map<K, V> filterKeys(bool Function(K) predicate) => 
+  Map<K, V> filterKeys(bool Function(K) predicate) =>
       Map.fromEntries(entries.where((e) => predicate(e.key)));
 
   /// Filter map by values that match predicate
   ///
   /// Example: map.filterValues((value) => value > 0) returns only entries with positive values
-  Map<K, V> filterValues(bool Function(V) predicate) => 
+  Map<K, V> filterValues(bool Function(V) predicate) =>
       Map.fromEntries(entries.where((e) => predicate(e.value)));
 
   /// Filter map by both key and value predicate
   ///
   /// Example: map.filter((key, value) => key.length > 2 && value.isNotEmpty) returns entries matching both conditions
-  Map<K, V> filter(bool Function(K, V) predicate) => 
+  Map<K, V> filter(bool Function(K, V) predicate) =>
       Map.fromEntries(entries.where((e) => predicate(e.key, e.value)));
 
   /// Keep only specified keys
   ///
   /// Example: map.only(['name', 'email']) returns map with only 'name' and 'email' keys
-  Map<K, V> only(Iterable<K> keys) => 
+  Map<K, V> only(Iterable<K> keys) =>
       Map.fromEntries(entries.where((e) => keys.contains(e.key)));
 
   /// Remove specified keys
   ///
   /// Example: map.without(['password', 'token']) returns map without 'password' and 'token' keys
-  Map<K, V> without(Iterable<K> keys) => 
+  Map<K, V> without(Iterable<K> keys) =>
       Map.fromEntries(entries.where((e) => !keys.contains(e.key)));
 
   /// Merge maps safely (doesn't modify original)
@@ -100,31 +105,28 @@ extension MapExtension<K, V> on Map<K, V> {
   /// Check if map contains all specified keys
   ///
   /// Example: map.containsAllKeys(['name', 'email']) returns true if both keys exist
-  bool containsAllKeys(Iterable<K> keys) => 
+  bool containsAllKeys(Iterable<K> keys) =>
       keys.every((key) => containsKey(key));
 
   /// Check if map contains any of specified keys
   ///
   /// Example: map.containsAnyKey(['name', 'username']) returns true if at least one key exists
-  bool containsAnyKey(Iterable<K> keys) => 
-      keys.any((key) => containsKey(key));
+  bool containsAnyKey(Iterable<K> keys) => keys.any((key) => containsKey(key));
 
   /// Check if all values match predicate
   ///
   /// Example: map.allValues((value) => value > 0) returns true if all values are positive
-  bool allValues(bool Function(V) predicate) => 
-      values.every(predicate);
+  bool allValues(bool Function(V) predicate) => values.every(predicate);
 
   /// Check if any value matches predicate
   ///
   /// Example: map.anyValue((value) => value == null) returns true if any value is null
-  bool anyValue(bool Function(V) predicate) => 
-      values.any(predicate);
+  bool anyValue(bool Function(V) predicate) => values.any(predicate);
 
   /// Get missing keys from a set of required keys
   ///
   /// Example: map.getMissingKeys(['name', 'email', 'age']) returns list of missing keys
-  List<K> getMissingKeys(Iterable<K> requiredKeys) => 
+  List<K> getMissingKeys(Iterable<K> requiredKeys) =>
       requiredKeys.where((key) => !containsKey(key)).toList();
 
   /// Apply multiple transformations in chain
@@ -158,8 +160,8 @@ extension MapExtension<K, V> on Map<K, V> {
   /// Swap keys and values (useful when values are unique)
   ///
   /// Example: {'a': 1, 'b': 2}.swap() returns {1: 'a', 2: 'b'}
-  Map<V, K> swap() => Map.fromEntries(
-      entries.map((e) => MapEntry(e.value, e.key)));
+  Map<V, K> swap() =>
+      Map.fromEntries(entries.map((e) => MapEntry(e.value, e.key)));
 
   /// Get random entry
   ///

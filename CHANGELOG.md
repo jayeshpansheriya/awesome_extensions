@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.1.0] - 2025-01-17
+### Added
+- Comprehensive documentation for all 15 extension files (100+ examples)
+- TextStyle utility methods: `withColor()`, `withOpacity()`, `size()`, `scale()`, `letterSpace()`, `wordSpace()`, `lineHeight()`, `family()`
+- Migration guide: [MIGRATION_2.0.26_TO_2.1.0.md](MIGRATION_2.0.26_TO_2.1.0.md)
+
+### Changed
+- All widget extensions renamed to `Awesome*Extension` pattern
+- Text style methods converted to getters: `.bold()` → `.bold`, `.italic()` → `.italic`
+- `.toCenter()` → `.center` (getter)
+- `.setOpacity()` → `.withOpacity()`
+
+### Improved
+- 100% documentation coverage with inline examples
+- Better IDE autocomplete and tooltips
+- Consistent API design (getters for simple properties, methods for parameters)
+
+**Breaking Changes:** See [migration guide](MIGRATION_2.0.26_TO_2.1.0.md) for details.
+
+---
+
 ## [2.0.26] - 2025-09-14
 ### Added
 - **Map Extensions**: Added a comprehensive set of `Map` extensions for advanced data manipulation, including safe access (`getOrDefault`), filtering (`filterKeys`, `filterValues`), transformation (`toQueryString`), and nested map operations (`getNested`, `setNested`).
