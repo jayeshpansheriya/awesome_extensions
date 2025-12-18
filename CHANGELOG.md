@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.1.0] - 2025-01-17
+## [2.1.0] - 2025-12-18
 ### Added
 - Comprehensive documentation for all 15 extension files (100+ examples)
 - TextStyle utility methods: `withColor()`, `withOpacity()`, `size()`, `scale()`, `letterSpace()`, `wordSpace()`, `lineHeight()`, `family()`

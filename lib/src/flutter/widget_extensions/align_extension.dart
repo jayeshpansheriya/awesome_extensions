@@ -41,14 +41,13 @@ extension AwesomeAlignExtension on Widget {
     Key? key,
     double? heightFactor,
     double? widthFactor,
-  }) =>
-      Align(
-        key: key,
-        alignment: Alignment.bottomCenter,
-        heightFactor: heightFactor,
-        widthFactor: widthFactor,
-        child: this,
-      );
+  }) => Align(
+    key: key,
+    alignment: Alignment.bottomCenter,
+    heightFactor: heightFactor,
+    widthFactor: widthFactor,
+    child: this,
+  );
 
   /// Aligns this widget at the bottom left
   ///
@@ -60,14 +59,13 @@ extension AwesomeAlignExtension on Widget {
     Key? key,
     double? heightFactor,
     double? widthFactor,
-  }) =>
-      Align(
-        key: key,
-        alignment: Alignment.bottomLeft,
-        heightFactor: heightFactor,
-        widthFactor: widthFactor,
-        child: this,
-      );
+  }) => Align(
+    key: key,
+    alignment: Alignment.bottomLeft,
+    heightFactor: heightFactor,
+    widthFactor: widthFactor,
+    child: this,
+  );
 
   /// Aligns this widget at the bottom right
   ///
@@ -79,14 +77,13 @@ extension AwesomeAlignExtension on Widget {
     Key? key,
     double? heightFactor,
     double? widthFactor,
-  }) =>
-      Align(
-        key: key,
-        alignment: Alignment.bottomRight,
-        heightFactor: heightFactor,
-        widthFactor: widthFactor,
-        child: this,
-      );
+  }) => Align(
+    key: key,
+    alignment: Alignment.bottomRight,
+    heightFactor: heightFactor,
+    widthFactor: widthFactor,
+    child: this,
+  );
 
   /// Aligns this widget at the center
   ///
@@ -113,14 +110,13 @@ extension AwesomeAlignExtension on Widget {
     Key? key,
     double? heightFactor,
     double? widthFactor,
-  }) =>
-      Align(
-        key: key,
-        alignment: Alignment.centerLeft,
-        heightFactor: heightFactor,
-        widthFactor: widthFactor,
-        child: this,
-      );
+  }) => Align(
+    key: key,
+    alignment: Alignment.centerLeft,
+    heightFactor: heightFactor,
+    widthFactor: widthFactor,
+    child: this,
+  );
 
   /// Aligns this widget at the center right
   ///
@@ -132,14 +128,13 @@ extension AwesomeAlignExtension on Widget {
     Key? key,
     double? heightFactor,
     double? widthFactor,
-  }) =>
-      Align(
-        key: key,
-        alignment: Alignment.centerRight,
-        heightFactor: heightFactor,
-        widthFactor: widthFactor,
-        child: this,
-      );
+  }) => Align(
+    key: key,
+    alignment: Alignment.centerRight,
+    heightFactor: heightFactor,
+    widthFactor: widthFactor,
+    child: this,
+  );
 
   /// Aligns this widget using linear interpolation between two alignments
   ///
@@ -166,14 +161,13 @@ extension AwesomeAlignExtension on Widget {
     Key? key,
     double? heightFactor,
     double? widthFactor,
-  }) =>
-      Align(
-        key: key,
-        alignment: Alignment.lerp(a, b, t)!,
-        heightFactor: heightFactor,
-        widthFactor: widthFactor,
-        child: this,
-      );
+  }) => Align(
+    key: key,
+    alignment: Alignment.lerp(a, b, t)!,
+    heightFactor: heightFactor,
+    widthFactor: widthFactor,
+    child: this,
+  );
 
   /// Aligns this widget at the top center
   ///
@@ -185,14 +179,13 @@ extension AwesomeAlignExtension on Widget {
     Key? key,
     double? heightFactor,
     double? widthFactor,
-  }) =>
-      Align(
-        key: key,
-        alignment: Alignment.topCenter,
-        heightFactor: heightFactor,
-        widthFactor: widthFactor,
-        child: this,
-      );
+  }) => Align(
+    key: key,
+    alignment: Alignment.topCenter,
+    heightFactor: heightFactor,
+    widthFactor: widthFactor,
+    child: this,
+  );
 
   /// Aligns this widget at the top left
   ///
@@ -219,14 +212,13 @@ extension AwesomeAlignExtension on Widget {
     Key? key,
     double? heightFactor,
     double? widthFactor,
-  }) =>
-      Align(
-        key: key,
-        alignment: Alignment.topRight,
-        heightFactor: heightFactor,
-        widthFactor: widthFactor,
-        child: this,
-      );
+  }) => Align(
+    key: key,
+    alignment: Alignment.topRight,
+    heightFactor: heightFactor,
+    widthFactor: widthFactor,
+    child: this,
+  );
 
   /// Aligns this widget at custom X and Y coordinates
   ///
@@ -249,12 +241,11 @@ extension AwesomeAlignExtension on Widget {
     Key? key,
     double? heightFactor,
     double? widthFactor,
-  }) =>
-      Align(
-        key: key,
-        alignment: Alignment(x, y),
-        heightFactor: heightFactor,
-        widthFactor: widthFactor,
-        child: this,
-      );
+  }) => Align(
+    key: key,
+    alignment: Alignment(x, y),
+    heightFactor: heightFactor,
+    widthFactor: widthFactor,
+    child: this,
+  );
 }

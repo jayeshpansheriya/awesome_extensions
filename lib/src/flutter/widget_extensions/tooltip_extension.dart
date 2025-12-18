@@ -66,16 +66,15 @@ extension AwesomeTooltipExtension on Widget {
     TextStyle? textStyle,
     Duration? waitDuration,
     EdgeInsetsGeometry? margin,
-  }) =>
-      Tooltip(
-        message: message,
-        decoration: decoration,
-        constraints: constraints,
-        padding: padding,
-        preferBelow: preferBelow,
-        textStyle: textStyle,
-        waitDuration: waitDuration,
-        margin: margin,
-        child: this,
-      );
+  }) => Tooltip(
+    message: message,
+    decoration: decoration,
+    constraints: constraints,
+    padding: padding,
+    preferBelow: preferBelow,
+    textStyle: textStyle,
+    waitDuration: waitDuration,
+    margin: margin,
+    child: this,
+  );
 }

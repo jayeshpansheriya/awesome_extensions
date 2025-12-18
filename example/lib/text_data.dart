@@ -27,8 +27,10 @@ class TextExt extends StatelessWidget {
             Text('Display Large Bold', style: context.displayLarge?.bold),
             const SizedBox(height: 8),
 
-            Text('Headline Large Semi-Bold',
-                style: context.headlineLarge?.semiBold),
+            Text(
+              'Headline Large Semi-Bold',
+              style: context.headlineLarge?.semiBold,
+            ),
             const SizedBox(height: 8),
 
             Text('Title Large Regular', style: context.titleLarge?.regular),
@@ -40,8 +42,10 @@ class TextExt extends StatelessWidget {
             Text('Body Small Thin', style: context.textTheme.bodySmall?.thin),
             const SizedBox(height: 8),
 
-            Text('Custom Style',
-                style: context.bodyLarge?.bold.withColor(Colors.blue).size(20)),
+            Text(
+              'Custom Style',
+              style: context.bodyLarge?.bold.withColor(Colors.blue).size(20),
+            ),
 
             const SizedBox(height: 24),
             const Divider(),

@@ -40,14 +40,13 @@ extension AwesomePositionedExtension on Widget {
     required double bottom,
     double? width,
     double? height,
-  }) =>
-      Positioned(
-        key: key,
-        bottom: bottom,
-        width: width,
-        height: height,
-        child: this,
-      );
+  }) => Positioned(
+    key: key,
+    bottom: bottom,
+    width: width,
+    height: height,
+    child: this,
+  );
 
   /// Positions this widget with specific left and right distances
   ///
@@ -66,15 +65,14 @@ extension AwesomePositionedExtension on Widget {
     required double right,
     double? width,
     double? height,
-  }) =>
-      Positioned(
-        key: key,
-        left: left,
-        right: right,
-        width: width,
-        height: height,
-        child: this,
-      );
+  }) => Positioned(
+    key: key,
+    left: left,
+    right: right,
+    width: width,
+    height: height,
+    child: this,
+  );
 
   /// Positions this widget with all four edges specified (Left, Right, Top, Bottom)
   ///
@@ -96,17 +94,16 @@ extension AwesomePositionedExtension on Widget {
     required double right,
     double? width,
     double? height,
-  }) =>
-      Positioned(
-        key: key,
-        top: top,
-        bottom: bottom,
-        left: left,
-        right: right,
-        width: width,
-        height: height,
-        child: this,
-      );
+  }) => Positioned(
+    key: key,
+    top: top,
+    bottom: bottom,
+    left: left,
+    right: right,
+    width: width,
+    height: height,
+    child: this,
+  );
 
   /// Positions this widget with specific top and bottom distances
   ///
@@ -125,15 +122,14 @@ extension AwesomePositionedExtension on Widget {
     required double bottom,
     double? width,
     double? height,
-  }) =>
-      Positioned(
-        key: key,
-        top: top,
-        bottom: bottom,
-        width: width,
-        height: height,
-        child: this,
-      );
+  }) => Positioned(
+    key: key,
+    top: top,
+    bottom: bottom,
+    width: width,
+    height: height,
+    child: this,
+  );
 
   /// Positions this widget at a specific distance from the top
   ///

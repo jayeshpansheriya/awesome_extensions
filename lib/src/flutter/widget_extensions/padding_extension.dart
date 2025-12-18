@@ -56,12 +56,11 @@ extension AwesomePaddingExtension on Widget {
     ViewPadding padding,
     double devicePixelRatio, {
     Key? key,
-  }) =>
-      Padding(
-        key: key,
-        padding: EdgeInsets.fromViewPadding(padding, devicePixelRatio),
-        child: this,
-      );
+  }) => Padding(
+    key: key,
+    padding: EdgeInsets.fromViewPadding(padding, devicePixelRatio),
+    child: this,
+  );
 
   /// Adds padding with specific values for each side (Left, Top, Right, Bottom)
   ///
@@ -76,12 +75,11 @@ extension AwesomePaddingExtension on Widget {
     double right,
     double bottom, {
     Key? key,
-  }) =>
-      Padding(
-        key: key,
-        padding: EdgeInsets.fromLTRB(left, top, right, bottom),
-        child: this,
-      );
+  }) => Padding(
+    key: key,
+    padding: EdgeInsets.fromLTRB(left, top, right, bottom),
+    child: this,
+  );
 
   /// Adds padding only on specified sides
   ///
@@ -98,17 +96,16 @@ extension AwesomePaddingExtension on Widget {
     double right = 0.0,
     double bottom = 0.0,
     Key? key,
-  }) =>
-      Padding(
-        key: key,
-        padding: EdgeInsets.only(
-          top: top,
-          left: left,
-          bottom: bottom,
-          right: right,
-        ),
-        child: this,
-      );
+  }) => Padding(
+    key: key,
+    padding: EdgeInsets.only(
+      top: top,
+      left: left,
+      bottom: bottom,
+      right: right,
+    ),
+    child: this,
+  );
 
   /// Adds symmetric padding (vertical and/or horizontal)
   ///
@@ -121,12 +118,11 @@ extension AwesomePaddingExtension on Widget {
     double vertical = 0.0,
     double horizontal = 0.0,
     Key? key,
-  }) =>
-      Padding(
-        key: key,
-        padding: EdgeInsets.symmetric(vertical: vertical, horizontal: horizontal),
-        child: this,
-      );
+  }) => Padding(
+    key: key,
+    padding: EdgeInsets.symmetric(vertical: vertical, horizontal: horizontal),
+    child: this,
+  );
 
   /// Adds horizontal padding (left and right)
   ///
@@ -136,10 +132,10 @@ extension AwesomePaddingExtension on Widget {
   /// // Same as: paddingSymmetric(horizontal: 24)
   /// ```
   Padding paddingHorizontal(double value, {Key? key}) => Padding(
-        key: key,
-        padding: EdgeInsets.symmetric(horizontal: value),
-        child: this,
-      );
+    key: key,
+    padding: EdgeInsets.symmetric(horizontal: value),
+    child: this,
+  );
 
   /// Adds vertical padding (top and bottom)
   ///
@@ -149,10 +145,10 @@ extension AwesomePaddingExtension on Widget {
   /// // Same as: paddingSymmetric(vertical: 16)
   /// ```
   Padding paddingVertical(double value, {Key? key}) => Padding(
-        key: key,
-        padding: EdgeInsets.symmetric(vertical: value),
-        child: this,
-      );
+    key: key,
+    padding: EdgeInsets.symmetric(vertical: value),
+    child: this,
+  );
 
   /// Adds directional padding (Start, Top, End, Bottom)
   ///
@@ -168,12 +164,11 @@ extension AwesomePaddingExtension on Widget {
     double end,
     double bottom, {
     Key? key,
-  }) =>
-      Padding(
-        key: key,
-        padding: EdgeInsetsDirectional.fromSTEB(start, top, end, bottom),
-        child: this,
-      );
+  }) => Padding(
+    key: key,
+    padding: EdgeInsetsDirectional.fromSTEB(start, top, end, bottom),
+    child: this,
+  );
 
   /// Adds padding at the start (left in LTR, right in RTL)
   ///
@@ -184,10 +179,10 @@ extension AwesomePaddingExtension on Widget {
   /// Text('Content').paddingStart(16)
   /// ```
   Padding paddingStart(double start, {Key? key}) => Padding(
-        key: key,
-        padding: EdgeInsetsDirectional.only(start: start),
-        child: this,
-      );
+    key: key,
+    padding: EdgeInsetsDirectional.only(start: start),
+    child: this,
+  );
 
   /// Adds padding at the end (right in LTR, left in RTL)
   ///
@@ -198,8 +193,8 @@ extension AwesomePaddingExtension on Widget {
   /// Icon(Icons.arrow_forward).paddingEnd(8)
   /// ```
   Padding paddingEnd(double end, {Key? key}) => Padding(
-        key: key,
-        padding: EdgeInsetsDirectional.only(end: end),
-        child: this,
-      );
+    key: key,
+    padding: EdgeInsetsDirectional.only(end: end),
+    child: this,
+  );
 }
