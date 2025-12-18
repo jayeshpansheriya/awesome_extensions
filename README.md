@@ -7,6 +7,20 @@
 
 ![flutter_extension](https://user-images.githubusercontent.com/31765271/205228040-e9211b4a-8f8e-49c9-b0fd-3094120a0a5e.png)
 
+## 🎉 What's New in v2.1.0
+
+**Major documentation and API improvements!**
+
+- ✅ **Comprehensive documentation** for all extensions with 100+ examples
+- ✅ **Consistent naming** with `Awesome*Extension` pattern
+- ✅ **Improved API design** - getters for simple properties, methods for parameters
+- ✅ **Enhanced TextStyle utilities** - new color, size, and spacing methods
+- ✅ **Better developer experience** - improved IDE autocomplete and inline docs
+
+**Upgrading from v2.0.26?** See the [Migration Guide](MIGRATION_2.0.26_TO_2.1.0.md) for step-by-step instructions.
+
+---
+
 ## Let's get started 💪
 
 1. Go to `pubspec.yaml`
@@ -42,6 +56,7 @@ dependencies:
     - [SliverToBoxAdapter](#slivertoboxadapter)
     - [Other](#other)
   - [List Extensions](#list-extensions)
+  - [Map Extensions](#map-extensions)
   - [Date Extensions](#date-extensions)
   - [Number Extensions](#number-extensions)
     - [Future \& Duration](#future--duration)
@@ -114,27 +129,60 @@ Similar 2021 TextStyle are:
 If you don't want to use theme styles, then we have some other methods:
 
 ```dart
+// v2.1.0+ - Improved API with getters and methods
 Text('Hello World')
-    .bold()
-    .fontSize(25)
-    .italic();
+    .bold          // ✅ Getter (no parentheses)
+    .fontSize(25)  // ✅ Method (with parentheses)
+    .italic;       // ✅ Getter (no parentheses)
+
+// You can also start from a String
+'Hello World'
+    .text()
+    .fontSize(24)
+    .bold
+    .textColor(Colors.blue)
+    .letterSpacing(1.2);
 ```
 
-Similar methods are:
+**Simple Styles (Getters - no parentheses):**
+- `.bold` - Bold text
+- `.italic` - Italic text
+- `.withUnderLine` - Underlined text
+- `.lineThrough` - Line through text
 
-- `textScale()` TextScale
-- `bold()` Bold Text
-- `italic()` Italic Text
-- `fontWeight()` Specific FontWeight
-- `fontSize()` Specific FontSize
-- `letterSpacing()` Specific LetterSpacing
-- `height()` Specific Height
-- `wordSpacing()` Specific WordSpacing
-- `fontFamily()` Specific FontFamily
-- `textShadow()` Specific TextShadow
-- `textColor()` TextColor
-- `textAlignment()` Specific TextAlignment
-- `withUnderLine()` TextUnderLine
+**Parameterized Styles (Methods - with parentheses):**
+- `textScale()` - TextScale
+- `fontWeight()` - Specific FontWeight
+- `fontSize()` - Specific FontSize
+- `letterSpacing()` - Specific LetterSpacing
+- `height()` - Specific Height
+- `wordSpacing()` - Specific WordSpacing
+- `fontFamily()` - Specific FontFamily
+- `textShadow()` - Specific TextShadow
+- `textColor()` - TextColor
+- `textAlignment()` - Specific TextAlignment
+- `decoration()` - Text decoration
+
+**Enhanced TextStyle Extensions:**
+```dart
+TextStyle style = TextStyle();
+
+// Color utilities
+style.withColor(Colors.blue)
+style.withOpacity(0.5)
+
+// Size utilities
+style.size(24)
+style.scale(1.5)
+
+// Spacing utilities
+style.letterSpace(1.5)
+style.wordSpace(3.0)
+style.lineHeight(1.8)
+
+// Font utilities
+style.family('Roboto')
+```
 
 #### Theme
 
@@ -360,8 +408,8 @@ Opacity(
   child: Text("text"),
 )
 
-// After
-Text("text").setOpacity(0.5)
+// After (v2.1.0+)
+Text("text").withOpacity(0.5)
 ```
 
 ### Expanded
@@ -440,6 +488,7 @@ SliverToBoxAdapter(
 Now we can just add round corners, shadows, align, and added gestures to our Widgets.
 
 ```dart
+// v2.1.0+ - Updated API
 Container(
   height: 100,
   width: 100,
@@ -447,13 +496,39 @@ Container(
   .withRoundCorners(backgroundColor: Colors.grey)
   .withShadow()
   .alignAtCenter()
-  .toCenter()
+  .center              // ✅ Changed from .toCenter()
   .withTooltip('My Tooltip')
   .paddingOnly(left: 10)
   .paddingAll(20)
   .onTap(() => print('tap'))
   .onLongPress(() => print('long press'));
 ```
+
+**All Widget Extensions (v2.1.0):**
+
+**Layout & Positioning:**
+- `alignAtTopLeft()`, `alignAtCenter()`, `alignAtBottomRight()`, etc. - 11 alignment methods
+- `.center` - Center widget (getter)
+- `positionTop()`, `positionBottom()`, `positionLRTB()`, etc. - Positioned in Stack
+- `paddingAll()`, `paddingSymmetric()`, `paddingOnly()`, etc. - 9 padding methods
+
+**Flex & Sizing:**
+- `expanded()` - Wrap with Expanded
+- `flexible()` - Wrap with Flexible
+
+**Visual Effects:**
+- `withOpacity()` - Add opacity
+- `applyShimmer()` - Add shimmer loading effect
+- `withRoundCorners()` - Add rounded corners to Container
+- `withShadow()` - Add shadow to Container
+
+**Interaction:**
+- `onTap()`, `onDoubleTap()`, `onLongPress()` - Gesture detection
+- `withTooltip()` - Add tooltip
+
+**Utilities:**
+- `showIf()` - Conditional rendering
+- `.sliver` - Convert to SliverToBoxAdapter (getter)
 
 Automatically detect platform and show material and cupertino dialog
 
@@ -505,6 +580,76 @@ Row(
 
 
 <img  alt="Screenshot 2024-10-10 at 13 34 14" src="https://github.com/user-attachments/assets/b64a6a65-468b-43be-88b5-9ee2271971b9">
+
+## Map Extensions
+
+A comprehensive set of extensions for advanced `Map` manipulation, ensuring you write less boilerplate and more expressive code.
+
+### Safe Access
+
+Avoid null errors with safe access methods that provide default values.
+
+```dart
+final map = {'name': 'John'};
+
+// Before
+final age = map.containsKey('age') ? map['age'] : 30;
+
+// After
+final age = map.getOrDefault('age', 30); // Returns 30
+```
+
+- `getOrDefault(key, defaultValue)`: Returns the value for the given key or the `defaultValue` if the key is not in the map.
+- `getOrElse(key, function)`: Returns the value for the given key or computes it from a function if the key is not in the map.
+
+### Filtering
+
+Easily filter maps by keys or values.
+
+```dart
+final scores = {'math': 95, 'science': 88, 'history': 75};
+
+// Filter by keys
+final scienceScores = scores.filterKeys((key) => key.startsWith('s')); // {'science': 88}
+
+// Filter by values
+final highScores = scores.filterValues((value) => value > 90); // {'math': 95}
+```
+
+### Transformation & Merging
+
+Transform maps into different formats or merge them safely.
+
+```dart
+// Convert to a URL query string
+final params = {'user': 'john_doe', 'page': 2};
+final query = params.toQueryString(); // "user=john_doe&page=2"
+
+// Merge two maps
+final map1 = {'a': 1, 'b': 2};
+final map2 = {'b': 3, 'c': 4};
+final merged = map1.merge(map2); // {'a': 1, 'b': 3, 'c': 4}
+```
+
+### Nested Operations
+
+Access and manipulate nested map data with ease using dot notation.
+
+```dart
+final data = {
+  'user': {
+    'profile': {
+      'name': 'Jane Doe'
+    }
+  }
+};
+
+// Get a nested value
+final name = data.getNested('user.profile.name'); // 'Jane Doe'
+
+// Set a nested value
+data.setNested('user.profile.age', 28);
+```
 
 ## Date Extensions
 
