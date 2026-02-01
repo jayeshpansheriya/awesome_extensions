@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.1.1] - 2026-02-01
+### Added
+- **Font Variation Weight Support**: Added `withFontVariationWeight(double weight)` method to `TextStyle` extension for precise font weight control using variable fonts.
+- **Enhanced Font Weight Extensions**: All font weight getters (w100-w900, thin-mostThick) now automatically include `fontVariations` parameter for better variable font support.
+
 ## [2.1.0] - 2026-01-16
 ### Changed
 - **Dot Shorthand Refactor**: Refactored the entire codebase (both library and example project) to utilize Dart's "dot shorthand" feature for constructors, static methods, and enums.
