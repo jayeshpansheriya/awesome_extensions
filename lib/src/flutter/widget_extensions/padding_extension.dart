@@ -83,4 +83,62 @@ extension PaddingX on Widget {
     padding: EdgeInsetsDirectional.only(end: end),
     child: this,
   );
+
+  Padding paddingLeft(double value, {Key? key}) => Padding(
+    key: key,
+    padding: .only(left: value),
+    child: this,
+  );
+  Padding paddingTop(double value, {Key? key}) => Padding(
+    key: key,
+    padding: .only(top: value),
+    child: this,
+  );
+  Padding paddingRight(double value, {Key? key}) => Padding(
+    key: key,
+    padding: .only(right: value),
+    child: this,
+  );
+  Padding paddingBottom(double value, {Key? key}) => Padding(
+    key: key,
+    padding: .only(bottom: value),
+    child: this,
+  );
+}
+
+extension EdgeInsetsX on EdgeInsets {
+  EdgeInsets insetsAll(double value) => this + .all(value);
+
+  EdgeInsets insetsLTRB(
+    double left,
+    double top,
+    double right,
+    double bottom, {
+    Key? key,
+  }) => this + .fromLTRB(left, top, right, bottom);
+
+  EdgeInsets insetsOnly({
+    double left = 0.0,
+    double top = 0.0,
+    double right = 0.0,
+    double bottom = 0.0,
+    Key? key,
+  }) => this + .only(top: top, left: left, bottom: bottom, right: right);
+
+  EdgeInsets insetsSymmetric({
+    double vertical = 0.0,
+    double horizontal = 0.0,
+    Key? key,
+  }) => this + .symmetric(vertical: vertical, horizontal: horizontal);
+
+  EdgeInsets insetsHorizontal(double value, {Key? key}) =>
+      this + .symmetric(horizontal: value);
+
+  EdgeInsets insetsVertical(double value, {Key? key}) =>
+      this + .symmetric(vertical: value);
+
+  EdgeInsets insetsLeft(double value) => this + .only(left: value);
+  EdgeInsets insetsTop(double value) => this + .only(top: value);
+  EdgeInsets insetsRight(double value) => this + .only(right: value);
+  EdgeInsets insetsBottom(double value) => this + .only(bottom: value);
 }
