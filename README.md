@@ -92,6 +92,14 @@ FontWeight extensions that apply font weights on `TextStyle`:
 - `extraLight` or `w200` Extra-light - FontWeight.w200
 - `thin` or `w100` Thin, the least thick - FontWeight.w100
 
+All font weight extensions now support variable fonts through automatic `fontVariations` parameter.
+
+For precise control over font weight with variable fonts, use:
+
+```dart
+Text('Hello World', style: context.bodyLarge?.withFontVariationWeight(650))
+```
+
 Similar 2021 TextStyle are:
 
 - `context.displayLarge`
