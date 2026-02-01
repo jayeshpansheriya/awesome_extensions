@@ -1,5 +1,10 @@
 # Changelog
 
+## [2.2.0] - 2026-02-01
+### Added
+- **Padding Extension Enhancement**: Added directional padding methods (`paddingLeft`, `paddingTop`, `paddingRight`, `paddingBottom`) for more granular widget padding control.
+- **EdgeInsets Extension**: Introduced `EdgeInsetsX` extension with comprehensive insets methods including `insetsAll`, `insetsLTRB`, `insetsOnly`, `insetsSymmetric`, `insetsHorizontal`, `insetsVertical`, `insetsLeft`, `insetsTop`, `insetsRight`, and `insetsBottom` for advanced padding composition and manipulation.
+
 ## [2.1.0] - 2026-01-16
 ### Changed
 - **Dot Shorthand Refactor**: Refactored the entire codebase (both library and example project) to utilize Dart's "dot shorthand" feature for constructors, static methods, and enums.

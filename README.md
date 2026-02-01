@@ -351,6 +351,36 @@ Similar padding extensions are:
 - `paddingLTRB` Creates insets from offsets from the left, top, right, and bottom.
 - `paddingSymmetric` Creates insets with symmetrical vertical and horizontal offsets.
 - `paddingFromWindowPadding` Creates insets that match the given window padding.
+- `paddingLeft` Adds padding to the left side only.
+- `paddingTop` Adds padding to the top side only.
+- `paddingRight` Adds padding to the right side only.
+- `paddingBottom` Adds padding to the bottom side only.
+
+**EdgeInsets Extensions:**
+
+You can also compose and manipulate `EdgeInsets` objects with the new `EdgeInsetsX` extension:
+
+```dart
+// Combine multiple insets
+final combinedInsets = EdgeInsets.all(10).insetsLeft(5); // Adds 5 more to left
+
+// Add insets in specific directions
+EdgeInsets.zero.insetsSymmetric(horizontal: 20, vertical: 10);
+EdgeInsets.all(8).insetsOnly(left: 4, right: 4);
+```
+
+Available EdgeInsets extension methods:
+
+- `insetsAll` Adds equal padding to all sides.
+- `insetsLTRB` Adds padding from left, top, right, and bottom.
+- `insetsOnly` Adds padding with only specified values.
+- `insetsSymmetric` Adds symmetrical vertical and horizontal padding.
+- `insetsHorizontal` Adds equal horizontal padding.
+- `insetsVertical` Adds equal vertical padding.
+- `insetsLeft` Adds padding to the left side.
+- `insetsTop` Adds padding to the top side.
+- `insetsRight` Adds padding to the right side.
+- `insetsBottom` Adds padding to the bottom side.
 
 ### Opacity
 
