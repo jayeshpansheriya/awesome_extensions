@@ -46,4 +46,24 @@ extension NumExtension on num {
   num multiply(num b) => this * b;
 
   num subtract(num b) => this - b;
+
+  /// Rounds number to specified decimal places
+  /// Example: 3.14159.roundToDecimal(2) => 3.14
+  double roundToDecimal(int decimalPlaces) {
+    final mod = num.parse('1${'0' * decimalPlaces}');
+    return ((this * mod).round().toDouble()) / mod;
+  }
+
+  /// Formats number as currency string
+  /// Example: 12.5.toCurrency() => "$12.50"
+  String toCurrency({String symbol = '\$', int decimalDigits = 2}) {
+    return '$symbol${toStringAsFixed(decimalDigits)}';
+  }
+
+  /// Formats double as percentage string
+  /// Example: 0.75.toPercent() => "75%"
+  String toPercent({int decimalDigits = 0}) {
+    final value = this * 100;
+    return '${value.toStringAsFixed(decimalDigits)}%';
+  }
 }

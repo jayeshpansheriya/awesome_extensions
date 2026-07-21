@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.1] - 2026-07-21
+### Added
+- **String Extensions**: Added `isJson`, `toSlug`, `removeSpecialCharacters`, `hasCapitalLetter`, and `NullableStringExtension` (`isNullOrEmpty`, `isNotNullOrEmpty`, `orDefault`).
+- **List & Iterable Extensions**: Added generic type support, `getOrNull(index)`, `firstWhereOrNull`, `lastWhereOrNull`, `chunked(size)`, `distinctBy`, and `separatedBy`.
+- **Date Extensions**: Added `isTomorrow`, `isLeapYear`, `daysInMonth`, `startOfDay`, `endOfDay`, `addDays`, `subtractDays`, and relative `timeAgo` formatting.
+- **Number Extensions**: Added `toCurrency`, `toPercent`, and `roundToDecimal`.
+- **BuildContext Extensions**: Added `focus_extension` (`unfocus`, `requestFocus`, `hideKeyboard`).
+- **Widget Extensions**: Added `margin_extension` (`marginAll`, `marginSymmetric`, `marginOnly`, `marginDirectional`) and `layout_helper_extension` (`scrollable`, `safeArea`, `card`, `clipRRect`, `visible`, `fittedBox`, `inkWell`).
+
+### Fixed
+- **String Safety**: Guarded `capitalize` and `capitalizeFirst` against empty string `RangeError`.
+
 ## [2.1.0] - 2026-01-16
 ### Changed
 - **Dot Shorthand Refactor**: Refactored the entire codebase (both library and example project) to utilize Dart's "dot shorthand" feature for constructors, static methods, and enums.

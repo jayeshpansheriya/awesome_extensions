@@ -1,18 +1,24 @@
+import 'dart:convert';
+
 extension StringExtension on String {
   /// Capitalize each word inside string
   ///
-  /// Example: your name => Your Name, your name => Your name
-  String get capitalize =>
-      split(' ').map((str) => str.capitalizeFirst).join(' ');
+  /// Example: your name => Your Name
+  String get capitalize {
+    if (isEmpty) return this;
+    return split(' ').map((str) => str.capitalizeFirst).join(' ');
+  }
 
   /// Uppercase first letter inside string and let the others lowercase
   ///
   /// Example: your name => Your name
-  String get capitalizeFirst =>
-      "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
+  String get capitalizeFirst {
+    if (isEmpty) return this;
+    return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
+  }
 
   /// Checks if string contains at least one Capital Letter
-  bool get hasCapitalletter => hasMatch(r'[A-Z]');
+  bool get hasCapitalLetter => hasMatch(r'[A-Z]');
 
   bool get is7Z => hasMatch(r'^.+\.7z$');
 
@@ -109,6 +115,30 @@ extension StringExtension on String {
 
   bool get isZIP => hasMatch(r'^.+\.zip$');
 
+  /// Check if string is valid JSON
+  bool get isJson {
+    try {
+      jsonDecode(this);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  /// Convert string into URL friendly slug format
+  /// Example: "Hello World!" => "hello-world"
+  String get toSlug {
+    return replaceAll(
+      RegExp(r'[^\w\s-]'),
+      '',
+    ).trim().replaceAll(RegExp(r'\s+'), '-').toLowerCase();
+  }
+
+  /// Remove non-alphanumeric characters except spaces
+  String get removeSpecialCharacters {
+    return replaceAll(RegExp(r'[^\w\s]'), '');
+  }
+
   /// Remove all whitespace inside string
   ///
   /// Example: your name => yourname
@@ -117,4 +147,15 @@ extension StringExtension on String {
   bool hasMatch(String pattern) => RegExp(pattern).hasMatch(this);
 
   String ifIsEmpty(String fallback) => isEmpty ? fallback : this;
+}
+
+extension NullableStringExtension on String? {
+  /// Returns true if the string is null or empty
+  bool get isNullOrEmpty => this == null || this!.trim().isEmpty;
+
+  /// Returns true if the string is not null and not empty
+  bool get isNotNullOrEmpty => !isNullOrEmpty;
+
+  /// Return fallback string if this is null or empty
+  String orDefault(String fallback) => isNullOrEmpty ? fallback : this!;
 }
