@@ -312,9 +312,24 @@ context.routeName;
 context.routeArguments;
 ```
 
+## Focus & Keyboard Extensions
+
+Easily manage input focus and dismiss the soft keyboard directly from `BuildContext`.
+
+```dart
+// Unfocus current input (dismiss keyboard)
+context.unfocus();
+
+// Hide keyboard from primary focus
+context.hideKeyboard();
+
+// Request focus for a specific FocusNode
+context.requestFocus(myFocusNode);
+```
+
 ## Widget Extensions
 
-This extension is reduced more code.
+This extension reduces boilerplate code significantly.
 
 #### SizeBox
 
@@ -351,6 +366,42 @@ Similar padding extensions are:
 - `paddingLTRB` Creates insets from offsets from the left, top, right, and bottom.
 - `paddingSymmetric` Creates insets with symmetrical vertical and horizontal offsets.
 - `paddingFromWindowPadding` Creates insets that match the given window padding.
+
+#### Margin
+
+```dart
+Text("Hello").marginAll(16.0);
+Text("Hello").marginSymmetric(horizontal: 10.0, vertical: 5.0);
+Text("Hello").marginOnly(left: 8.0, top: 4.0);
+Text("Hello").marginDirectional(start: 12.0, top: 6.0);
+```
+
+#### Layout Helpers
+
+Chainable widget wrappers to eliminate nested boilerplate code.
+
+```dart
+// Scrollable wrapper
+Text("Long Content").scrollable(scrollDirection: Axis.vertical);
+
+// SafeArea wrapper
+Text("Content").safeArea();
+
+// Card wrapper
+Text("Card Content").card(elevation: 4.0);
+
+// ClipRRect wrapper
+Image.network("...").clipRRect(borderRadius: BorderRadius.circular(12));
+
+// Conditional rendering
+Text("Visible Content").visible(isLoggedIn);
+
+// FittedBox wrapper
+Text("Fitted Text").fittedBox(fit: BoxFit.contain);
+
+// InkWell ripple wrapper
+Text("Clickable").inkWell(onTap: () => print('tapped'));
+```
 
 ### Opacity
 
@@ -465,10 +516,34 @@ context.showAlertDialog(
 );
 ```
 
-## List Extensions
+## List & Iterable Extensions
+
+#### Safe Element Access & Lookup
+
+```dart
+final list = [10, 20, 30];
+
+// Safe lookup without throwing RangeError
+list.getOrNull(0); // 10
+list.getOrNull(5); // null
+
+// Safe predicate search without throwing StateError
+list.firstWhereOrNull((e) => e > 15); // 20
+list.lastWhereOrNull((e) => e < 25);  // 20
+```
+
+#### Chunking & Distinct Filtering
+
+```dart
+// Split list into chunks of specified size
+[1, 2, 3, 4, 5].chunked(2); // [[1, 2], [3, 4], [5]]
+
+// Filter unique elements by key selector
+users.distinctBy((u) => u.id);
+```
 
 #### notNullWidget
-  
+
 ```dart
 Row(
   mainAxisAlignment: MainAxisAlignment.center,
@@ -495,7 +570,7 @@ Row(
   children: [
     const Text('Hello').paddingAll(5),
     const Text('World').paddingAll(5),
-    const Text('Seperated').paddingAll(5),
+    const Text('Separated').paddingAll(5),
     const Text('By').paddingAll(5),
     const Text('Commas').paddingAll(5),
   ].separatedBy(
@@ -580,17 +655,38 @@ data.setNested('user.profile.age', 28);
 ## Date Extensions
 
 ```dart
-// for check two date are same or not
-date.isSameDate(otherdate);    // its return bool (true/false)
+// Date comparisons
+date.isSameDate(otherDate);    // bool
+date.isToday;                   // bool
+date.isYesterday;               // bool
+date.isTomorrow;                // bool
+date.isLeapYear;                // bool
 
-// for check date is today's date
-date.isToday    // its return bool (true/false)
+// Date boundaries & calculations
+date.daysInMonth;               // int (e.g. 28, 29, 30, 31)
+date.startOfDay;                // DateTime at 00:00:00
+date.endOfDay;                  // DateTime at 23:59:59
+date.addDays(5);                // DateTime + 5 days
+date.subtractDays(2);           // DateTime - 2 days
 
-// for check this date is yesterday's date
-date.isYesterday    // its return bool (true/false)
+// Relative time formatting
+DateTime.now().subtract(const Duration(minutes: 5)).timeAgo; // "5 minutes ago"
 ```
 
 ## Number Extensions
+
+#### Formatting & Calculations
+
+```dart
+// Currency formatting
+1234.5.toCurrency(symbol: '$'); // "$1234.50"
+
+// Percentage formatting
+0.75.toPercent();               // "75%"
+
+// Round to decimal places
+3.14159.roundToDecimal(2);      // 3.14
+```
 
 #### Future & Duration
 
@@ -620,22 +716,38 @@ print(1.5.hours);
 
 ```dart
 // your name => Your Name
-'your name'.capitalize();
+'your name'.capitalize;
 
 // your name => Your name
-'your name'.capitalizeFirst();
+'your name'.capitalizeFirst;
 
 // your name => yourname
-'your name'.removeAllWhitespace();
+'your name'.removeAllWhitespace;
 
-// Match any RegExp
-'test123'.hasMatch(r'[0-9]'); // true
+// Convert to URL-friendly slug
+'Hello World!'.toSlug; // "hello-world"
 
-// Return bool if matches pattern
-'123'.isNumericOnly();        // true
-'abc'.isAlphabetOnly();       // true
-'Hello'.hasCapitalLetter();   // true
-'true'.isBool();              // true
+// Remove special characters
+'Hello@# World!'.removeSpecialCharacters; // "Hello World"
+
+// Check valid JSON
+'{"key": "value"}'.isJson; // true
+
+// Match RegExp & validations
+'123'.isNumericOnly;        // true
+'abc'.isAlphabetOnly;       // true
+'Hello'.hasCapitalLetter;   // true
+'true'.isBool;              // true
+```
+
+#### Nullable String Extensions
+
+```dart
+String? text;
+
+text.isNullOrEmpty;      // true if null, empty, or whitespace only
+text.isNotNullOrEmpty;   // true if contains valid non-whitespace text
+text.orDefault('Guest'); // returns "Guest" if null or empty
 ```
 
 ## Async Extensions

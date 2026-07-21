@@ -1,6 +1,5 @@
 export 'async_snapshot_extension.dart';
 export 'color_extension.dart';
-export 'context_extensions/bottom_sheet_extension.dart';
 export 'context_extensions/color_scheme_extension.dart';
 export 'context_extensions/dialog_extension.dart';
 export 'context_extensions/focus_extension.dart';

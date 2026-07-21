@@ -10,14 +10,14 @@
 ## Let get started 💪
 
 1. Go to `pubspec.yaml`
-2. add a awesome_extensions and replace `[version]` with the latest version:
+2. Add awesome_extensions and replace `[version]` with the latest version:
 
-```dart
+```yaml
 dependencies:
- awesome_extensions: ^[version]
+  awesome_extensions: ^[version]
 ```
 
-3. click the packages get button or _flutter pub get_
+3. Click the packages get button or run `flutter pub get`
 
 ## See [awesome_extensions](https://jayeshpansheriya.github.io/awesome_extensions) for docs & samples
 
@@ -31,9 +31,12 @@ dependencies:
     - [Theme](#theme)
   - [Media Query Extensions For Responsive Layout](#media-query-extensions-for-responsive-layout)
   - [Navigation Extensions](#navigation-extensions)
+  - [Focus & Keyboard Extensions](#focus--keyboard-extensions)
   - [Widget Extensions](#widget-extensions)
     - [SizeBox](#sizebox)
     - [Padding](#padding)
+    - [Margin](#margin)
+    - [Layout Helpers](#layout-helpers)
     - [Opacity](#opacity)
     - [Expanded](#expanded)
     - [Flexible](#flexible)  
@@ -41,15 +44,13 @@ dependencies:
     - [Nil Widget](#nil-widget)
     - [SliverToBoxAdapter](#slivertoboxadapter)
     - [Other](#other)
-  - [List Extensions](#list-extensions)
+  - [List & Iterable Extensions](#list--iterable-extensions)
+  - [Map Extensions](#map-extensions)
   - [Date Extensions](#date-extensions)
   - [Number Extensions](#number-extensions)
-    - [Future \& Duration](#future--duration)
   - [String Extensions](#string-extensions)
   - [Async Extensions](#async-extensions)
   - [Color Extensions](#color-extensions)
-    - [Darken](#darken)
-    - [Lighten](#lighten)
   - [Url Strategy](#url-strategy)
   - [Avatar Image](#avatar-image)
   - [Support](#support)
@@ -67,16 +68,16 @@ From the `TextStyle` Access properties right in the `context` instance.
 
 ```dart
 // Before
-Text('Hello World',style: Theme.of(context).textTheme.labelSmall),
+Text('Hello World', style: Theme.of(context).textTheme.labelSmall),
 
-Text('Hello World', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 40)
+Text('Hello World', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 40))
 
 // After
-Text('Hello World',style: context.labelSmall),
+Text('Hello World', style: context.labelSmall),
 // OR
-Text('Hello World',style: context.displaySmall),
+Text('Hello World', style: context.displaySmall),
 // If you want to bold text then
-Text('Hello World',style: context.labelSmall?.bold),
+Text('Hello World', style: context.labelSmall?.bold),
 ```
 
 FontWeight extensions that apply font weights on `TextStyle`:
@@ -111,7 +112,7 @@ Similar 2021 TextStyle are:
 
 #### Text
 
-If you dont want use theme, then we have some other methods:
+If you don't want to use theme styles, then we have some other methods:
 
 ```dart
 Text('Hello World')
@@ -194,18 +195,7 @@ Similar extensions are:
 - `context.isSmallTablet` // True if the shortestSide is largest than 600p
 - `context.isLargeTablet` // True if the shortestSide is largest than 720p
 
-MediaQuery as Inherited Model
-Old Way X
-
-MediaQuery.of(context).size;
-MediaQuery.of(context).padding; MediaQuery.of (context). orientation;
-By calling MediaQuery.of(context).size, the widget will rebuild when any of the MediaQuery properties change (less performant).
-
-New Way ✓
-
-MediaQuery.sizeof(context);
-MediaQuery.paddingOf(context); MediaQuery.orientation of (context);
-By calling MediaQuery.sizeof(context), the widget will rebuild only when the size changes, avoiding unnecessary rebuilds.
+### MediaQuery as Inherited Model
 
 - `context.mqSize` // The same of MediaQuery.sizeOf(context)
 - `context.mqHeight` // The same of MediaQuery.sizeOf(context).height
@@ -231,42 +221,14 @@ MyPlatform.isFuchsia
 //Check the device type
 MyPlatform.isMobile
 MyPlatform.isDesktop
-//All platforms are supported independently in web!
-//You can tell if you are running inside a browser
-//on Windows, iOS, OSX, Android, etc.
 MyPlatform.isWeb
 
-
 // Returns a value<T> according to the screen size
-// can give value for:
-// mobile: if the shortestSide is smaller than 600
-// tablet: if the shortestSide is smaller than 1200
-// desktop: if width is largest than 1200
 context.responsiveValue<T>(
     T? mobile,
     T? tablet,
     T? desktop,
-),
-
-// Example
-Container(
-    child: context.responsiveValue(
-        mobile: Container(
-          color: Colors.yellow,
-          width: context.width,
-          height: context.height,
-        ),
-        tablet: Container(
-          color: Colors.green,
-          width: context.width,
-          height: context.height,
-        ),
-        desktop: Container(
-          color: Colors.black,
-          width: context.width,
-          height: context.height,
-        )),
-     )
+)
 ```
 
 ## Navigation Extensions
@@ -274,14 +236,6 @@ Container(
 From the `Navigator` Access properties right in the `context` instance.
 
 ```dart
-// Before
-Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => SecondScreen()),
-  );
-
-// After
-
 // for push
 context.push(SecondScreen());
 context.pushNamed('/home');
@@ -306,18 +260,28 @@ context.routeName;
 context.routeArguments;
 ```
 
+## Focus & Keyboard Extensions
+
+Easily manage input focus and dismiss the soft keyboard directly from `BuildContext`.
+
+```dart
+// Unfocus current input (dismiss keyboard)
+context.unfocus();
+
+// Hide keyboard from primary focus
+context.hideKeyboard();
+
+// Request focus for a specific FocusNode
+context.requestFocus(myFocusNode);
+```
+
 ## Widget Extensions
 
-This extension is reduced more code.
+This extension reduces boilerplate code significantly.
 
 #### SizeBox
 
 ```dart
-// Before
-SizedBox(
-    height : 20.0
-   )
-// After
 // make space of 20.0 height
 20.0.heightBox
 
@@ -328,14 +292,7 @@ SizedBox(
 #### Padding
 
 ```dart
-// Before
-Padding(
-  padding: const EdgeInsets.all(8.0),
-  child: Text("text"),
-);
-
-// After
-Text("text").paddingAll(8.0),
+Text("text").paddingAll(8.0);
 ```
 
 Similar padding extensions are:
@@ -346,126 +303,130 @@ Similar padding extensions are:
 - `paddingSymmetric` Creates insets with symmetrical vertical and horizontal offsets.
 - `paddingFromWindowPadding` Creates insets that match the given window padding.
 
+#### Margin
+
+```dart
+Text("Hello").marginAll(16.0);
+Text("Hello").marginSymmetric(horizontal: 10.0, vertical: 5.0);
+Text("Hello").marginOnly(left: 8.0, top: 4.0);
+Text("Hello").marginDirectional(start: 12.0, top: 6.0);
+```
+
+#### Layout Helpers
+
+Chainable widget wrappers to eliminate nested boilerplate code.
+
+```dart
+// Scrollable wrapper
+Text("Long Content").scrollable(scrollDirection: Axis.vertical);
+
+// SafeArea wrapper
+Text("Content").safeArea();
+
+// Card wrapper
+Text("Card Content").card(elevation: 4.0);
+
+// ClipRRect wrapper
+Image.network("...").clipRRect(borderRadius: BorderRadius.circular(12));
+
+// Conditional rendering
+Text("Visible Content").visible(isLoggedIn);
+
+// FittedBox wrapper
+Text("Fitted Text").fittedBox(fit: BoxFit.contain);
+
+// InkWell ripple wrapper
+Text("Clickable").inkWell(onTap: () => print('tapped'));
+```
+
 ### Opacity
 
 ```dart
-// Before
-Opacity(
-  opacity: 0.5,
-  child: Text("text"),
-)
-
-// After
 Text("text").setOpacity(0.5)
 ```
 
 ### Expanded
 
 ```dart
-/// Before
-Expanded(
-  child: Text("text"),
-)
-
-// After
 Text("text").expanded()
 ```
 
 ### Flexible
 
 ```dart
-/// Before
-Flexible(
-  child: Text("text"),
-)
-
-// After
 Text("text").flexible()
 ```
 
 #### Shimmer Effect
 
-![OYCE3](https://user-images.githubusercontent.com/31765271/177955655-66a856a6-108a-429f-bbad-64b1c3f114aa.gif)
-
 ```dart
-Container(height: 50,width: 50,).applyShimmer();
+Container(height: 50, width: 50).applyShimmer();
 ```
-
-you can also change color of shimmer using `Color baseColor`, `Color highlightColor`.
 
 #### Nil Widget
 
-Sometimes, according to a condition, we want to display nothing. Usually when we can't return null, we would return something like `const SizedBox()` for example.
-
-This is good, but it has some performance impacts since `SizedBox` creates a `RenderObject`. The `RenderObject` lives in the render tree and some computations are performed on it, even if it paints nothing on the screen.
-
-We can do better, we can have a widget which does not create a `RenderObject`, while being still valid. The `Nil` widget is the minimal implementation for this use case. It only creates an `Element` and does nothing while it's building. Because the optimal way to use it, is to call `const Nil()`, it also comes with a `nil` constant that you can use everywhere (which is a `const Nil()`).
-
 ```dart
-// Good
-text != null ? Text(text) : const Container()
-// Better
-text != null ? Text(text) : const SizedBox()
-// BEST
 text != null ? Text(text) : nil
-or
-if (text != null) Text(text)
 ```
 
 ### SliverToBoxAdapter
 
 ```dart
 Text(text).sliver;
-// is same as
-SliverToBoxAdapter(
-  child: Text(text),
-);
 ```
 
 #### Other
 
-Now we can just add round corners, shadows, align, and added gestures to our Widgets.
-
 ```dart
 Container(
-      height: 100,
-       width: 100,)
-         .withRoundCorners(backgroundColor: Colors.grey)
-         .withShadow()
-         .alignAtCenter()
-         .toCenter()
-         .withTooltip('My Tooltip')
-         .paddingOnly(left: 10)
-         .paddingAll(20)
-         .onTap(() => print('tap'))
-         .onLongPress(() => print('long press'))
+  height: 100,
+  width: 100,
+)
+  .withRoundCorners(backgroundColor: Colors.grey)
+  .withShadow()
+  .alignAtCenter()
+  .toCenter()
+  .withTooltip('My Tooltip')
+  .paddingOnly(left: 10)
+  .paddingAll(20)
+  .onTap(() => print('tap'))
+  .onLongPress(() => print('long press'));
 ```
 
-Automatic detect platform and show material and cupertino dialog
+## List & Iterable Extensions
+
+#### Safe Element Access & Lookup
 
 ```dart
-context.showAlertDialog(title: 'title',
-                        message: 'message',)
+final list = [10, 20, 30];
+
+// Safe lookup without throwing RangeError
+list.getOrNull(0); // 10
+list.getOrNull(5); // null
+
+// Safe predicate search without throwing StateError
+list.firstWhereOrNull((e) => e > 15); // 20
+list.lastWhereOrNull((e) => e < 25);  // 20
 ```
 
-## List Extensions
+#### Chunking & Distinct Filtering
+
+```dart
+// Split list into chunks of specified size
+[1, 2, 3, 4, 5].chunked(2); // [[1, 2], [3, 4], [5]]
+
+// Filter unique elements by key selector
+users.distinctBy((u) => u.id);
+```
 
 #### notNullWidget
-  
+
 ```dart
 Row(
   mainAxisAlignment: MainAxisAlignment.center,
   children: <Widget?>[
-    Container(
-      height: 100,
-      width: 100,
-      color: Colors.red,
-    ).showIf(true),
-    Container(
-      height: 100,
-      width: 100,
-      color: Colors.green,
-    ).showIf(false),
+    Container(height: 100, width: 100, color: Colors.red).showIf(true),
+    Container(height: 100, width: 100, color: Colors.green).showIf(false),
   ].notNullWidget(), // returns only not null widgets
 ),
 ```
@@ -478,137 +439,143 @@ Row(
   children: [
     const Text('Hello').paddingAll(5),
     const Text('World').paddingAll(5),
-    const Text('Seperated').paddingAll(5),
+    const Text('Separated').paddingAll(5),
     const Text('By').paddingAll(5),
     const Text('Commas').paddingAll(5),
-  ].separatedby(
-    const Text(','),
-  ),
+  ].separatedBy(const Text(',')),
 ),
 ```
 
+## Map Extensions
 
-<img  alt="Screenshot 2024-10-10 at 13 34 14" src="https://github.com/user-attachments/assets/b64a6a65-468b-43be-88b5-9ee2271971b9">
+```dart
+final map = {'name': 'John'};
+
+final age = map.getOrDefault('age', 30);
+```
+
+- `getOrDefault(key, defaultValue)`
+- `getOrElse(key, function)`
+- `filterKeys(predicate)`
+- `filterValues(predicate)`
+- `toQueryString()`
+- `merge(otherMap)`
+- `getNested('user.profile.name')`
+- `setNested('user.profile.age', 28)`
 
 ## Date Extensions
 
 ```dart
-// for check two date are same or not
-date.isSameDate(otherdate);    // its return bool (true/false)
+// Date comparisons
+date.isSameDate(otherDate);    // bool
+date.isToday;                   // bool
+date.isYesterday;               // bool
+date.isTomorrow;                // bool
+date.isLeapYear;                // bool
 
-// for check date is today's date
-date.isToday    // its return bool (true/false)
+// Date boundaries & calculations
+date.daysInMonth;               // int (e.g. 28, 29, 30, 31)
+date.startOfDay;                // DateTime at 00:00:00
+date.endOfDay;                  // DateTime at 23:59:59
+date.addDays(5);                // DateTime + 5 days
+date.subtractDays(2);           // DateTime - 2 days
 
-// for check this date is yesterday's date
-date.isYesterday    // its return bool (true/false)
+// Relative time formatting
+DateTime.now().subtract(const Duration(minutes: 5)).timeAgo; // "5 minutes ago"
 ```
 
 ## Number Extensions
 
-#### Future & Duration
-
-Utility to delay some callback (or code execution).
+#### Formatting & Calculations
 
 ```dart
-print('+ wait for 2 seconds');
-await 2.delay();
-print('- 2 seconds completed');
-print('+ callback in 1.2sec');
-1.delay(() => print('- 1.2sec callback called'));
+// Currency formatting
+1234.5.toCurrency(symbol: '$'); // "$1234.50"
+
+// Percentage formatting
+0.75.toPercent();               // "75%"
+
+// Round to decimal places
+3.14159.roundToDecimal(2);      // 3.14
 ```
 
-Easy way to make Durations from numbers.
+#### Future & Duration
 
 ```dart
+await 2.delay();
+1.delay(() => print('callback'));
+
 print(1.seconds + 200.milliseconds);
 print(1.hours + 30.minutes);
-print(1.5.hours);
-
-5.isLowerThan(4);
-5.isGreaterThan(4);
-5.isEqual(4);
 ```
 
 ## String Extensions
 
 ```dart
-//your name => Your Name,
-'your name'.capitalize();
-//your name => Your name,
-'your name'.capitalizeFirst();
-//your name => yourname
-'your name'.removeAllWhitespace();
+// your name => Your Name
+'your name'.capitalize;
 
-// match any RegExp
-'dsts'.hasMatch("'r'[A-Z]");
-//return bool if match RegExp
-'123'.isNumericOnly();
-'dsf'.isAlphabetOnly();
-'Ajh'.hasCapitalletter();
-'true'.isBool();
+// your name => Your name
+'your name'.capitalizeFirst;
+
+// your name => yourname
+'your name'.removeAllWhitespace;
+
+// Convert to URL-friendly slug
+'Hello World!'.toSlug; // "hello-world"
+
+// Remove special characters
+'Hello@# World!'.removeSpecialCharacters; // "Hello World"
+
+// Check valid JSON
+'{"key": "value"}'.isJson; // true
+
+// Match RegExp & validations
+'123'.isNumericOnly;        // true
+'abc'.isAlphabetOnly;       // true
+'Hello'.hasCapitalLetter;   // true
+'true'.isBool;              // true
+```
+
+#### Nullable String Extensions
+
+```dart
+String? text;
+
+text.isNullOrEmpty;      // true if null, empty, or whitespace only
+text.isNotNullOrEmpty;   // true if contains valid non-whitespace text
+text.orDefault('Guest'); // returns "Guest" if null or empty
 ```
 
 ## Async Extensions
-
-An extention to help dealing with all the possible states of an `AsyncSnapshot` in a `StreamBuilder` / `FutureBuilder`.
-Reduces boilerplate code signifigantly by moving each possible state into it's own function.
 
 ```dart
 StreamBuilder(
   stream: incomingMessagesStream,
   builder: (context, snapshot) {
     snapshot.when(
-      data: (data, isComplete) {
-        return Column(
-          children: [
-            Text('Latest Message: $data'),
-            if (isComplete) Text('No More Message'),
-          ]
-        );
-      },
-      error: (error, stackTrace) {
-        return Text('We have an error');
-      },
-      loading: () {
-        return CircularProgressIndicator();
-      },
+      data: (data, isComplete) => Text('Data: $data'),
+      error: (error, stackTrace) => Text('Error: $error'),
+      loading: () => CircularProgressIndicator(),
     );
   },
 );
 ```
-also you can use `maybeWhen`, Similar to [when], but allows [data] callback to be optional.
 
 ## Color Extensions
 
-Darken
-
-The `darken` method darkens the color by a specified percentage. The percentage should be between 0 and 100. By default, the color is darkened by 10%.
-
 ```dart
-Color darkRed = Colors.red.darken(20); // Darkens the red color by 20%
+Color darkRed = Colors.red.darken(20);
+Color lightRed = Colors.red.lighten(20);
+Color semiTransparent = Colors.blue.alphaPercent(50);
 ```
-
-Lighten
-
-The lighten method lightens the color by a specified percentage. The percentage should be between 0 and 100. By default, the color is lightened by 10%.
-
-```dart
-Color lightRed = Colors.red.lighten(20); // Lightens the red color by 20%
-```
-
-Also Added Some Extra color extensions like: string hax to color, brightness, and change specific RGB color value.
 
 ## Url Strategy
 
-With a simple call of `setPathUrlStrategy`, your Flutter web app does not have a leading `#`
-in the URL anymore 🚀
-
 ```dart
 void main() {
-// Here we set the URL strategy for our web app.
-// It is safe to call this function when running on mobile or desktop as well.
-setPathUrlStrategy();
-runApp(MyApp());
+  setPathUrlStrategy();
+  runApp(MyApp());
 }
 ```
 
@@ -616,47 +583,19 @@ runApp(MyApp());
 
 ```dart
 AvatarImage(
-   backgroundImage: NetworkImage(
-    'https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg'),
-     shape: AvatarImageShape.standard,
-     size: ImageSize.LARGE,
-     child: Text('Lucky'),
-          backgroundColor: Colors.red,
-      ),
-
-AvatarImage(
-    shape: AvatarImageShape.circle,
-    child: Text('JP'),
-    backgroundColor: Colors.red,
-      ),
+  shape: AvatarImageShape.circle,
+  child: Text('JP'),
+  backgroundColor: Colors.red,
+)
 ```
-
-![avatar-image](https://user-images.githubusercontent.com/31765271/205228265-a30afe80-1f12-4874-808f-177aafb25b4a.jpeg)
-![avatar-name](https://user-images.githubusercontent.com/31765271/205228285-e5a52b8e-0675-4796-858b-7257d1925a5b.jpeg)
-
-| Properties      | Description                                                                                                |
-| --------------- | ---------------------------------------------------------------------------------------------------------- |
-| child           | type of [Widget], which can have text , icon etc                                                           |
-| backgroundColor | Color to fill the background of avatar                                                                     |
-| foregroundColor | Color to change the textColor inside the avatar                                                            |
-| radius          | size of the avatar                                                                                         |
-| minRadius       | minimum size of the avatar                                                                                 |
-| maxRadius       | maximun size of the avatar                                                                                 |
-| size            | size of the avatar i.e `ImageSize.large`, `ImageSize.medium`, `ImageSize.small`                            |
-| shape           | shape of the avatar i.e, `AvatarImageShape.standard`, `AvatarImageShape.circle`, `AvatarImageShape.square` |
-| borderRadius    | extra radius to avatar shapes, not applicable to circular avatar                                           |
 
 ## Support
 
-You liked this package? then give it a star. If you want to help then:
-
-- Start this repository
-- Send a Pull Request with new features
-- Share this package
-- Create issues if you find a Bug or want to suggest something
+- ⭐ Star this repository
+- 🔧 Send a Pull Request with new features
+- 📢 Share this package
+- 🐛 Create issues if you find a bug or want to suggest something
 
 ## ❤️❤️❤️
 
 Supported by [JetBrains Open Source](https://www.jetbrains.com/community/opensource/#support)
-
-[<img src="https://raw.githubusercontent.com/nslogx/flutter_easyloading/master/images/jetbrains.png" width=200 height=112/>](https://www.jetbrains.com/?from=FlutterEasyLoading)
