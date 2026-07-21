@@ -51,9 +51,9 @@ class WidgetExt extends StatelessWidget {
               const Text('Seperated').paddingAll(5),
               const Text('By').paddingAll(5),
               const Text('Commas').paddingAll(5),
-            ].separatedby(const Text(',')),
+            ].separatedBy(const Text(',')),
           ),
-        ].separatedby(10.heightBox),
+        ].separatedBy(10.heightBox),
       ),
     );
   }
