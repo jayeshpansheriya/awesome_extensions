@@ -159,8 +159,22 @@ From the `Theme` class. Access your themes right in the `context` instance.
 
 #### Spacing
 
-Custom extension of `Theme`. Allows for constant spacing throughout the app. Access right in the `context` instance.
+Custom extension of `Theme`. Allows for constant spacing throughout the app. Access right in the `context` instance. To use it, add SpacingTheme to your app's ThemeData extensions:
 
+```dart
+
+MaterialApp(
+  theme: ThemeData(
+    // ... your existing theme settings
+    extensions: [
+      SpacingTheme(), // or SpacingTheme.spacious() for larger spacing
+    ],
+  ),
+  home: MyApp(),
+);
+```
+
+- `context.spacingXs`
 - `context.spacingSm`
 - `context.spacingMd`
 - `context.spacingLg`
@@ -175,7 +189,7 @@ Custom extension of `Theme`. Allows for constant spacing throughout the app. Acc
 | xl | 64 | 128 |
 
 
-Use `SpacingTheme.custom`to define your own values.
+Use `SpacingTheme.custom` to define your own values.
 
 Works with all of the widget extensions like `context.spacingXs.heightBox` or `Text('Hello world!').paddingAll(context.spacingSm)`.
 
