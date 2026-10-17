@@ -48,7 +48,7 @@ class SpacingTheme extends ThemeExtension<SpacingTheme> {
   });
 
   @override
-  ThemeExtension<SpacingTheme> copyWith({
+  SpacingTheme copyWith({
     double? xs,
     double? sm,
     double? md,
@@ -65,7 +65,7 @@ class SpacingTheme extends ThemeExtension<SpacingTheme> {
   }
 
   @override
-  ThemeExtension<SpacingTheme> lerp(
+  SpacingTheme lerp(
     ThemeExtension<SpacingTheme>? other,
     double t,
   ) {
