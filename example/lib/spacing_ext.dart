@@ -14,7 +14,7 @@ class _SpacingExampleState extends State<SpacingExample> {
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: ThemeData(
+      data: Theme.of(context).copyWith(
         extensions: [useSpacious ? SpacingTheme.spacious() : SpacingTheme()],
       ),
       child: Builder(
@@ -23,7 +23,7 @@ class _SpacingExampleState extends State<SpacingExample> {
             appBar: AppBar(title: const Text('Spacing Theme')),
             body: Center(
               child: Column(
-                spacing: innerContext.spacingMd, 
+                spacing: innerContext.spacingMd,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -39,15 +39,27 @@ class _SpacingExampleState extends State<SpacingExample> {
                       ),
                     ],
                   ),
-                  Container(color: Colors.blue, child: Text('sm').paddingAll(innerContext.spacingSm)),
-                  Container(color: Colors.blue, child: Text('md').paddingAll(innerContext.spacingMd)),
-                  Container(color: Colors.blue, child: Text('lg').paddingAll(innerContext.spacingLg)),
-                  Container(color: Colors.blue, child: Text('xl').paddingAll(innerContext.spacingXl)),
+                  Container(
+                    color: Colors.blue,
+                    child: Text('sm').paddingAll(innerContext.spacingSm),
+                  ),
+                  Container(
+                    color: Colors.blue,
+                    child: Text('md').paddingAll(innerContext.spacingMd),
+                  ),
+                  Container(
+                    color: Colors.blue,
+                    child: Text('lg').paddingAll(innerContext.spacingLg),
+                  ),
+                  Container(
+                    color: Colors.blue,
+                    child: Text('xl').paddingAll(innerContext.spacingXl),
+                  ),
                 ],
               ),
             ),
           );
-        }
+        },
       ),
     );
   }
