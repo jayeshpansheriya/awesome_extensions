@@ -577,4 +577,100 @@ void main() {
       ); // visibleWidget is rendered, hiddenWidget is SizedBox.shrink()
     });
   });
+
+  group('SpacingTheme & Context Extensions', () {
+    testWidgets('default SpacingTheme provides spacing values via context', (
+      WidgetTester tester,
+    ) async {
+      late BuildContext savedContext;
+      
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: ThemeData(
+            extensions: [SpacingTheme()],
+          ),
+          home: Builder(
+            builder: (context) {
+              savedContext = context;
+              return const SizedBox();
+            },
+          ),
+        ),
+      );
+
+      // Verify that values are provided successfully
+      expect(savedContext.spacingSm, isA<double>());
+      expect(savedContext.spacingMd, isA<double>());
+      expect(savedContext.spacingLg, isA<double>());
+      expect(savedContext.spacingXl, isA<double>());
+    });
+
+    testWidgets('spacious SpacingTheme provides larger spacing values', (
+      WidgetTester tester,
+    ) async {
+      late BuildContext defaultContext;
+      late BuildContext spaciousContext;
+      
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Column(
+            children: [
+              Theme(
+                data: ThemeData(extensions: [SpacingTheme()]),
+                child: Builder(
+                  builder: (context) {
+                    defaultContext = context;
+                    return const SizedBox();
+                  },
+                ),
+              ),
+              Theme(
+                data: ThemeData(extensions: [SpacingTheme.spacious()]),
+                child: Builder(
+                  builder: (context) {
+                    spaciousContext = context;
+                    return const SizedBox();
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+
+      // Verify spacious values are greater than standard values
+      expect(spaciousContext.spacingSm, greaterThan(defaultContext.spacingSm));
+      expect(spaciousContext.spacingMd, greaterThan(defaultContext.spacingMd));
+      expect(spaciousContext.spacingLg, greaterThan(defaultContext.spacingLg));
+      expect(spaciousContext.spacingXl, greaterThan(defaultContext.spacingXl));
+    });
+
+    testWidgets('paddingAll works with context spacing sizes', (
+      WidgetTester tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: ThemeData(
+            extensions: [SpacingTheme()],
+          ),
+          home: Scaffold(
+            body: Builder(
+              builder: (context) {
+                // Testing inline extension composition
+                return const Text('Test').paddingAll(context.spacingMd);
+              },
+            ),
+          ),
+        ),
+      );
+
+      // Verify the widget is wrapped in a Padding (or Container with padding) widget
+      final textFinder = find.text('Test');
+      expect(textFinder, findsOneWidget);
+      
+      // We look for a widget that provides padding (like Padding)
+      final ancestor = find.ancestor(of: textFinder, matching: find.byType(Padding));
+      expect(ancestor, findsWidgets);
+    });
+  });
 }
