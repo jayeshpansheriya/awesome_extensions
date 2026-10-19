@@ -3,6 +3,7 @@ import 'package:awesome_extensions/awesome_extensions_flutter.dart';
 import 'package:example/avtar_exp.dart';
 import 'package:example/padding_ext.dart';
 import 'package:example/shimmer_effect.dart';
+import 'package:example/spacing_ext.dart';
 import 'package:example/text_data.dart';
 import 'package:example/widget_ext.dart';
 import 'package:flutter/material.dart';
@@ -97,6 +98,16 @@ class MyHomePageState extends State<MyHomePage> {
                 context.push(const PaddingExt());
               },
               child: const Text('Padding Ext'),
+            ),
+
+            20.0.heightBox,
+
+            ///Spacing Extensions
+            ElevatedButton(
+              onPressed: () {
+                context.push(const SpacingExample());
+              },
+              child: const Text('Spacing Ext'),
             ),
 
             20.0.heightBox,

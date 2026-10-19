@@ -29,6 +29,7 @@ dependencies:
     - [TextStyle](#textstyle)
     - [Text](#text)
     - [Theme](#theme)
+    - [Spacing](#spacing)
   - [Media Query Extensions For Responsive Layout](#media-query-extensions-for-responsive-layout)
   - [Navigation Extensions](#navigation-extensions)
   - [Widget Extensions](#widget-extensions)
@@ -155,6 +156,44 @@ From the `Theme` class. Access your themes right in the `context` instance.
 - `context.hoverColor`
 - `context.dividerColor`
 - `context.scaffoldBackgroundColor`
+
+#### Spacing
+
+Custom extension of `Theme`. Allows for constant spacing throughout the app. Access right in the `context` instance. To use it, add SpacingTheme to your app's ThemeData extensions:
+
+```dart
+
+MaterialApp(
+  theme: ThemeData(
+    // ... your existing theme settings
+    extensions: [
+      SpacingTheme(), // or SpacingTheme.spacious() for larger spacing
+    ],
+  ),
+  home: MyApp(),
+);
+```
+
+- `context.spacingXs`
+- `context.spacingSm`
+- `context.spacingMd`
+- `context.spacingLg`
+- `context.spacingXl`
+
+| Size | Default | Spacious |
+|---|---|---|
+| xs | 4 | 8 |
+| sm | 8 | 16 |
+| md | 16 | 32 |
+| lg | 32 | 64 |
+| xl | 64 | 128 |
+
+
+Use `SpacingTheme.custom` to define your own values.
+
+Works with all of the widget extensions like `context.spacingXs.heightBox` or `Text('Hello world!').paddingAll(context.spacingSm)`.
+
+
 
 ## Media Query Extensions For Responsive Layout
 
