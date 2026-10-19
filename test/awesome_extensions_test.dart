@@ -621,10 +621,16 @@ void main() {
 
     test('lerp interpolates between two themes correctly', () {
       final themeA = SpacingTheme.custom(xs: 0, sm: 10, md: 20, lg: 30, xl: 40);
-      final themeB = SpacingTheme.custom(xs: 10, sm: 20, md: 40, lg: 60, xl: 80);
+      final themeB = SpacingTheme.custom(
+        xs: 10,
+        sm: 20,
+        md: 40,
+        lg: 60,
+        xl: 80,
+      );
 
       // Test halfway interpolation (t = 0.5)
-      final lerpedTheme = themeA.lerp(themeB, 0.5) as SpacingTheme;
+      final lerpedTheme = themeA.lerp(themeB, 0.5);
 
       expect(lerpedTheme.xs, equals(5.0));
       expect(lerpedTheme.sm, equals(15.0));
@@ -635,10 +641,10 @@ void main() {
 
     test('lerp handles null properly', () {
       final themeA = SpacingTheme();
-      
-      // Interpolating with null should typically return the calling object 
+
+      // Interpolating with null should typically return the calling object
       // (or handle it gracefully per standard ThemeExtension guidelines)
-      final lerpedTheme = themeA.lerp(null, 0.5) as SpacingTheme;
+      final lerpedTheme = themeA.lerp(null, 0.5);
       expect(lerpedTheme.xs, equals(4.0));
       expect(lerpedTheme.md, equals(16.0));
     });
@@ -649,12 +655,10 @@ void main() {
       WidgetTester tester,
     ) async {
       late BuildContext savedContext;
-      
+
       await tester.pumpWidget(
         MaterialApp(
-          theme: ThemeData(
-            extensions: [SpacingTheme()],
-          ),
+          theme: ThemeData(extensions: [SpacingTheme()]),
           home: Builder(
             builder: (context) {
               savedContext = context;
@@ -672,55 +676,69 @@ void main() {
       expect(savedContext.spacingXl, equals(64.0));
     });
 
-    testWidgets('spacious SpacingTheme provides larger spacing values via context', (
-      WidgetTester tester,
-    ) async {
-      late BuildContext defaultContext;
-      late BuildContext spaciousContext;
-      
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Column(
-            children: [
-              Theme(
-                data: ThemeData(extensions: [SpacingTheme()]),
-                child: Builder(
-                  builder: (context) {
-                    defaultContext = context;
-                    return const SizedBox();
-                  },
-                ),
-              ),
-              Theme(
-                data: ThemeData(extensions: [SpacingTheme.spacious()]),
-                child: Builder(
-                  builder: (context) {
-                    spaciousContext = context;
-                    return const SizedBox();
-                  },
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
+    testWidgets(
+      'spacious SpacingTheme provides larger spacing values via context',
+      (WidgetTester tester) async {
+        late BuildContext defaultContext;
+        late BuildContext spaciousContext;
 
-      // Verify spacious values are strictly greater than standard values
-      expect(spaciousContext.spacingXs, greaterThan(defaultContext.spacingXs));
-      expect(spaciousContext.spacingSm, greaterThan(defaultContext.spacingSm));
-      expect(spaciousContext.spacingMd, greaterThan(defaultContext.spacingMd));
-      expect(spaciousContext.spacingLg, greaterThan(defaultContext.spacingLg));
-      expect(spaciousContext.spacingXl, greaterThan(defaultContext.spacingXl));
-    });
+        await tester.pumpWidget(
+          MaterialApp(
+            home: Column(
+              children: [
+                Theme(
+                  data: ThemeData(extensions: [SpacingTheme()]),
+                  child: Builder(
+                    builder: (context) {
+                      defaultContext = context;
+                      return const SizedBox();
+                    },
+                  ),
+                ),
+                Theme(
+                  data: ThemeData(extensions: [SpacingTheme.spacious()]),
+                  child: Builder(
+                    builder: (context) {
+                      spaciousContext = context;
+                      return const SizedBox();
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+
+        // Verify spacious values are strictly greater than standard values
+        expect(
+          spaciousContext.spacingXs,
+          greaterThan(defaultContext.spacingXs),
+        );
+        expect(
+          spaciousContext.spacingSm,
+          greaterThan(defaultContext.spacingSm),
+        );
+        expect(
+          spaciousContext.spacingMd,
+          greaterThan(defaultContext.spacingMd),
+        );
+        expect(
+          spaciousContext.spacingLg,
+          greaterThan(defaultContext.spacingLg),
+        );
+        expect(
+          spaciousContext.spacingXl,
+          greaterThan(defaultContext.spacingXl),
+        );
+      },
+    );
 
     testWidgets('paddingAll works directly with context spacing sizes', (
       WidgetTester tester,
     ) async {
       await tester.pumpWidget(
         MaterialApp(
-          theme: ThemeData(
-            extensions: [SpacingTheme()],
-          ),
+          theme: ThemeData(extensions: [SpacingTheme()]),
           home: Scaffold(
             body: Builder(
               builder: (context) {
@@ -735,11 +753,14 @@ void main() {
       // Verify the widget is wrapped in a Padding (or Container with padding) widget
       final textFinder = find.text('Test');
       expect(textFinder, findsOneWidget);
-      
+
       // Look for a padding widget that provides the exact md inset (16.0)
-      final paddingFinder = find.ancestor(of: textFinder, matching: find.byType(Padding));
+      final paddingFinder = find.ancestor(
+        of: textFinder,
+        matching: find.byType(Padding),
+      );
       expect(paddingFinder, findsWidgets);
-      
+
       final Padding paddingWidget = tester.widget(paddingFinder.first);
       expect(paddingWidget.padding, equals(const EdgeInsets.all(16.0)));
     });

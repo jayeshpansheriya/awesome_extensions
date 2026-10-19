@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.2] - 2026-10-19
+### Added
+- **Spacing Theme Extension**: Added `SpacingTheme` (`ThemeExtension`) with standard, spacious, and custom presets (`xs`–`xl`), plus `BuildContext` accessors (`spacingTheme`, `spacingXs`, `spacingSm`, `spacingMd`, `spacingLg`, `spacingXl`) for consistent app-wide spacing.
+
 ## [2.1.1] - 2026-07-21
 ### Added
 - **String Extensions**: Added `isJson`, `toSlug`, `removeSpecialCharacters`, `hasCapitalLetter`, and `NullableStringExtension` (`isNullOrEmpty`, `isNotNullOrEmpty`, `orDefault`).

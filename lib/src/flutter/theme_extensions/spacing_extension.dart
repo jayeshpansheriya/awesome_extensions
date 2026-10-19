@@ -65,10 +65,7 @@ class SpacingTheme extends ThemeExtension<SpacingTheme> {
   }
 
   @override
-  SpacingTheme lerp(
-    ThemeExtension<SpacingTheme>? other,
-    double t,
-  ) {
+  SpacingTheme lerp(ThemeExtension<SpacingTheme>? other, double t) {
     if (other is! SpacingTheme) return this;
     return SpacingTheme(
       xs: lerpDouble(xs, other.xs, t)!,
@@ -83,7 +80,8 @@ class SpacingTheme extends ThemeExtension<SpacingTheme> {
 /// Extension on [BuildContext] to provide easy access to spacing values defined in [SpacingTheme].
 extension SpacingExt on BuildContext {
   /// Performs a simple [Theme.of(context).spacingTheme] action and returns the given [SpacingTheme]. Defaults to the standard [SpacingTheme] if none is found.
-  SpacingTheme get spacingTheme => Theme.of(this).extension<SpacingTheme>() ?? const SpacingTheme();
+  SpacingTheme get spacingTheme =>
+      Theme.of(this).extension<SpacingTheme>() ?? const SpacingTheme();
 
   /// Extra small spacing value. Defaults to 4.0.
   double get spacingXs => spacingTheme.xs;
