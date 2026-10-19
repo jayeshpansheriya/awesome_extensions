@@ -75,7 +75,9 @@ build/
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
 
-# FVM Version Cache
-.fvm/
+# FVM Version Cache (keep fvm_config.json tracked)
+.fvm/*
+!.fvm/fvm_config.json
 
-pubspec.lock
+# Library packages should not commit the root lockfile; example may keep its own.
+/pubspec.lock
